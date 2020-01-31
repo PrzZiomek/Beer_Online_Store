@@ -1,0 +1,56 @@
+@import "abstract";
+
+
+
+.beer-label{
+   
+    flex-basis: 22%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 45vh; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    margin: 2% 0 3% 0;
+    
+
+    > span,
+    > p{
+        flex-basis: 100%;
+        padding: 15px;
+    }
+
+    > span.beerTitle{
+        max-height: 58px;
+        overflow: hidden;
+    }
+
+    > p.price{
+        font-weight: normal;
+    }
+
+    > a{
+        flex-basis: 45%;
+        @include greenButton(1.1rem);
+
+        &:hover{
+            @include greenButtonHover()
+        }
+    }
+    > button{
+        flex-basis: 45%;
+        @include greenButton(1.1rem);
+
+        &:hover{
+            @include greenButtonHover()
+        }
+     }
+
+    > img{
+        width: 20%;
+        height: 55%;
+    }
+}
+
+
