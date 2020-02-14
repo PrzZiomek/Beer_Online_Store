@@ -1,10 +1,10 @@
-export const RMV_FROM_OFFER = "RMV_FROM_OFFER";
 export const RMV_FROM_CART = "RMV_FROM_CART";
 export const RMV_FROM_FAVOUR = "RMV_FROM_FAVOUR";
-export const ADD_TO_OFFER = "ADD_TO_OFFER";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const ADD_TO_FAVOUR = "ADD_TO_FAVOUR";
-export const CLEAR_OFFER = "CLEAR_OFFER";
 export const CLEAR_CART = "CLEAR_CART";
 export const CLEAR_FAVOUR = "CLEAR_FAVOUR";
 export const CURRENT_BEER = "CURRENT_BEER";
+export const FETCH_BEGIN = "FETCH_BEGIN";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAIL = "FETCH_FAIL";

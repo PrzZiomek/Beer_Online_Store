@@ -1,12 +1,37 @@
-import { ADD_TO_CART, ADD_TO_FAVOUR, ADD_TO_OFFER, RMV_FROM_CART, RMV_FROM_FAVOUR, RMV_FROM_OFFER, CLEAR_CART, CLEAR_FAVOUR, CLEAR_OFFER, CURRENT_BEER } from "./actions";
+import { ADD_TO_CART,
+        ADD_TO_FAVOUR,
+        RMV_FROM_CART,
+        RMV_FROM_FAVOUR,
+        CLEAR_CART,
+        CLEAR_FAVOUR,
+        CURRENT_BEER,
+        FETCH_BEGIN,
+        FETCH_SUCCESS,
+        FETCH_FAIL
+        } from "./actions";
 
 
-export const addToOffer = (value) => ({
-    type: ADD_TO_OFFER,
+
+export const fetchBegin = () => ({
+    type: FETCH_BEGIN
+})
+
+export const fetchSuccess = (payload) => ({
+    type: FETCH_SUCCESS,
+    payload
+})
+
+export const fetchFail = (error) => ({
+    type: FETCH_FAIL,
+    error
+})
+
+export const addToCartAction = (value) => ({
+    type: ADD_TO_CART,
     value  
 });
 
-export const setCurrentBeer = (value) => ({
+export const setCurrentBeerAction = (value) => ({
     type: CURRENT_BEER,
     value
 })

@@ -1,19 +1,21 @@
 import { store } from "../manageState/store";
 import { pipeline as compose } from "./toManipulateDOM/pipeline";
-import { clearContentOf, createDiv, createImgElem, createLinkRedirectToDescription, createBtnAddToCart, createSpanElem, createText } from "./toManipulateDOM/handlersToManipulateDOM";
- 
+import { clearContentOf, createDiv, createImgElem, createSpanElem, createText } from "./toManipulateDOM/basisHandlersToManipulateDOM";
+import { createBtnAddToCart, createLinkRedirectToDescription } from "./toManipulateDOM/handlersToManipulateDOM"
 
-export const area = document.querySelector("main");
+
 
 
 
 
   export const OfferOnPage = () => {
 
+    const area = document.querySelector("main");
+
     clearContentOf(area);
 
-      const beers = store.getState().reducerToOffer;
-
+      const beers = store.getState().reducerToResponse.items;
+      
       beers.map(beer => {
 
         const wrapperDiv = compose(            

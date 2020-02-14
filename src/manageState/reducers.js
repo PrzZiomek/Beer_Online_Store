@@ -1,6 +1,14 @@
 import { combineReducers } from "./combineReducers";
-import { ADD_TO_CART, ADD_TO_FAVOUR, ADD_TO_OFFER, RMV_FROM_CART, RMV_FROM_FAVOUR, RMV_FROM_OFFER, CLEAR_CART, CLEAR_FAVOUR, CLEAR_OFFER, CURRENT_BEER } from "./actions";
-
+import { ADD_TO_CART,
+        ADD_TO_FAVOUR,
+        RMV_FROM_CART,
+        RMV_FROM_FAVOUR,
+        CLEAR_CART,
+        CLEAR_FAVOUR, 
+        CURRENT_BEER,   
+        FETCH_BEGIN,
+        FETCH_FAIL,
+        FETCH_SUCCESS } from "./actions";
 
 
 
@@ -9,27 +17,43 @@ const initStateObj = {
     beer: null,
 };
 
+const initStateToFetch = {
+    items: [],
+    loading: false,
+    error: null
+}
+
+
+
+const reducerToResponse = (state = initStateToFetch, action) => {
+
+            switch (action.type){
+                case FETCH_BEGIN:
+                    return{
+                        ...state,
+                        loading: true,
+                    };
+                case FETCH_SUCCESS:
+                    return{
+                        ...state,
+                        loading:false,
+                        items: action.payload
+                    };
+                case FETCH_FAIL:
+                    return{
+                        ...state,
+                        loading: false,
+                        items: [],
+                        error: action.error
+                    }
+                default:
+                    return state;
+            }
+        }
 
 
 
 
-
-
-
-
-const reducerToOffer = (state = initStateArr, action) => {
-
-    switch (action.type){
-        case ADD_TO_OFFER:
-            return [...state, action.value];
-        case RMV_FROM_OFFER: 
-            return state.filter((x) => x.id !== action.value.id ) ;
-        case CLEAR_OFFER:
-             return [];
-        default:
-            return state;
-    }
-};
 
 
 const reducerToFavour = (state = initStateArr, action) => {
@@ -85,9 +109,9 @@ const reducerToCurrentValues = (state = initStateObj, action) => {
 
 
 export const mainReducer = combineReducers({
+                      reducerToResponse,
                       reducerToFavour,
                       reducerToCart,
-                      reducerToOffer,
                       reducerToCurrentValues
                   })
 

@@ -7,7 +7,7 @@ import { showDescription } from "./components/showDescription";
 
 const routes = () => ({
 
-    "/" : () => setTimeout(OfferOnPage, 400),
+    "/" : () => OfferOnPage(), 
     "/opis" : () => showDescription()
    
 })

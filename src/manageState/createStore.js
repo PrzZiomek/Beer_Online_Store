@@ -15,7 +15,6 @@ const validateAction = action => {
 
 
 
-
 export const createStore = (reducer, middleware) => {
 
   let state;
@@ -32,6 +31,7 @@ export const createStore = (reducer, middleware) => {
     getState,
   };
 
+
   if(middleware){
     const dispatch = (action) => store.dispatch(action);
     store.dispatch = middleware({
@@ -44,34 +44,19 @@ export const createStore = (reducer, middleware) => {
 };
 
 
+/*
 
-
-export const thunkMiddleware = ({dispatch, getState}) => next => action => {
-  if (typeof action === 'function') {
-    return action(dispatch, getState);
-  }
-  return next(action);
-};
+*/
 
 
 
- export const loggingMiddleware = ({getState}) => next => action => {
-    console.info('before', getState());
-    console.info('action', action);
-    const result = next(action);
-    console.info('after', getState());
-    return result;
-  };
+
 
 
 
 export  const applyMiddleware = (...middlewares) => store => {
-    if (middlewares.length === 0) {
-      return dispatch => dispatch;
-    }
-    if (middlewares.length === 1) {
-      return middlewares[0](store);
-    }
+
+   
     const boundMiddlewares = middlewares.map(middleware =>
       middleware(store)
     );
@@ -86,54 +71,3 @@ export  const applyMiddleware = (...middlewares) => store => {
 
 
 
-
-/*
-export const createStore = (reducer) => {
-
-    let state;
-
-    const store = {
-
-      dispatch: (action) => {
-          validateAction(action);
-          state = reducer(state, action);
-      },
-
-      getState: () => state,
-    };
-
-    return store;
-};
-*/
-
-
-
-
-/*
-const createStore = reducer => {
-
-    let state;
-    const subscribers = [];
-
-    const store = {
-      dispatch: action => {
-        validateAction(action);
-        state = reducer(state, action);
-        subscribers.forEach(handler => handler());
-      },
-      getState: () => state,
-      subscriber: handler => {
-        subscribers.push(handler);
-        return () => {
-          const index = subscribers.indexOf(handler);
-          if (index > 0) {
-            subscribers.splice(index, 1);
-          }
-        };
-      }
-    };
-
-    store.dispatch({ type: "@@redux/INIT" });
-    return store;
-};
-*/

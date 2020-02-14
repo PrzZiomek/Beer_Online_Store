@@ -1,0 +1,46 @@
+
+.previev-background{
+
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0, 0) ;
+
+}
+
+
+
+.cart-previev{
+
+    position: absolute;
+    min-height: 50%;
+    width: 60%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    background-color: burlywood;
+    text-align: center;
+    font-weight: normal;
+
+    & > .statement{
+
+        font-size: 2.3rem;
+        letter-spacing: 2px;
+        margin: 5%;
+    }
+
+    .previev-actualBeer{
+
+        height: 70%;
+        width: 90%;
+        margin: 0 auto;
+        border: 2px solid green;
+        text-align: left;
+
+        & > h3{
+            margin: 2%;
+        }
+    }
+}
