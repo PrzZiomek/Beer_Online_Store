@@ -14,23 +14,25 @@ export const openCartPreviev = (beer) => {
     const cartPreviev = compose(
             createTitle("statement")("Dodałeś do koszyka!"),
             createInternalWrapperDiv("previev-actualBeer")(compose(  
-                createTitle("")(beer.name),
-                createSpanElem("price")(beer.srm),         
                 createImgElem("")(beer.image_url),
-                createSpanElem("description")(beer.description),
+                createTitle("")(beer.name),
+                createSpanElem("price")(`${beer.srm} $`),         
+                createText("description")(beer.description),
                 createButtonToCloseModal("")("kontynuuj zakupy")(cartPrevievModal),
                 createLinkTo("")("do kasy")("#/koszyk"),
             )),
             createInternalWrapperDiv("previev-cartContent")(compose(  
-                createTitle("statement")("Twój koszyk"),
+                createTitle("")("Twój koszyk"),
                 createInternalWrapperDiv("details")(compose(  
                     createText("")("produkt"),
                     createText("")("cena"),
                     createText("")("ilość"),
                     createText("")("wartość"),
-                )),                               
-                createText("")("razem"),
-                createSpanElem("sum")(beer.srm),                              
+                )), 
+                createInternalWrapperDiv("recapCosts")(compose(  
+                    createText("")("razem"),
+                    createSpanElem("sum")(beer.srm),  
+                )),                                                            
             ))
         )(createDiv("cart-previev")); 
 
@@ -48,4 +50,4 @@ createSpanElem("price")(beer.srm),
                 createSpanElem("date")(beer.first_brewed),
                 createText("")("producent"),
                 createSpanElem("produced")(beer.contributed_by),    
-*/
+*/    
