@@ -14,25 +14,38 @@
     display: grid;
     max-width: 100vw;
     height: 100vh;
-    grid-template-rows: 1fr 5fr;
-    background-color: darkorange;
+    grid-template-rows: 1fr 4fr;
     text-transform: uppercase;
 
+    &::after {
+        content: "";
+        background: url("../../graphics/green-bubbles-background.jpg");
+        top: 0;
+        left: -20%;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;   
+      }
 
     header{
 
-        border: 2px solid green;
         text-align: center;
         padding: 2%;
+        margin: 2% 22% 0 22%;
+        background-color: rgba(50, 205, 50, 0.9);
+        border-radius: 2%;
+        text-shadow: 7px -3px 3px #CE5937;
     
         > h1{
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: bold;
             font-style: italic;
             padding-bottom: 1%;
           }
         > h2{
-            font-size: 2rem;
+            font-size: 2.4rem;
+            padding-top: 1%;
           }  
     }
 
@@ -44,27 +57,54 @@
         height: 100%;
         grid-template-areas: "menu main";
         grid-template-columns: 1fr 7fr;
-        background-color: limegreen;
+        margin-top: 2%;
+
 
         nav{
             &.menu{
                 grid-area: menu;
-                background-color: limegreen;
-                color: green;
+                position: fixed;
+                left: 0;
+                top: 28vh;
                 font-size: 1.8rem;
-                border-right: 2px solid green;
             } 
             &.menu li{
-                padding-top: 10px;
                 list-style: none;
                 cursor: pointer;
-                padding-right: 5px;
-                margin: 5% 2% 5% 2%;
+                text-align: center;   
+
+                &:nth-child(5){
+                    font-size: 1.4rem;
+                }
+
+
+                &.cart{
+                    position: relative;
+                }
+
+                &.cart::after{
+                    position: absolute;
+                    color: rgb(177, 171, 182);
+                    font-weight: bold;
+                    display: block;
+                    top: 0;
+                    right: -8%;
+                    content: attr(beerAmount);
+                }
             }
             
             &.menu li a{
                 text-decoration: none;
-                color: brown;
+                background-color: darkorange;
+                text-align: center;
+                color: black;
+                display: block;
+                width: 100%;
+                height: 15%;
+                border-radius: 13%;
+                padding:5%;
+                margin: 12%;
+                box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
             }
             
             &.menu li a:hover{
@@ -84,6 +124,9 @@
     }
            
 }
+
+
+
 
 
 

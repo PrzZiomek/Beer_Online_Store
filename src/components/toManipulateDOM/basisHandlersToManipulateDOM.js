@@ -1,5 +1,5 @@
 import { setClss, setPath, setSrc, setTextContent } from "./handlersToCreateElements";
-import { pipeline as compose } from "./pipeline";
+import { pipeline as compose } from "../../pipeline";
 
 
 
@@ -85,7 +85,7 @@ export const createLinkTo = (cl) => (txtContent) => (path) => (element) => {
 }
 
 
-export const createInternalWrapperDiv = (cl) => (elements) => (element) => {
+export const createWrapperDiv = (cl) => (elements) => (element) => {
 
     const wrapper = elements(createDiv(cl));
     element.appendChild(wrapper);

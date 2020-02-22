@@ -10,10 +10,13 @@
     justify-content: center;
     text-align: center;
     min-height: 45vh; 
-    font-size: 1.2rem; 
+    font-size: 1.3rem; 
     font-weight: bold;
     margin: 2% 0 3% 0;
-    
+    padding-bottom: 1%;
+    background-color: rgba(50, 205, 50, 0.9);
+    border: 2px solid green;
+    border-radius: 5%;
 
     > span,
     > p{
@@ -32,7 +35,9 @@
 
     > a{
         flex-basis: 45%;
+        border-radius: 10%;
         @include greenButton(1.1rem);
+        border: 3px solid green;
 
         &:hover{
             @include greenButtonHover()
@@ -40,7 +45,9 @@
     }
     > button{
         flex-basis: 45%;
+        border-radius: 10%;
         @include greenButton(1.1rem);
+        border: 3px solid green;
 
         &:hover{
             @include greenButtonHover()

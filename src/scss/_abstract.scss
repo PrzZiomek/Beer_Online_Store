@@ -3,7 +3,7 @@
     text-transform: uppercase;
     font-weight: normal;
     font-size: $size;
-    color: darkgreen;
+    color: rgb(0, 71, 0);
     letter-spacing: 2px;
     border: 1px solid green;
     background-color: limegreen;
@@ -12,6 +12,7 @@
     text-decoration: none;
     text-align: center;
     padding: $padding;
+    border-radius: 13%;
 }
 
 

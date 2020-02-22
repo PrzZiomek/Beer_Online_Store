@@ -1,5 +1,5 @@
 
-.previev-background{
+.previevModal{
 
     position: absolute;
     width: 100vw;
@@ -12,6 +12,10 @@
 
 
 
+
+$actualBeer: previev-actualBeer;
+$cartContent: previev-cartContent;
+
 .cart-previev{
 
     position: fixed;
@@ -21,10 +25,10 @@
     top: 10%;
     transform: translateX(-50%);
     background-color: rgb(243, 193, 127);
-    border: 4px solid green;
+    border: 4px solid darkgreen;
 
 
-    & > .statement{
+    > .statement{
 
         font-size: 2rem;
         letter-spacing: 2px;
@@ -34,7 +38,7 @@
     }
 
 
-    .previev-actualBeer{
+    .#{$actualBeer}{
 
         height: 45vh;
         width: 45vw;
@@ -43,41 +47,43 @@
         position: relative;
 
 
-        & > h3{
+        > h3{
             margin: 2%;
             margin-left: 30%;
             font-size: 2rem;
             font-weight: normal;
         }
 
-        & > img{
+        > img{
             width: 14%;
-            height: 70%;
+            height: 78%;
             margin: 2%;
             position: absolute;
             left: 4%;
             top: 8%;
         }
 
-        & > .price{
+        > .price{
             font-weight: bold;
             font-size: 2.5rem;
             margin-left: 30%;
 
         }
 
-        & > .description{
+        > .description{
             display: block;
-            height: 45%;
             font-size: 1rem;       
             margin: 2%;
             margin-left: 30%;
             margin-right: 4%;
         }
 
-        & > a,
-        & > button{
-
+        > a,
+        > button{
+            position: absolute;
+            text-align: center;
+            top: 80%;
+            height: 12%;
             @include greenButton(1.1rem, 1.5%);
 
             &:hover{
@@ -85,54 +91,105 @@
             }
         }
 
-        & > button{
-            margin-left: 30%;
+        > button{
+            left: 28%;
+            width: 37%;
         }
 
-        & > a{
+        > a{
             background-color: green;
-            color: brown;
-            margin-left: 10%;
+            color: rgb(139, 34, 34);
+            left: 75%;
+            width: 18%;
 
             &:hover{
-                background-color: darkgreen;
+                background-color: brown
             }
         }
     }
 
 
-    .previev-cartContent{
+    .#{$cartContent}{
 
         width: 90%;
         margin: 0 5%;
         color: green;
 
-        & > h3{
+        > h3{
             font-weight: bold;
             color: brown;
             font-size: 2rem;
             margin: 4% 0 2% 0;
         }
 
-        & > .details{
+        > .cartContent-details{
             font-weight: bold;
             text-transform: capitalize;
-            background-color: darkgreen;
+            background-color: rgb(2, 80, 2);
             color:  rgb(241, 175, 89);
             text-align: center;
 
-            & > p{
+            > p{
                 margin: 1%;
                 width: 15%;
                 display: inline-block;
             }
 
-            & > :nth-child(1){
-                width: 46%;
+            > :nth-child(1){
+                width: 40%;
+            }
+
+            > :nth-child(3){
+                width: 20%;
             }
         }
 
-        & > .recapCosts{
+        > .cartContent-listWithOrders{
+
+            > .beer-paramsPreviev{
+
+                    display: flex;
+                    width: 100%;
+                    height: 5vh;
+                    background-color: green;
+                    color: white;
+                    font-size: 1.2rem;
+                    border: 1px solid rgb(2, 80, 2);
+                    align-items: center;
+                    padding-left: 2%;
+
+                    > :nth-child(1){
+                        flex-basis: 40%;
+                        overflow: hidden;
+                    }
+
+                    > :nth-child(2){
+                        flex-basis: 10%;
+                        margin-left: 8%;
+                    }
+
+                    > :nth-child(3){
+                        margin-left: 2%;
+                    }
+
+                    > :nth-last-child(1){
+                        margin-left: 5%;
+                    }
+
+                    > button{
+
+                        @include greenButton(1.5rem, 0.5%);
+                        flex-basis: 7%;
+
+                        &:hover{
+                            @include greenButtonHover();
+                            background-color: brown;
+                        }
+                    }
+                }
+        }
+
+        > .cartContent-recapCosts{
 
             margin: 3% 0;
             margin-left: 75%;
@@ -153,3 +210,5 @@
         } 
     }
 }
+
+

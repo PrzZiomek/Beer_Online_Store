@@ -1,42 +1,43 @@
-import { store } from "../../../manageState/store";
-import { pipeline as compose } from '../../toManipulateDOM/pipeline';
-import { clearContentOf, createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createInternalWrapperDiv } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createButtonToCloseModal } from "../../toManipulateDOM/handlersToManipulateDOM"
+import { pipeline as compose } from '../../../pipeline';
+import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createWrapperDiv } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createButtonToCloseModal } from "../../toManipulateDOM/handlersToManipulateDOM";
+import { createPrevievOfCartContent } from "./previevOfCartContent";
 
 
 
-export const openCartPreviev = (beer) => {
+export const actualBeerAndCartPreviev = (beer) => {
 
     const page = document.querySelector("body");  
-    const cartContent = store.getState().reducerToCart;
-    const cartPrevievModal = createDiv("previev-background");
+    const cartPrevievModal = createDiv("previevModal");
 
     const cartPreviev = compose(
             createTitle("statement")("Dodałeś do koszyka!"),
-            createInternalWrapperDiv("previev-actualBeer")(compose(  
+            createWrapperDiv("previev-actualBeer")(compose(  
                 createImgElem("")(beer.image_url),
                 createTitle("")(beer.name),
-                createSpanElem("price")(`${beer.srm} $`),         
+                createSpanElem("price")(`${beer.ebc} $`),         
                 createText("description")(beer.description),
-                createButtonToCloseModal("")("kontynuuj zakupy")(cartPrevievModal),
+                createButtonToCloseModal("")("kontynuuj zakupy")(page),
                 createLinkTo("")("do kasy")("#/koszyk"),
             )),
-            createInternalWrapperDiv("previev-cartContent")(compose(  
+            createWrapperDiv("previev-cartContent")(compose(  
                 createTitle("")("Twój koszyk"),
-                createInternalWrapperDiv("details")(compose(  
+                createWrapperDiv("cartContent-details")(compose(  
                     createText("")("produkt"),
                     createText("")("cena"),
                     createText("")("ilość"),
                     createText("")("wartość"),
                 )), 
-                createInternalWrapperDiv("recapCosts")(compose(  
+                createWrapperDiv("cartContent-listWithOrders")(compose(  
+                    createPrevievOfCartContent
+                )),  
+                createWrapperDiv("cartContent-recapCosts")(compose(  
                     createText("")("razem"),
-                    createSpanElem("sum")(beer.srm),  
+                    createSpanElem("sum")(`${beer.ebc} $`),  
                 )),                                                            
             ))
         )(createDiv("cart-previev")); 
 
-    console.log(cartContent);   
     cartPrevievModal.appendChild(cartPreviev);
     page.appendChild(cartPrevievModal);
 }

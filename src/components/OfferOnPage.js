@@ -1,5 +1,5 @@
 import { store } from "../manageState/store";
-import { pipeline as compose } from "./toManipulateDOM/pipeline";
+import { pipeline as compose } from "../pipeline";
 import { clearContentOf, createDiv, createImgElem, createSpanElem, createText } from "./toManipulateDOM/basisHandlersToManipulateDOM";
 import { createBtnAddToCart, createLinkRedirectToDescription } from "./toManipulateDOM/handlersToManipulateDOM"
 
@@ -21,9 +21,9 @@ import { createBtnAddToCart, createLinkRedirectToDescription } from "./toManipul
         const wrapperDiv = compose(            
                 createSpanElem("beerTitle")(beer.name),
                 createImgElem("")(beer.image_url),
-                createText("price")(`${beer.srm} $`),
+                createText("price")(`${beer.ebc} $`),
                 createBtnAddToCart("cartBtn")("koszyk")(beer),
-                createLinkRedirectToDescription(beer),
+                createLinkRedirectToDescription("")(beer),
           )(createDiv("beer-label"))
                 
        area.appendChild(wrapperDiv);
