@@ -1,6 +1,5 @@
-import { addToCurrentBeer, addToFavour, addToCart, removeFromCart } from "../handlersToShopping/handlersToShopping";
-import { addToCartAndOpenPreviev } from "../handlersToShopping/addToCartAndOpenPreviev/addToCartAndOpenPreviev";
-import { removeModal } from "../handlersToShopping/removeModal";
+import { addToCurrentBeer, addToFavour } from "../handlersToShopping/handlersToShopping";
+import { addToCartAndOpenPreviev } from "../addToCartAndOpenPreviev/addToCartAndOpenPreviev";
 import { setClss, setOnclickFn, setPath, setTextContent } from "./handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 
@@ -36,17 +35,6 @@ export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => 
 }
 
 
-export const createButtonToCloseModal = (cl) => (txtContent) => (page) => (element) => {
-
-  const btn = compose(
-          setClss(cl),
-          setTextContent(txtContent),
-          setOnclickFn(removeModal)(page)
-      )(document.createElement("button"));
-
-      element.appendChild(btn);
-  return element;
-}
 
 
 
@@ -65,28 +53,3 @@ export const createLinkRedirectToDescription = (cl) => (beer) => (element) => {
 
 
 
-export const createButtonToIncreaseOrder = (cl) => (beer) => (element) => {
-
-    const btn = compose(
-            setClss(cl),
-            setTextContent("+"),
-            setOnclickFn(addToCart)(beer)
-        )(document.createElement("button"));
-
-    element.appendChild(btn);
-  return element;
-}
-
-
-
-export const createButtonToDecreaseOrder = (cl) => (beer) => (element) => {
-
-    const btn = compose(
-            setClss(cl),
-            setTextContent("-"),
-            setOnclickFn(removeFromCart)(beer)
-        )(document.createElement("button"));
-
-    element.appendChild(btn);
-  return element;
-}

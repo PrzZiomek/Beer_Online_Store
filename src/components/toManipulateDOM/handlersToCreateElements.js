@@ -14,8 +14,8 @@ export const setSrc = (src) => (element) => {
   return element;
 }
 
-export const setOnclickFn = (fn) => (arg) => (element) => {
-    element.addEventListener("click", () =>{  fn(arg) });
+export const setOnclickFn = (fn) => (arg = null) => (element) => {
+    element.addEventListener("click", () =>{ arg ?  fn(arg) : fn() });
  return element;
 }
 

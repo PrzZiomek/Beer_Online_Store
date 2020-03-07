@@ -1,4 +1,4 @@
-import { mainReducer } from "./reducers";
+import { mainReducer } from "./reducers/reducerToCurrentBeer";
 
 
 
@@ -44,27 +44,9 @@ export const createStore = (reducer, middleware) => {
 };
 
 
-/*
-
-*/
 
 
 
-
-
-
-
-export  const applyMiddleware = (...middlewares) => store => {
-
-   
-    const boundMiddlewares = middlewares.map(middleware =>
-      middleware(store)
-    );
-
-    return boundMiddlewares.reduce((a, b) =>
-      next => a(b(next))
-    );
-  };
 
 
 

@@ -1,23 +1,27 @@
-import { pipeline as compose } from '../../../pipeline';
-import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createWrapperDiv } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createButtonToCloseModal } from "../../toManipulateDOM/handlersToManipulateDOM";
+import { pipeline as compose } from '../../pipeline';
+import { store } from "../../manageState/store";
+import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createWrapperDiv } from "../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createButtonToCloseModal } from "./createButtonToCloseModal";
 import { createPrevievOfCartContent } from "./previevOfCartContent";
+import valueOfEntireCart from "./valueOfEntireCart";
 
 
 
-export const actualBeerAndCartPreviev = (beer) => {
+export const actualBeerAndCartPreviev = () => {
 
     const page = document.querySelector("body");  
     const cartPrevievModal = createDiv("previevModal");
+    const cartContent = store.getState().reducerToCart;
+    const beer = store.getState().reducerToCurrentBeer.beer;
 
     const cartPreviev = compose(
             createTitle("statement")("Dodałeś do koszyka!"),
             createWrapperDiv("previev-actualBeer")(compose(  
                 createImgElem("")(beer.image_url),
                 createTitle("")(beer.name),
-                createSpanElem("price")(`${beer.ebc} $`),         
+                createSpanElem("price")(`${beer.abv} $`),         
                 createText("description")(beer.description),
-                createButtonToCloseModal("")("kontynuuj zakupy")(page),
+                createButtonToCloseModal("")("kontynuuj zakupy"),
                 createLinkTo("")("do kasy")("#/koszyk"),
             )),
             createWrapperDiv("previev-cartContent")(compose(  
@@ -29,11 +33,11 @@ export const actualBeerAndCartPreviev = (beer) => {
                     createText("")("wartość"),
                 )), 
                 createWrapperDiv("cartContent-listWithOrders")(compose(  
-                    createPrevievOfCartContent
+                    createPrevievOfCartContent(cartContent)
                 )),  
                 createWrapperDiv("cartContent-recapCosts")(compose(  
                     createText("")("razem"),
-                    createSpanElem("sum")(`${beer.ebc} $`),  
+                    createSpanElem("sum")(`${valueOfEntireCart(cartContent)} $`),  
                 )),                                                            
             ))
         )(createDiv("cart-previev")); 
@@ -42,13 +46,3 @@ export const actualBeerAndCartPreviev = (beer) => {
     page.appendChild(cartPrevievModal);
 }
 
-
-/*
-createSpanElem("price")(beer.srm),
-                createText("")("tagi"),
-                createSpanElem("tagline")(beer.tagline),
-                createText("")("wyprodukowano"),   
-                createSpanElem("date")(beer.first_brewed),
-                createText("")("producent"),
-                createSpanElem("produced")(beer.contributed_by),    
-*/    

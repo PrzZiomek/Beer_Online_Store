@@ -1,5 +1,5 @@
 import { doFetch } from "./doFetch";
-import { fetchSuccess, fetchFail } from "../../manageState/actionCreators";
+import { fetchSuccessAction, fetchFailAction } from "../../manageState/actionCreators";
 
 
 
@@ -7,7 +7,7 @@ import { fetchSuccess, fetchFail } from "../../manageState/actionCreators";
 
     return async (dispatch) => {
         
-        const beers = await doFetch().catch(err => dispatch(fetchFail(err)));
-         if(beers) dispatch(fetchSuccess(beers))
+        const beers = await doFetch().catch(err => dispatch(fetchFailAction(err)));
+         if(beers) dispatch(fetchSuccessAction(beers))
     }
  }

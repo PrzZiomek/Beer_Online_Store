@@ -1,4 +1,4 @@
-import { store } from "../../../manageState/store";
+import { store } from "../../manageState/store";
 
 
 

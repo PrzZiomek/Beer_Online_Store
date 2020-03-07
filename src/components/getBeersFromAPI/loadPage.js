@@ -1,14 +1,19 @@
 import { store } from "../../manageState/store";
-import { fetchBegin } from "../../manageState/actionCreators";
+import { fetchBeginAction } from "../../manageState/actionCreators";
 import { createResponse } from "./responseCreator";
-import { router } from "../../routes";
+import { router } from "../router/router";
 
 
 
-window.addEventListener("load", () => {
 
-  store.dispatch(fetchBegin());
-  store.dispatch(createResponse());
+window.addEventListener("load", () => { 
 
-  router()
-});
+    store.dispatch(fetchBeginAction());
+    store.dispatch(createResponse());
+
+    router() 
+  
+  });
+
+  
+

@@ -8,3 +8,5 @@ export const CURRENT_BEER = "CURRENT_BEER";
 export const FETCH_BEGIN = "FETCH_BEGIN";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
+export const INCR_ORDER = "INCR_ORDER";
+export const DECR_ORDER = "DECR_ORDER";

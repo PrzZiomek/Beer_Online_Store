@@ -21,13 +21,15 @@ import { createBtnAddToCart, createLinkRedirectToDescription } from "./toManipul
         const wrapperDiv = compose(            
                 createSpanElem("beerTitle")(beer.name),
                 createImgElem("")(beer.image_url),
-                createText("price")(`${beer.ebc} $`),
+                createText("price")(`${beer.abv} $`),
                 createBtnAddToCart("cartBtn")("koszyk")(beer),
                 createLinkRedirectToDescription("")(beer),
           )(createDiv("beer-label"))
                 
        area.appendChild(wrapperDiv);
+
       });
+
   };
 
 

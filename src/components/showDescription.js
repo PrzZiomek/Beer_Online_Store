@@ -11,7 +11,7 @@ export const showDescription = () => {
 
   clearContentOf(area);
 
-  const beer = store.getState().reducerToCurrentValues.beer;
+  const beer = store.getState().reducerToCurrentBeer.beer;
       
       const mainWrapper = compose(
               createWrapperDiv("description-part")(compose(
@@ -24,7 +24,7 @@ export const showDescription = () => {
                )),
               createWrapperDiv("description-params")(compose(                    
                   createText("")("cena"),
-                  createSpanElem("price")(beer.ebc),
+                  createSpanElem("price")(beer.abv),
                   createText("")("tagi"),
                   createSpanElem("tagline")(beer.tagline),
                   createText("")("wyprodukowano"),   
