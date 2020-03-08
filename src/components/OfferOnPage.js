@@ -5,16 +5,18 @@ import { createBtnAddToCart, createLinkRedirectToDescription } from "./toManipul
 
 
 
+  const errorStatement = createDiv("errorStatement");
 
 
-
-  export const OfferOnPage = () => {
+export const OfferOnPage = () => {
 
     const area = document.querySelector("main");
+    const beers = store.getState().reducerToResponse.items;
+    const errorRes = store.getState().reducerToResponse.error;
 
     clearContentOf(area);
 
-      const beers = store.getState().reducerToResponse.items;
+    if(errorRes) area.appendChild(errorStatement);
       
       beers.map(beer => {
 

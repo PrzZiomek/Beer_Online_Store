@@ -1,17 +1,8 @@
-import { ADD_TO_CART,
-    ADD_TO_FAVOUR,
-    RMV_FROM_CART,
-    RMV_FROM_FAVOUR,
-    CLEAR_CART,
-    CLEAR_FAVOUR, 
-    CURRENT_BEER,   
-    FETCH_BEGIN,
-    FETCH_FAIL,
-    FETCH_SUCCESS,
-    INCR_ORDER,
-    DECR_ORDER } from "../actions";
+import { ADD_TO_CART, RMV_FROM_CART, CLEAR_CART } from "../actions";
 
 const initState= [];
+
+const removeBeer = (cart, beer) => cart.reduce((acc,item) => item[0].name === beer.name ? [...acc,item.slice(1)] : [...acc,item] , [] );
 
 
 
@@ -21,7 +12,7 @@ export const reducerToCart = (state = initState, action) => {
         case ADD_TO_CART:
             return [...state, action.value];
         case RMV_FROM_CART: 
-            return state.filter((x) => x.id !== action.value.id ) ;
+            return removeBeer(state, action.value);
         case CLEAR_CART:
              return [];
         default:

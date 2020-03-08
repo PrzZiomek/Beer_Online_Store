@@ -11,7 +11,7 @@ export const showDescription = () => {
 
   clearContentOf(area);
 
-  const beer = store.getState().reducerToCurrentBeer.beer;
+  const beer = store.getState().reducerToCurrentBeer;
       
       const mainWrapper = compose(
               createWrapperDiv("description-part")(compose(

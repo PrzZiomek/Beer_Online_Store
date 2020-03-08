@@ -2,7 +2,7 @@
  const valueOfEntireCart = (arr) =>{ 
 
     let sum = arr.reduce((acc,poz) => acc + poz.abv, 0 );
-  return Math.round(sum * 1000) / 1000
+  return Math.round(sum * 100) / 100
 };
 
  export default valueOfEntireCart;

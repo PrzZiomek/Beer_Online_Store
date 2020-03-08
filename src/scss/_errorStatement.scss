@@ -1,0 +1,23 @@
+
+.errorStatement{
+
+    position: absolute;
+    width: 50vw;
+    height: 10vh;
+    background-color: green;
+    color: yellow;
+    text-transform: lowercase;
+    font-size: 2.2rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    &::after{
+        position: absolute;
+        content: "Brak połączenia z internetem!";
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+    }
+}
