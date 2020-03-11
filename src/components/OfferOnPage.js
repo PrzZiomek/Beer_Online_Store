@@ -5,7 +5,7 @@ import { createBtnAddToCart, createLinkRedirectToDescription } from "./toManipul
 
 
 
-  const errorStatement = createDiv("errorStatement");
+const errorStatement = createDiv("errorStatement");
 
 
 export const OfferOnPage = () => {

@@ -1,6 +1,6 @@
 
 export const groupObjectsBy = (key) => (arr) => {
-          return arr.reduce(function(acc, obj) {
+          return arr.reduce((acc, obj) =>{
                         acc[obj[key]] = (acc[obj[key]] || []).concat(obj);
                         return acc; 
                     }, {})

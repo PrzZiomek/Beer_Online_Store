@@ -1,5 +1,4 @@
-import { store } from "../../manageState/store";
-import { setCurrentBeerAction } from "../../manageState/actionCreators";
+import { setCurrentBeer } from "../handlersToShopping/handlersToShopping";
 import { addToCart } from "../handlersToShopping/handlersToShopping";
 import { actualBeerAndCartPreviev } from "./openCartStatement";
 
@@ -10,7 +9,7 @@ import { actualBeerAndCartPreviev } from "./openCartStatement";
 
 export const addToCartAndOpenPreviev = (beer) => {
 
-    store.dispatch(setCurrentBeerAction(beer))
+    setCurrentBeer(beer);
     addToCart(beer);
     actualBeerAndCartPreviev()
   
