@@ -58,6 +58,17 @@ export const createTitle = (cl) => (txtContent) => (element) =>{
   } 
 
 
+  export const createDivWithinElement = (cl) => (txtContent) => (element) =>{ 
+
+    const div = compose(
+              setClss(cl),
+              setTextContent(txtContent)
+       )(document.createElement("div"))
+       
+       element.appendChild(div);
+   return element;
+ } 
+
 
 export const createImgElem = (cl) => (src) => (element) => {
 

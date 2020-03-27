@@ -37,19 +37,3 @@ export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => 
 
 
 
-
-export const createLinkRedirectToDescription = (cl) => (beer) => (element) => {
-
-    const link = compose(
-            setClss(cl),
-            setPath(`#/opis/${insertDashesToPath(beer.name)}`),
-            setTextContent("opis"),
-            setOnclickFn(addToCurrentBeer)(beer)
-     )(document.createElement("a"));
-        
-    element.appendChild(link);
-  return element;
-}
-
-
-

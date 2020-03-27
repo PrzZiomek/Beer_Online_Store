@@ -17,3 +17,13 @@ window.addEventListener("load", () => {
 
   
 
+/* import { store } from "../../manageState/store";
+
+
+const errorRes = store.getState().reducerToResponse.error;
+const errorStatement = createDiv("errorStatement");
+if(errorRes){
+    document.querySelector("body").appendChild(errorStatement)
+}
+
+*/

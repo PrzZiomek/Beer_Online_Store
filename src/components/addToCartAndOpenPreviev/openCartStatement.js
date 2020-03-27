@@ -2,7 +2,7 @@ import { pipeline as compose } from '../../pipeline';
 import { store } from "../../manageState/store";
 import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createWrapperDiv } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createButtonToCloseModal } from "./createButtonToCloseModal";
-import { createPrevievOfCartContent } from "./previevOfCartContent";
+import { createPrevievOfCartContent } from "../previevOfCartContent/previevOfCartContent";
 import valueOfEntireCart from "./valueOfEntireCart";
 
 
@@ -43,6 +43,6 @@ export const actualBeerAndCartPreviev = () => {
         )(createDiv("cart-previev")); 
 
     cartPrevievModal.appendChild(cartPreviev);
-    page.appendChild(cartPrevievModal);
+  page.appendChild(cartPrevievModal);
 }
 

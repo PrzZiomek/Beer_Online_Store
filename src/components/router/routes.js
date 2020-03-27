@@ -1,5 +1,6 @@
-import { OfferOnPage } from "../OfferOnPage";
+import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
 import { showDescription } from "../showDescription";
+import { shoppingCart } from "../shoppingCart/shoppingCart";
 
 
 
@@ -8,9 +9,10 @@ import { showDescription } from "../showDescription";
 export const routes = () => ({
 
                 "/" : () => OfferOnPage(), 
-                "/opis" : () => showDescription()
+                "/opis" : () => showDescription(),
+                "/koszyk" : () => shoppingCart()
             
-            })
+            });
 
 
 

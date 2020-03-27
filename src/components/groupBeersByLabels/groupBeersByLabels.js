@@ -1,4 +1,4 @@
-import { pipeline as compose } from '../../../pipeline';
+import { pipeline as compose } from '../../pipeline';
 import { groupObjectsBy, placeObjectValuesInArray } from "./morphisms"
 
 
