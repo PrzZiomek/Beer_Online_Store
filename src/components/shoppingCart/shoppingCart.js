@@ -39,15 +39,19 @@ export const shoppingCart = () => {
             createWrapperDiv("cart-recapCosts")(compose(  
                 createText("")("razem"),
                 createSpanElem("sum")(`${valueOfEntireCart(cartContent)} $`),  
-            )),                  
-            createWrapperDiv("cart-buttons")(compose(
-                createLinkTo("")("kontynuuj zakupy")("#/"),
+            )),   
+            createWrapperDiv("cart-buttons1")(compose(
                 createLinkTo("")("zaloguj się")("#/logowanie"),
                 createText("")("lub"),
                 createLinkTo("")("zarejestruj się")("#/rejestracja"),
+            )),               
+            createWrapperDiv("cart-buttons2")(compose(
+                createLinkTo("")("kontynuuj zakupy")("#/"),            
                 createLinkTo("")("następny krok")("#/wybór metody"),
             ))
        )(createDiv("shopping-cart"));
 
   area.appendChild(mainWrapper);
 }
+
+                
