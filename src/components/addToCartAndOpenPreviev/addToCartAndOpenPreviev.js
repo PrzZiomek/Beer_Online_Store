@@ -1,6 +1,6 @@
 import { setCurrentBeer } from "../handlersToShopping/handlersToShopping";
 import { addToCart } from "../handlersToShopping/handlersToShopping";
-import { actualBeerAndCartPreviev } from "./openCartStatement";
+import { actualBeerAndCartPreviev } from "./actualBeerAndCartPreviev";
 
 
 

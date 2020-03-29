@@ -36,4 +36,17 @@ export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => 
 
 
 
+export const createBtnToRemoveBeer = (cl) => (txtContent) => (arg) => (element) => {
+
+  const btn = compose(
+          setClss(cl),
+          setTextContent(txtContent),
+          setOnclickFn(addToCartAndOpenPreviev)(arg)
+    )(document.createElement("button"));
+
+   element.appendChild(btn);
+return element;
+}
+
+
 

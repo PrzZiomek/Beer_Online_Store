@@ -2,9 +2,8 @@
 .shopping-cart{
 
     width: 95%;
-    min-height: 70vh;
+    min-height: 75vh;
     background-color: rgba(50, 205, 50, 0.9);
-    padding-top: 10%;
     box-shadow: 3px 3px 5px 8px rgba(0, 0, 0, 0.4);
     border-radius: 5%;
 
@@ -12,9 +11,148 @@
     & > .cart-progressBar{
 
         width: 60%;
-        height: 5%;
-        background-color: yellowgreen;
-        margin: 5% auto ;
+        height: 2vh;
+        background-color: rgb(175, 197, 131);
+        margin: 5% auto;
+        position: relative;
+
+        > div{
+            width: 5%;
+            height: 60%;
+            border-radius: 50%;
+            position: absolute;
+            background-color: indianred;
+            text-align: center;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 1;
+
+            &:nth-child(1){
+                left: 0;
+            }
+    
+            &:nth-child(2){
+                left: 30%;
+            }
+    
+            &:nth-child(3){
+                right: 30%;
+            }
+    
+            &:nth-child(4){
+                right: 0;
+            }
+        }
+
+        
+    }
+
+
+    & > .cart-header{
+
+        width: 84%;
+        margin: 0 auto;        
+        font-size: 2rem;
+        font-weight: bold;
+
+        > .title{    
+            margin: 0 2% 0 4%;
+            display: inline-block;
+            position: relative;
+
+            &::before{
+                position: absolute;
+                top: 5%;
+                left: -20%;
+                display: block;
+                content: "1";
+                height: 110%;
+                width: 20%;
+                background-color: green;
+                margin-right: 1%;
+            }
+        }
+
+        > .amount{
+            font-size: 2rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        > p{
+            margin-top: 1%;
+            font-size: 1.5rem;
+            font-weight: normal;
+            text-transform: none;
+        }
+
+    }
+
+
+    & > .cart-columnTitles{
+
+        font-weight: bold;
+        text-transform: capitalize;
+        background-color: rgb(2, 80, 2);
+        color:  rgb(241, 175, 89);
+        text-align: center;
+        width: 85%;
+        margin: 2% auto;
+
+        > p{
+            margin: 1%;
+            width: 15%;
+            display: inline-block;
+        }
+    }
+
+
+    & > .cart-listWithOrders{
+
+        width: 84%;
+    }
+
+
+    > .cart-recapCosts{
+
+        margin: 3% 0;
+        margin-left: 70%;
+
+        > p{
+            text-transform: uppercase;
+            color: brown;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+
+        > .sum{
+            font-weight: bold;
+            color: black;
+            margin-left: 22%;
+            font-size: 1.2rem;
+        }
+    } 
+
+
+    & > .cart-buttons{
+
+        margin-top: 5%;
+        width: 84%;
+        display: flex;
+
+        > p{
+            flex-basis: 2%;
+        }
+
+        > a{
+            @include greenButton(1.2rem, 0.5%);
+            flex-basis: 20%;
+
+            &:hover{
+                @include greenButtonHover();
+                background-color: brown;
+            }
+        }
     }
 
 }
