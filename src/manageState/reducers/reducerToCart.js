@@ -21,7 +21,7 @@ export const reducerToCart = (state = initState, action) => {
         case ADD_TO_CART:
             return [...state, action.value];
         case RMV_FROM_CART: 
-            return removePos([...state])(action.value)
+            return removePos(state)(action.value)
         case CLEAR_CART:
              return [];
         default:

@@ -2,7 +2,7 @@ import { pipeline as compose } from '../../pipeline';
 import { store } from "../../manageState/store";
 import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createWrapperDiv } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createButtonToCloseModal } from "./createButtonToCloseModal";
-import { createPrevievOfCartContent } from "../previevOfCartContent/previevOfCartContent";
+import { createPrevievOfCartContent } from "./previevOfCartContent/previevOfCartContent";
 import valueOfEntireCart from "./valueOfEntireCart";
 
 

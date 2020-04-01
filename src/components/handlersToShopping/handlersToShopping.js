@@ -6,7 +6,7 @@ import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModa
 
 export const addToCart = (beer) => store.dispatch(addToCartAction(beer));
 
-export const removeFromCart = (beer) => console.log("removeFromCart");
+export const removeFromCart = (beer) => store.dispatch(removeFromCartAction(beer));
 
 export const addToFavour = () => console.log("addToFavour");
 

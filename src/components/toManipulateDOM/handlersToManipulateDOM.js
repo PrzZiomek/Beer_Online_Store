@@ -36,7 +36,7 @@ export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => 
 
 
 
-export const createBtnToRemoveBeer = (cl) => (txtContent) => (arg) => (element) => {
+export const createBtnToRemoveGroupOfBeers = (cl) => (txtContent) => (arg) => (element) => {
 
   const btn = compose(
           setClss(cl),
