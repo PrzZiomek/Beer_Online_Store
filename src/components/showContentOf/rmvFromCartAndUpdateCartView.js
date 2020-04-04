@@ -1,9 +1,9 @@
 import { removeFromCart } from "../handlersToShopping/handlersToShopping";
-import { shoppingCart } from "../shoppingCart/shoppingCart";
+import { ShoppingCart } from "../shoppingCart/ShoppingCart";
 
 
 export const rmvFromCartAndUpdateCartView = (beer) =>  {
 
         removeFromCart(beer);
-        shoppingCart()
+        ShoppingCart()
     }

@@ -101,26 +101,29 @@
         text-transform: capitalize;
         background-color: rgb(2, 80, 2);
         color:  rgb(241, 175, 89);
-        text-align: center;
         width: 90%;
         margin: auto;
         margin-top: 2%;
 
         > :nth-child(1){
-            margin-left: -5%;
+            margin-left: 1%;
         }
 
         > :nth-child(2){
-            margin-left: 6%;
+            margin-left: 25%;
         }
 
         > :nth-child(3){
+            margin-left: 20%;
+        }
+
+        > :nth-child(4),
+        > :nth-child(5){
             margin-left: 8%;
         }
 
         > p{
             margin: 1%;
-            width: 15%;
             display: inline-block;
             font-size: 1.2rem;
         }
@@ -196,7 +199,7 @@
             text-transform: uppercase;
             color: brown;
             display: inline-block;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
         }
 
         > .sum{

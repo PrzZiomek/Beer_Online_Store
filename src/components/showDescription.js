@@ -6,7 +6,7 @@ import { createBtnAddToFavour, createBtnAddToCart } from "./toManipulateDOM/hand
 
 
 
-export const showDescription = () => {
+export const ShowDescription = () => {
 
   const area = document.querySelector("main");
 

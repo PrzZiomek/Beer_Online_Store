@@ -1,5 +1,6 @@
 import { doFetch } from "./doFetch";
 import { fetchSuccessAction, fetchFailAction } from "../../manageState/actionCreators";
+import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
 
 
 
@@ -8,6 +9,10 @@ import { fetchSuccessAction, fetchFailAction } from "../../manageState/actionCre
     return async (dispatch) => {
         
         const beers = await doFetch().catch(err => dispatch(fetchFailAction(err)));
-         if(beers) dispatch(fetchSuccessAction(beers))
+        
+         if(beers){ 
+            dispatch(fetchSuccessAction(beers));
+            OfferOnPage()
+         }
     }
  }

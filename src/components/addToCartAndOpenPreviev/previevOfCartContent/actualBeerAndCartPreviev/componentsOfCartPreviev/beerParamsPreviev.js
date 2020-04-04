@@ -1,13 +1,13 @@
-import { pipeline as compose } from '../../../pipeline';
-import { createDiv, createSpanElem, createText } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../showContentOf/buttonsToChangeOrderQuantity";
-import { groupBeersByLabels } from "../../groupBeersByLabels/groupBeersByLabels";
-import { addToCartAndUpdatePreviev, rmvFromCartAndUpdatePreviev } from "../../handlersToShopping/handlersToShopping";
-import sumOfGroup from "./sumOfGroup";
+import { pipeline as compose } from '../../../../../pipeline';
+import { createDiv, createSpanElem, createText } from "../../../../toManipulateDOM/basisHandlersToManipulateDOM";
+import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../../../showContentOf/buttonsToChangeOrderQuantity";
+import { groupBeersByLabels } from "../../../../groupBeersByLabels/groupBeersByLabels";
+import { addToCartAndUpdatePreviev, rmvFromCartAndUpdatePreviev } from "../../../../handlersToShopping/handlersToShopping";
+import sumOfGroup from "../../sumOfGroup";
 
 
 
- export const createPrevievOfCartContent = (cartContent) => (element) => {
+ export const beerParamsPreviev = (cartContent) => (element) => {
       
        groupBeersByLabels(cartContent).map(group => {
 

@@ -49,22 +49,3 @@ export const createBtnToRemoveGroupOfBeers = (cl) => (txtContent) => (arg) => (e
   return element;
 }
 
-
-export const createLinkToShoppingCart =  (element) => {
-  
-  const area = document.querySelector("main");
-
-  clearContentOf(area);
-
-  const link = compose(
-          setClss(""),
-          setPath("#/koszyk"),
-          setTextContent("do kasy")
-    )(document.createElement("a"));
-     
-  element.appendChild(link);
-return element;
-}
-
-
-

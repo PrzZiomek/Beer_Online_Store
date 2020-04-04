@@ -9,7 +9,7 @@ import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
 
 
  export const createElementWithCartContent = (cartContent) => (element) => {
-      
+       
        groupBeersByLabels(cartContent).map(group => {
 
                 const wrapperDiv = compose(   

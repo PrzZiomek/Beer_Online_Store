@@ -98,7 +98,9 @@ export const createLinkTo = (cl) => (txtContent) => (path) => (element) => {
 
 export const createWrapperDiv = (cl) => (...elements) => (element) => {
 
-  const wrapper = compose(...elements)(createDiv(cl));
+  const wrapper = compose(
+            ...elements
+      )(createDiv(cl));
 
     element.appendChild(wrapper);
   return element;

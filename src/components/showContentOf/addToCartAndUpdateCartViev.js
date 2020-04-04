@@ -1,9 +1,9 @@
 import { addToCart } from "../handlersToShopping/handlersToShopping";
-import { shoppingCart } from "../shoppingCart/shoppingCart";
+import { ShoppingCart } from "../shoppingCart/ShoppingCart";
 
 
 export const addToCartAndUpdateCartView = (beer) =>  {
 
         addToCart(beer);
-        shoppingCart()
+        ShoppingCart()
     }
