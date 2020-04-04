@@ -5,6 +5,7 @@ import { createBtnAddToFavour, createBtnAddToCart } from "./toManipulateDOM/hand
 
 
 
+
 export const showDescription = () => {
 
   const area = document.querySelector("main");
@@ -14,15 +15,15 @@ export const showDescription = () => {
   const beer = store.getState().reducerToCurrentBeer;
       
       const mainWrapper = compose(
-              createWrapperDiv("description-part")(compose(
+              createWrapperDiv("description-part")(
                   createLinkTo("")("powrót do głównej")("#/"),
                   createTitle("")(beer.name),
                   createImgElem("")(beer.image_url),
                   createSpanElem("description")(beer.description),
                   createBtnAddToFavour("favourBtn")("dodaj do ulubionych")(beer),
                   createBtnAddToCart("cartBtn")("dodaj do koszyka")(beer), 
-               )),
-              createWrapperDiv("description-params")(compose(                    
+               ),
+              createWrapperDiv("description-params")(                   
                   createText("")("cena"),
                   createSpanElem("price")(beer.abv),
                   createText("")("tagi"),
@@ -31,7 +32,7 @@ export const showDescription = () => {
                   createSpanElem("date")(beer.first_brewed),
                   createText("")("producent"),
                   createSpanElem("produced")(beer.contributed_by),            
-                ))
+                )
           )(createDiv("beer-description"));
 
  area.appendChild(mainWrapper);

@@ -1,7 +1,8 @@
 import { pipeline as compose } from '../../pipeline';
 import { store } from "../../manageState/store";
-import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo, createWrapperDiv } from "../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createDiv, createImgElem, createSpanElem, createText, createTitle, createWrapperDiv } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createButtonToCloseModal } from "./createButtonToCloseModal";
+import {  createLinkToShoppingCart } from "../toManipulateDOM/handlersToManipulateDOM";
 import { createPrevievOfCartContent } from "./previevOfCartContent/previevOfCartContent";
 import valueOfEntireCart from "./valueOfEntireCart";
 
@@ -16,30 +17,30 @@ export const actualBeerAndCartPreviev = () => {
     
     const cartPreviev = compose(
             createTitle("statement")("Dodałeś do koszyka!"),
-            createWrapperDiv("previev-actualBeer")(compose(  
+            createWrapperDiv("previev-actualBeer")( 
                 createImgElem("")(beer.image_url),
                 createTitle("")(beer.name),
                 createSpanElem("price")(`${beer.abv} $`),         
                 createText("description")(beer.description),
                 createButtonToCloseModal("")("kontynuuj zakupy"),
-                createLinkTo("")("do kasy")("#/koszyk"),
-            )),
-            createWrapperDiv("previev-cartContent")(compose(  
+                createLinkToShoppingCart,
+            ),
+            createWrapperDiv("previev-cartContent")( 
                 createTitle("")("Twój koszyk"),
-                createWrapperDiv("cartContent-details")(compose(  
+                createWrapperDiv("cartContent-details")( 
                     createText("")("produkt"),
                     createText("")("cena"),
                     createText("")("ilość"),
                     createText("")("wartość"),
-                )), 
-                createWrapperDiv("cartContent-listWithOrders")(compose(  
+                ), 
+                createWrapperDiv("cartContent-listWithOrders")( 
                     createPrevievOfCartContent(cartContent)
-                )),  
-                createWrapperDiv("cartContent-recapCosts")(compose(  
+                ),  
+                createWrapperDiv("cartContent-recapCosts")( 
                     createText("")("razem"),
                     createSpanElem("sum")(`${valueOfEntireCart(cartContent)} $`),  
-                )),                                                            
-            ))
+                ),                                                            
+            )
         )(createDiv("cart-previev")); 
 
     cartPrevievModal.appendChild(cartPreviev);
