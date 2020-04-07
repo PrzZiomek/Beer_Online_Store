@@ -4,6 +4,11 @@ export const setClss = (cl) => (element) => {
    return element;
 }
 
+export const setforAtr = (to) => (element) => {
+  element.for = to;
+return element;
+}
+
 export const setTextContent = (txtContent) => (element) => {
      element.textContent = txtContent;
    return element;

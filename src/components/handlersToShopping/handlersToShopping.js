@@ -1,5 +1,5 @@
 import { store } from "../../manageState/store";
-import { actualBeerAndCartPreviev } from "../addToCartAndOpenPreviev/previevOfCartContent/actualBeerAndCartPreviev/actualBeerAndCartPreviev";
+import { actualBeerAndCartPreviev } from "../AddToCartAndOpenPreviev/previevOfCartContent/actualBeerAndCartPreviev/actualBeerAndCartPreviev";
 import { setCurrentBeerAction, addToCartAction, removeFromCartAction} from "../../manageState/actionCreators";
 import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
 

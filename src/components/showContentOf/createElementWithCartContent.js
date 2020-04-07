@@ -3,7 +3,7 @@ import { createDiv, createSpanElem, createText, createImgElem } from "../toManip
 import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "./buttonsToChangeOrderQuantity";
 import { groupBeersByLabels } from "../groupBeersByLabels/groupBeersByLabels";
 import { createBtnToRemoveGroupOfBeers } from "../toManipulateDOM/handlersToManipulateDOM"
-import sumOfGroup from "../addToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
+import sumOfGroup from "../AddToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
 import { addToCartAndUpdateCartView } from "./addToCartAndUpdateCartViev";
 import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
 

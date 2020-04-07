@@ -15,11 +15,22 @@ export const clearContentOf = (el) => {
 export const createDiv = (cl) => { 
 
     const element = document.createElement("div");
-        if(cl){ element.classList.add(cl) };
-
-   return element;
+    const elementWithClss =  setClss(cl)(element);
+  return elementWithClss
  } 
 
+
+export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
+
+    const strong = document.createElement("strong");
+    const abbr = document.createElement("abbr");
+    abbr.title = abbrTitle;
+    abbr.textContent = "*";
+    strong.appendChild(abbr);
+    element.appendChild(strong);
+
+  return element  
+}
 
 
 export const createSpanElem = (cl) => (txtContent) => (element) =>{ 
@@ -61,9 +72,8 @@ export const createTitle = (cl) => (txtContent) => (element) =>{
   export const createDivWithinElement = (cl) => (txtContent) => (element) =>{ 
 
     const div = compose(
-              setClss(cl),
               setTextContent(txtContent)
-       )(document.createElement("div"))
+       )(createDiv(cl))
        
        element.appendChild(div);
    return element;
@@ -90,10 +100,13 @@ export const createLinkTo = (cl) => (txtContent) => (path) => (element) => {
             setPath(path),
             setTextContent(txtContent)
       )(document.createElement("a"));
-       
+
+      
     element.appendChild(link);
   return element;
 }
+
+
 
 
 export const createWrapperDiv = (cl) => (...elements) => (element) => {

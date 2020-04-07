@@ -1,5 +1,5 @@
 import { removeFromCart } from "../handlersToShopping/handlersToShopping";
-import { ShoppingCart } from "../shoppingCart/ShoppingCart";
+import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
 
 
 export const rmvFromCartAndUpdateCartView = (beer) =>  {

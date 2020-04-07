@@ -1,5 +1,5 @@
 import { addToCart } from "../handlersToShopping/handlersToShopping";
-import { ShoppingCart } from "../shoppingCart/ShoppingCart";
+import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
 
 
 export const addToCartAndUpdateCartView = (beer) =>  {

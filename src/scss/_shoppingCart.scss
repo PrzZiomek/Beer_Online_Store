@@ -33,7 +33,7 @@
                 left: 0;
                 background-color: green;
                 color: rgb(182, 201, 143);
-                border: 2px solid rgb(182, 201, 143);
+                border: 6px solid rgb(182, 201, 143);
             }
     
             &:nth-child(2){
@@ -114,12 +114,14 @@
         }
 
         > :nth-child(3){
-            margin-left: 20%;
+            margin-left: 15%;
         }
 
-        > :nth-child(4),
-        > :nth-child(5){
+        > :nth-child(4){
             margin-left: 8%;
+        }
+        > :nth-child(5){
+            margin-left: 15%;
         }
 
         > p{

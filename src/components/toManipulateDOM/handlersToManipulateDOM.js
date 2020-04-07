@@ -1,5 +1,5 @@
 import { addToCurrentBeer, addToFavour } from "../handlersToShopping/handlersToShopping";
-import { addToCartAndOpenPreviev } from "../addToCartAndOpenPreviev/addToCartAndOpenPreviev";
+import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
 import { setClss, setOnclickFn, setPath, setTextContent } from "./handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 import { clearContentOf } from "./basisHandlersToManipulateDOM"

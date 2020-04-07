@@ -1,6 +1,6 @@
 import { pipeline as compose } from '../../../pipeline';
 import { createText, createDiv, createSpanElem } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import valueOfEntireCart  from "../../addToCartAndOpenPreviev/valueOfEntireCart";
+import valueOfEntireCart  from "../../AddToCartAndOpenPreviev/valueOfEntireCart";
 
 
 

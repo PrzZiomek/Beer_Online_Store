@@ -1,6 +1,6 @@
 import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
-import { ShowDescription } from "../ShowDescription";
-import { ShoppingCart } from "../shoppingCart/ShoppingCart";
+import { ShowDescription } from "../BeerDescription/ShowDescription";
+import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
 
 
 

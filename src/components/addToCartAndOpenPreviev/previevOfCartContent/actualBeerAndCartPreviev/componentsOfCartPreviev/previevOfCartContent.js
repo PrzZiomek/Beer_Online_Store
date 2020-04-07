@@ -1,5 +1,5 @@
 import { createDiv, createSpanElem, createText, createTitle, createWrapperDiv } from "../../../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { beerParamsPreviev  } from "./../componentsOfCartPreviev/beerParamsPreviev";
+import { beerParamsPreviev  } from "./beerParamsPreviev";
 import { pipeline as compose } from '../../../../../pipeline';
 import valueOfEntireCart from "../../../valueOfEntireCart";
 
