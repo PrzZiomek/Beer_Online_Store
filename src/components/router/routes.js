@@ -1,5 +1,5 @@
 import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
-import { ShowDescription } from "../BeerDescription/ShowDescription";
+import { BeerDescription } from "../BeerDescription/BeerDescription";
 import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
 
 
@@ -9,7 +9,7 @@ import { ShoppingCart } from "../ShoppingCart/ShoppingCart";
 export const routes = () => ({
 
                 "/" : () => OfferOnPage(), 
-                "/opis" : () => ShowDescription(),
+                "/opis" : () => BeerDescription(),
                 "/koszyk" : () => ShoppingCart()
             
             });

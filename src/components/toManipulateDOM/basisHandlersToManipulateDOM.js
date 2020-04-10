@@ -20,17 +20,7 @@ export const createDiv = (cl) => {
  } 
 
 
-export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
 
-    const strong = document.createElement("strong");
-    const abbr = document.createElement("abbr");
-    abbr.title = abbrTitle;
-    abbr.textContent = "*";
-    strong.appendChild(abbr);
-    element.appendChild(strong);
-
-  return element  
-}
 
 
 export const createSpanElem = (cl) => (txtContent) => (element) =>{ 

@@ -5,7 +5,12 @@ export const setClss = (cl) => (element) => {
 }
 
 export const setforAtr = (to) => (element) => {
-  element.for = to;
+    element.for = to;
+  return element;
+}
+
+export const setName = (name) => (element) => {
+  element.name = name;
 return element;
 }
 
@@ -19,7 +24,7 @@ export const setSrc = (src) => (element) => {
   return element;
 }
 
-export const setOnclickFn = (fn) => (arg = null) => (element) => {
+export const setOnclickFn = (fn) => (arg = "") => (element) => {
     element.addEventListener("click", () =>{ arg ?  fn(arg) : fn() });
  return element;
 }
