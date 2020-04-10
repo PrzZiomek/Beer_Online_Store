@@ -1,4 +1,4 @@
-import { setClss, setTextContent, setName } from "./handlersToCreateElements";
+import { setClss, setTextContent, setName, setType, setValue } from "./handlersToCreateElements";
 import { createSpanElem } from "./basisHandlersToManipulateDOM";
 import { pipeline as compose } from "../../pipeline";
 
@@ -17,9 +17,35 @@ export const createTextInput = (cl) => (name) => (element) => {
     const textInput = compose(
             setClss(cl),
             setName(name),
+            setType("text")
     )(document.createElement("input"));
 
   element.appendChild(textInput);
+ return element;
+}
+
+export const createPasswordInput = (cl) => (name) => (element) => {
+
+    const passwordInput = compose(
+            setClss(cl),
+            setName(name),
+            setType("password")
+    )(document.createElement("input"));
+
+  element.appendChild(passwordInput);
+ return element;
+}
+
+
+export const createRadioInput = (cl) => (value) => (element) => {
+
+  const radioInput = compose(
+          setClss(cl),
+          setName(name),
+          setValue(value)
+  )(document.createElement("input"));
+
+element.appendChild(radioInput);
 return element;
 }
 
@@ -51,4 +77,17 @@ export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
   element.appendChild(label);
  return element;
     
+  }
+
+
+  export const createBtnSendsFormToValidation = (cl) => (element) => {
+
+        const btn = compose(
+                setClss(cl),
+                setTextContent("txtContent"),
+                setOnclickFn(addToFavour)(arg)
+            )(document.createElement("button"));
+      
+      element.appendChild(btn);
+    return element;
   }

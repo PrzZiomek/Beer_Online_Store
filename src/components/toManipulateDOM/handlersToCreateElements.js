@@ -33,3 +33,13 @@ export const setPath = (path) => (element) => {
     element.href = path;
  return element;
 }
+
+export const setType = (type) => (element) => {
+  element.type = type;
+return element;
+}
+
+export const setValue = (value) => (element) => {
+  element.value = value;
+return element;
+}
