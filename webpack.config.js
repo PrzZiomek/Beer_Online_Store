@@ -25,13 +25,21 @@ module.exports = {
             },
 
             {
-                test: /\.(svg|png|jpg|gif)$/,
-                use: {
+                test: /\.(svg|png|jpg|gif)$/i,
+                use:[ 
+                 {
                     loader: "file-loader",
                     options: {
                         name: '[path][name].[ext]',
-                      },
-                }
+                    },
+                 },
+                 {
+                     loader: "url-loader",
+                     options:{
+                         limit: false,
+                     }
+                 }
+            ]
             }
         ]
     }

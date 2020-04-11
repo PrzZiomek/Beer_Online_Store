@@ -10,12 +10,12 @@ export const setforAtr = (to) => (element) => {
 }
 
 export const setName = (name) => (element) => {
-  element.name = name;
-return element;
+    element.name = name;
+  return element;
 }
 
-export const setTextContent = (txtContent) => (element) => {
-     element.textContent = txtContent;
+export const setTextContent = (textContent) => (element) => {
+     element.textContent = textContent;
    return element;
 }
 
@@ -29,8 +29,8 @@ export const setOnclickFn = (fn) => (arg = "") => (element) => {
  return element;
 }
 
-export const setPath = (path) => (element) => {
-    element.href = path;
+export const setPath = (href) => (element) => {
+    element.href = href;
  return element;
 }
 

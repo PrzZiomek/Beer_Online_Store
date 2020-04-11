@@ -1,0 +1,102 @@
+@import "abstract";
+
+
+.registration-form{
+
+    @include universalBackground();
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    > button{
+        @include greenButton(1.2rem, 0.5%);
+        padding: 1%;
+        box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+        margin: 5% auto;
+        justify-self: center;
+
+        &:hover{
+           @include greenButtonHover()
+        }
+    }
+}
+
+
+
+.form-header{
+
+    display: flex;
+    flex-basis: 100%;
+    height: 15%;
+    text-align: center;
+
+    > h3{
+        flex-basis: 50%;
+        font-size: 1.5rem;
+        margin: 2% 0;
+    }
+
+    > img{
+        flex-basis: 10%;
+        height: 10vh;
+    }
+
+    > a{
+        @include yellowLink(&);
+        margin: 1%;
+
+      &::after{
+        bottom: -2%;
+      }
+
+    }
+}
+
+
+
+.form-textFields{
+
+    height: 50%;
+    flex-basis: 40%;
+    margin: 5% auto;
+    text-align: center;
+    text-transform: capitalize;
+
+    > label{
+        display: block;
+        margin: 1% 0;
+        width: 100%;
+        font-size: 1.2rem;
+        text-transform: capitalize;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    > input{
+        display: block;
+        width: 40%;
+        height: 5vh;
+        margin-bottom: 2%;
+    }
+}
+
+
+
+.form-acceptFields{
+
+    flex-basis: 40%;
+    height: 25%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-transform: capitalize;
+
+     > input{
+        flex-basis: 40%;
+    }
+
+    > :nth-child(odd){
+        flex-basis: 40%;
+    }
+}

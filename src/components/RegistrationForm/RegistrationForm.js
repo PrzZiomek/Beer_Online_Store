@@ -1,6 +1,7 @@
-import { createDiv, clearContentOf, createWrapperDiv, createTitle, createLinkTo, createImgElem, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createBtnAddToCart } from "../toManipulateDOM/handlersToManipulateDOM";
-import { createForm, createLabelWithRequired, createTextInput, createRadioInput } from "../toManipulateDOM/handlersToCreateForm";
+import { clearContentOf, createWrapperDiv, createTitle, createLinkTo, createImgElem, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createForm, createLabelWithRequired, createTextInput, createRadioInput, createBtnSendsRegisterFormToValidation, createPasswordInput } from "../toManipulateDOM/handlersToCreateForm";
+import { pipeline as compose } from "../../pipeline";
+import glassesImg from "../../../graphics/szklanki.jpg";
 
 
 
@@ -13,13 +14,20 @@ export const RegistrationForm = () => {
         const wrapperDiv = compose(     
                 createWrapperDiv("form-header")(
                     createTitle("")("rejestracja"),
-                    createImgElem("")("../../../graphics/szklanki.jpg")
+                    createImgElem("")(glassesImg),
+                    createLinkTo("")("cofnij")("#/koszyk")
                   ),
                 createWrapperDiv("form-textFields")(
-                    createTextInput("")("imie"),
                     createLabelWithRequired("")("imie")("imię"),
-                    createTextInput("")("nazwisko"),
+                    createTextInput("")("imie"),
                     createLabelWithRequired("")("nazwisko")("nazwisko"),
+                    createTextInput("")("nazwisko"),
+                    createLabelWithRequired("")("e-mail")("e-mail"),
+                    createTextInput("")("e-mail"),
+                    createLabelWithRequired("")("haslo")("hasło"),
+                    createPasswordInput("")("haslo"),
+                    createLabelWithRequired("")("haslo2")("powtórz hasło"),
+                    createPasswordInput("")("haslo2")
                   ), 
                 createWrapperDiv("form-acceptFields")(
                     createRadioInput("")("acceptRegulations"),
@@ -32,6 +40,7 @@ export const RegistrationForm = () => {
                     createRadioInput("")("acceptSendingNewsletter"),    
                     createText("")("Wyrażam zgodę na wysyłanie mi meilowo przez Beers S.A. z siedzibą w Poznaniu wiadomości marketingowych.")      
                  ),
+                 createBtnSendsRegisterFormToValidation("")('dokończ rejestrację')
                 
           )(createForm("registration-form"))
                 

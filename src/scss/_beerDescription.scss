@@ -5,13 +5,7 @@
 
 .beer-description{
 
-    width: 95%;
-    height: 70vh;
-    background-color: rgba(50, 205, 50, 0.9);
-    padding-bottom: 10%;
-    box-shadow: 3px 3px 5px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 5%;
-
+    @include universalBackground();
 }
 
 
@@ -22,36 +16,7 @@
     position: relative;
 
     & > a{
-        display: block;
-        position: relative;
-        margin: 1% 0 0 76%;
-        text-decoration: none;
-        letter-spacing: 1px;
-        font-size: 1.3rem;
-        cursor: pointer;
-        color: darkgreen;
-
-        &:after{
-            content: "";
-            display: block;
-            position: absolute;
-            width: 30%;
-            height: 2px;
-            right: 11%;
-            bottom: -10%;
-            background-color: darkgreen;
-        }
-
-        &:hover:after{
-            background-color: lime;
-            transition: 0.5s;  
-            right: 70%;                 
-        }
-
-        &:hover{
-            transition: 0.5s;                   
-            color: lime;
-        }
+        @include yellowLink(&);
     }
 
 

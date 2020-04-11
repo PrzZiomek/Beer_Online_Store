@@ -1,5 +1,4 @@
-import { setClss, setTextContent, setName, setType, setValue } from "./handlersToCreateElements";
-import { createSpanElem } from "./basisHandlersToManipulateDOM";
+import { setClss, setTextContent, setName, setType, setValue, setforAtr, setOnclickFn } from "./handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 
 
@@ -64,28 +63,31 @@ export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
 }
 
 
-  export const createLabelWithRequired = (cl) => (to) => (spanText) => (element) => {
+  export const createLabelWithRequired = (cl) => (to) => (textContent) => (element) => {
 
-    const label = compose(
-        setClss(cl),
-        setforAtr(to),
-        setTextContent(txtContent),
-        createSpanElem("")(spanText),
-        createStrongWithAbbrAtr("required")
-    )(document.createElement("label"));
+      const label = compose(
+              setClss(cl),
+              setforAtr(to),
+              setTextContent(textContent),
+              createStrongWithAbbrAtr("required")
+        )(document.createElement("label"));
 
-  element.appendChild(label);
- return element;
+    element.appendChild(label);
+  return element;
     
   }
 
 
-  export const createBtnSendsFormToValidation = (cl) => (element) => {
+  const registerFormValidation = () => console.log("validation!");
+  
+
+
+  export const createBtnSendsRegisterFormToValidation = (cl) =>  (textContent) => (element) => {
 
         const btn = compose(
                 setClss(cl),
-                setTextContent("txtContent"),
-                setOnclickFn(addToFavour)(arg)
+                setTextContent(textContent),
+                setOnclickFn(registerFormValidation)()
             )(document.createElement("button"));
       
       element.appendChild(btn);

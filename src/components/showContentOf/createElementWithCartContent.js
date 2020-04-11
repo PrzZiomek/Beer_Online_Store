@@ -8,6 +8,7 @@ import { addToCartAndUpdateCartView } from "./addToCartAndUpdateCartViev";
 import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
 
 
+
  export const createElementWithCartContent = (cartContent) => (element) => {
        
        groupBeersByLabels(cartContent).map(group => {
