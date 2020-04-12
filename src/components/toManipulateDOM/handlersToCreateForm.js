@@ -41,7 +41,8 @@ export const createRadioInput = (cl) => (value) => (element) => {
   const radioInput = compose(
           setClss(cl),
           setName(name),
-          setValue(value)
+          setValue(value),
+          setType("radio")
   )(document.createElement("input"));
 
 element.appendChild(radioInput);

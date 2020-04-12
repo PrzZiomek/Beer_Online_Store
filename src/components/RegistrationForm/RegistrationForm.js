@@ -1,7 +1,6 @@
 import { clearContentOf, createWrapperDiv, createTitle, createLinkTo, createImgElem, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createForm, createLabelWithRequired, createTextInput, createRadioInput, createBtnSendsRegisterFormToValidation, createPasswordInput } from "../toManipulateDOM/handlersToCreateForm";
 import { pipeline as compose } from "../../pipeline";
-import glassesImg from "../../../graphics/szklanki.jpg";
 
 
 
@@ -14,7 +13,6 @@ export const RegistrationForm = () => {
         const wrapperDiv = compose(     
                 createWrapperDiv("form-header")(
                     createTitle("")("rejestracja"),
-                    createImgElem("")(glassesImg),
                     createLinkTo("")("cofnij")("#/koszyk")
                   ),
                 createWrapperDiv("form-textFields")(
@@ -32,10 +30,10 @@ export const RegistrationForm = () => {
                 createWrapperDiv("form-acceptFields")(
                     createRadioInput("")("acceptRegulations"),
                     createWrapperDiv("agreementOnRules")(
-                        createText("")("akceptuję"),
+                        createText("")("Akceptuję "),
                         createLinkTo("")("regulamin serwisu")("#/regulamin-serwisu"),
                         createText("")(" i zapoznałem się z "),
-                        createLinkTo("")("Polityką Prywatności")("#/polityka-prywatnosci")
+                        createLinkTo("")("polityką prywatności")("#/polityka-prywatnosci")
                     ),
                     createRadioInput("")("acceptSendingNewsletter"),    
                     createText("")("Wyrażam zgodę na wysyłanie mi meilowo przez Beers S.A. z siedzibą w Poznaniu wiadomości marketingowych.")      
