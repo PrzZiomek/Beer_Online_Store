@@ -85,6 +85,15 @@
         margin-bottom: 3%;
         font-size: 1.3rem;
     }
+
+    > .withInfo{
+     
+            display: none;
+            text-transform: none;
+            margin: 0;
+            background-color: rgb(8, 133, 8);
+            border: 2px solid rgb(16, 179, 16);
+    }
 }
 
 
@@ -123,3 +132,6 @@
         text-decoration: none;
     }
 }
+
+
+

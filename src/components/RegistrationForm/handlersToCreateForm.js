@@ -1,6 +1,6 @@
-import { setClss, setTextContent, setName, setType, setValue, setforAtr, setOnclickFn } from "./handlersToCreateElements";
+import { setClss, setTextContent, setName, setType, setValue, setforAtr, setOnclickFn } from "../toManipulateDOM/handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
-
+import{ registrationFormValidator } from "./validation/registrationFormValidator";
 
 
 export const createForm = (cl) => { 
@@ -33,6 +33,18 @@ export const createPasswordInput = (cl) => (name) => (element) => {
 
   element.appendChild(passwordInput);
  return element;
+}
+
+export const createEmailInput = (cl) => (name) => (element) => {
+
+  const passwordInput = compose(
+          setClss(cl),
+          setName(name),
+          setType("email")
+  )(document.createElement("input"));
+
+element.appendChild(passwordInput);
+return element;
 }
 
 
@@ -79,7 +91,6 @@ export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
   }
 
 
-  const registerFormValidation = () => console.log("validation!");
   
 
 
@@ -88,7 +99,7 @@ export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
         const btn = compose(
                 setClss(cl),
                 setTextContent(textContent),
-                setOnclickFn(registerFormValidation)()
+                setOnclickFn(registrationFormValidator)()
             )(document.createElement("button"));
       
       element.appendChild(btn);

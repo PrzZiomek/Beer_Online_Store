@@ -1,6 +1,7 @@
-import { clearContentOf, createWrapperDiv, createTitle, createLinkTo, createImgElem, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createForm, createLabelWithRequired, createTextInput, createRadioInput, createBtnSendsRegisterFormToValidation, createPasswordInput } from "../toManipulateDOM/handlersToCreateForm";
+import { clearContentOf, createWrapperDiv, createTitle, createLinkTo, createDivWithinElement, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createForm, createLabelWithRequired, createTextInput, createEmailInput, createRadioInput, createBtnSendsRegisterFormToValidation, createPasswordInput } from "./handlersToCreateForm";
 import { pipeline as compose } from "../../pipeline";
+import { infoAboutPassword }  from "./infoAboutPassword.js"
 
 
 
@@ -10,7 +11,7 @@ export const RegistrationForm = () => {
 
     clearContentOf(area);
       
-        const wrapperDiv = compose(     
+        const wrapper = compose(     
                 createWrapperDiv("form-header")(
                     createTitle("")("rejestracja"),
                     createLinkTo("")("cofnij")("#/koszyk")
@@ -21,9 +22,10 @@ export const RegistrationForm = () => {
                     createLabelWithRequired("")("nazwisko")("nazwisko"),
                     createTextInput("")("nazwisko"),
                     createLabelWithRequired("")("e-mail")("e-mail"),
-                    createTextInput("")("e-mail"),
+                    createEmailInput("")("e-mail"),
                     createLabelWithRequired("")("haslo")("hasło"),
-                    createPasswordInput("")("haslo"),
+                    createPasswordInput("password")("haslo"),
+                    createDivWithinElement("withInfo")("hasło musi mieć min. 6 znaków, moze składać się z duzych liter, znaków specjalnych i liczb"),
                     createLabelWithRequired("")("haslo2")("powtórz hasło"),
                     createPasswordInput("")("haslo2")
                   ), 
@@ -42,5 +44,7 @@ export const RegistrationForm = () => {
                 
           )(createForm("registration-form"))
                 
-       area.appendChild(wrapperDiv);
+       area.appendChild(wrapper);
+
+       infoAboutPassword()
 }

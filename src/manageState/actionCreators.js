@@ -9,7 +9,9 @@ import { ADD_TO_CART,
         FETCH_SUCCESS,
         FETCH_FAIL,
         DECR_ORDER,
-        INCR_ORDER
+        INCR_ORDER,
+        VALID,
+        NOT_VALID
         } from "./actions";
 
 
@@ -50,4 +52,14 @@ export const incrOrderAction = () => ({
 
 export const decrOrderAction = () => ({
     type: DECR_ORDER
+})
+
+export const validationOKaction = (value) => ({
+    type: VALID,
+    value
+})
+
+export const NoValidationAction = (error) => ({
+    type: NOT_VALID,
+    error
 })
