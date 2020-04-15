@@ -1,4 +1,4 @@
-import { addToCurrentBeer } from "../handlersToShopping/handlersToShopping";
+import { dispatchAddToCurrentBeer } from "../handlersToShopping/handlersToShopping";
 import { setClss, setOnclickFn, setPath, setTextContent } from "../toManipulateDOM/handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 import { insertDashesToPath } from "./insertDashesToPath";
@@ -12,7 +12,7 @@ export const createLinkRedirectToDescription = (cl) => (beer) => (element) => {
             setClss(cl),
             setPath(`#/opis/${insertDashesToPath(beer.name)}`),
             setTextContent("opis"),
-            setOnclickFn(addToCurrentBeer)(beer)
+            setOnclickFn(dispatchAddToCurrentBeer)(beer)
      )(document.createElement("a"));
         
     element.appendChild(link);

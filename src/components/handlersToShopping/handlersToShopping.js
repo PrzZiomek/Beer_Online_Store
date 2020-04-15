@@ -4,22 +4,22 @@ import { setCurrentBeerAction, addToCartAction, removeFromCartAction } from "../
 import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
 
 
-export const addToCart = (beer) => store.dispatch(addToCartAction(beer));
+export const dispatchAddToCart = (beer) => store.dispatch(addToCartAction(beer));
 
-export const removeFromCart = (beer) => store.dispatch(removeFromCartAction(beer));
+export const dispatchRemoveFromCart = (beer) => store.dispatch(removeFromCartAction(beer));
 
-export const addToFavour = () => console.log("addToFavour");
+export const dispatchAddToFavour = () => console.log("addToFavour");
 
-export const addToCurrentBeer = (beer) => store.dispatch(setCurrentBeerAction(beer));
+export const dispatchAddToCurrentBeer = (beer) => store.dispatch(setCurrentBeerAction(beer));
 
-export const setCurrentBeer = (beer) =>  store.dispatch(setCurrentBeerAction(beer))
+export const dispatchSetCurrentBeer = (beer) =>  store.dispatch(setCurrentBeerAction(beer))
 
 
 
 export const addToCartAndUpdatePreviev = (beer) => {
 
     removePrevievCartModal();
-    addToCart(beer);
+    dispatchAddToCart(beer);
     actualBeerAndCartPreviev()
 }
 
@@ -27,6 +27,6 @@ export const addToCartAndUpdatePreviev = (beer) => {
 export const rmvFromCartAndUpdatePreviev = (beer) => {
     
     removePrevievCartModal();
-    removeFromCart(beer);
+    dispatchRemoveFromCart(beer);
     actualBeerAndCartPreviev()
 }

@@ -1,8 +1,8 @@
-import { addToCurrentBeer, addToFavour } from "../handlersToShopping/handlersToShopping";
+import { dispatchAddToFavour } from "../handlersToShopping/handlersToShopping";
 import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
-import { setClss, setOnclickFn, setPath, setTextContent } from "./handlersToCreateElements";
+import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
-import { clearContentOf } from "./basisHandlersToManipulateDOM"
+//import { clearContentOf } from "./basisHandlersToManipulateDOM"
 
 
 
@@ -15,7 +15,7 @@ export const createBtnAddToFavour = (cl) => (txtContent) => (arg) => (element) =
     const btn = compose(
             setClss(cl),
             setTextContent(txtContent),
-            setOnclickFn(addToFavour)(arg)
+            setOnclickFn(dispatchAddToFavour)(arg)
        )(document.createElement("button"));
         
     element.appendChild(btn);

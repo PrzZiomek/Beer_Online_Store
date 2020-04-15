@@ -1,5 +1,5 @@
-import { setCurrentBeer } from "../handlersToShopping/handlersToShopping";
-import { addToCart } from "../handlersToShopping/handlersToShopping";
+import { dispatchSetCurrentBeer } from "../handlersToShopping/handlersToShopping";
+import { dispatchAddToCart } from "../handlersToShopping/handlersToShopping";
 import { actualBeerAndCartPreviev } from "./previevOfCartContent/actualBeerAndCartPreviev/actualBeerAndCartPreviev";
 
 
@@ -9,8 +9,8 @@ import { actualBeerAndCartPreviev } from "./previevOfCartContent/actualBeerAndCa
 
 export const addToCartAndOpenPreviev = (beer) => {
 
-    setCurrentBeer(beer);
-    addToCart(beer);
+    dispatchSetCurrentBeer(beer);
+    dispatchAddToCart(beer);
     actualBeerAndCartPreviev()
   
 }
