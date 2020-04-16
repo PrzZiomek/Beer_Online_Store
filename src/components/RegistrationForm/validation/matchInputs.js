@@ -5,10 +5,10 @@ import { verifyPassword } from "./composingOfCheckingFunctions/verifyPassword";
 
 
 
-export const matchInputs = (input) => ({
+export const matchInputWithFn = (input) => ({
 
-    "text" : verifyName(input.value),
-    "email" : verifyEmail(input.value),
-    "radio" : verifyAgreement(input.checked),
-    "password" : verifyPassword(input.value),
-})
+                "text" : verifyName(input.value),
+                "email" : verifyEmail(input.value),
+                "radio" : verifyAgreement(input.checked),
+                "password" : verifyPassword(input.value),
+            })

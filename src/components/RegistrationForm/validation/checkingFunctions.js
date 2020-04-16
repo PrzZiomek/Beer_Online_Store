@@ -43,9 +43,7 @@ export const checkIfPasswordIsIdentical = (prevText) => (text) => {
 
 
 export const checkIfIsAgreement = (checked) => {
-    if(checked){
-        return text;
-    } else{
+    if(!checked){
         throw Error("musisz wyrazić zgodę");
     } 
 };

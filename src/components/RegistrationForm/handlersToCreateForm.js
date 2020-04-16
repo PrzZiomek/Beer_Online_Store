@@ -91,15 +91,11 @@ export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
   }
 
 
-  
-
-
-  export const createBtnSendsRegisterFormToValidation = (cl) =>  (textContent) => (element) => {
+  export const createBtn = (cl) =>  (textContent) => (element) => {
 
         const btn = compose(
                 setClss(cl),
                 setTextContent(textContent),
-                setOnclickFn(registrationFormValidator)()
             )(document.createElement("button"));
       
       element.appendChild(btn);

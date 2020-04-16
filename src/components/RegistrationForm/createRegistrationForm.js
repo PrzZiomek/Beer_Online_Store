@@ -1,9 +1,9 @@
-import { createForm, createBtnSendsRegisterFormToValidation } from "./handlersToCreateForm";
+import { createForm } from "./handlersToCreateForm";
 import { pipeline as compose } from "../../pipeline";
 import { formHeader } from "./componentsOfRegistrationForm/formHeader";
 import { formTextFields } from "./componentsOfRegistrationForm/formTextFields";
 import { formAcceptFields } from "./componentsOfRegistrationForm/formAcceptFields";
-
+import { registrationFormValidator } from "./validation/registrationFormValidator";
 
 
 
@@ -15,9 +15,10 @@ export const createRegistrationForm = () => {
             formHeader,
             formTextFields,
             formAcceptFields,
-            createBtnSendsRegisterFormToValidation("")('dokończ rejestrację')             
+            createBtn("")('dokończ rejestrację')             
         )(createForm("registration-form"))
             
- area.appendChild(wrapper);
-
+    area.appendChild(wrapper);
+    
+    wrapper.onsubmit = registrationFormValidator();
 }
