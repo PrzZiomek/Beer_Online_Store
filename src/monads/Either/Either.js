@@ -3,7 +3,7 @@ import { Left } from "./Left";
 
 
 
-export const Either = (f) => {
+ const Either = (f) => {
 
                 try {
                     let res = f();
@@ -12,3 +12,10 @@ export const Either = (f) => {
                     return Left(e);
                 }
             }
+
+
+
+Either.of = Either;
+
+
+export default Either;

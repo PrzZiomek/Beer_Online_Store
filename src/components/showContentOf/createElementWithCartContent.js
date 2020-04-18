@@ -14,7 +14,7 @@ import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
        groupBeersByLabels(cartContent).map(group => {
 
                 const wrapperDiv = compose(   
-                        createBtnToRemoveGroupOfBeers("remove")("X")(),  
+                        createBtnToRemoveGroupOfBeers("remove")("X")(group[0]),  
                         createImgElem("")(group[0].image_url),       
                         createSpanElem("beerTitle")(group[0].name),
                         createText("price")(`${group[0].abv} $`),

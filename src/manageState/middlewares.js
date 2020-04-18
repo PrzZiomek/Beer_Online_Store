@@ -29,7 +29,7 @@ export const loggingMiddleware = ({getState}) => next => action => {
 const delayMiddleware = ({dispatch, getState}) => next => action => {
 
   console.info(">>>>> getState",getState());
-  console.info('">>>>>" action', action);
+  console.info('>>>>> action', action);
 
   return next(action);
 };

@@ -1,6 +1,7 @@
 import { ADD_TO_CART,
         ADD_TO_FAVOUR,
         RMV_FROM_CART,
+        RMV_TYPE_FROM_CART,
         RMV_FROM_FAVOUR,
         CLEAR_CART,
         CLEAR_FAVOUR,
@@ -62,4 +63,9 @@ export const validationOKaction = (value) => ({
 export const NoValidationAction = (error) => ({
     type: NOT_VALID,
     error
+})
+
+export const rmvWholeTypeFromCartAction = (value) => ({
+    type: RMV_TYPE_FROM_CART,
+    value
 })

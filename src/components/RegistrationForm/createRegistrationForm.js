@@ -1,4 +1,4 @@
-import { createForm } from "./handlersToCreateForm";
+import { createForm, createBtn } from "./handlersToCreateForm";
 import { pipeline as compose } from "../../pipeline";
 import { formHeader } from "./componentsOfRegistrationForm/formHeader";
 import { formTextFields } from "./componentsOfRegistrationForm/formTextFields";

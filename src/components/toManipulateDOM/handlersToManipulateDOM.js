@@ -1,5 +1,6 @@
 import { dispatchAddToFavour } from "../handlersToShopping/handlersToShopping";
 import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
+import { rmvGroupOfBeerAndUpdateViev } from '../showContentOf/rmvGroupOfBeerAndUpdateViev';
 import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 //import { clearContentOf } from "./basisHandlersToManipulateDOM"
@@ -42,7 +43,7 @@ export const createBtnToRemoveGroupOfBeers = (cl) => (txtContent) => (arg) => (e
     const btn = compose(
             setClss(cl),
             setTextContent(txtContent),
-            setOnclickFn(addToCartAndOpenPreviev)(arg)
+            setOnclickFn(rmvGroupOfBeerAndUpdateViev)(arg)
       )(document.createElement("button"));
 
     element.appendChild(btn);

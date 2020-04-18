@@ -1,6 +1,11 @@
-import { ADD_TO_CART, RMV_FROM_CART, CLEAR_CART } from "../actions";
+import { ADD_TO_CART,
+         RMV_FROM_CART,
+         CLEAR_CART,
+         RMV_TYPE_FROM_CART } from "../actions";
+
 
 const initState= [];
+
 
 //const removeBeerFromNested = (cart,beer) => cart.reduce((acc,item) => item[0].name === beer.name ? [...acc,item.slice(1)] : [...acc,item] , [] );
 const removePos = (arr) => (beer) => {
@@ -24,6 +29,11 @@ export const reducerToCart = (state = initState, action) => {
             return removePos(state)(action.value)
         case CLEAR_CART:
              return [];
+        case RMV_TYPE_FROM_CART:
+             return state.filter((x) =>{ console.log(x.name);
+              console.log(action.value.name);
+               x.name !==  action.value.name
+              })
         default:
             return state;
     }
