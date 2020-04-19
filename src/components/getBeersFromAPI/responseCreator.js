@@ -1,6 +1,7 @@
 import { doFetch } from "./doFetch";
 import { fetchSuccessAction, fetchFailAction } from "../../manageState/actionCreators";
 import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
+import { removeLoader } from './loader/removeLoader';
 
 
 
@@ -12,7 +13,8 @@ import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
         
          if(beers){ 
             dispatch(fetchSuccessAction(beers));
-            OfferOnPage()
+            removeLoader();
+            OfferOnPage();
          }
     }
  }

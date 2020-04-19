@@ -1,5 +1,5 @@
 export const RMV_FROM_CART = "RMV_FROM_CART";
-export const RMV_TYPE_FROM_CART = "RMV_FROM_CART";
+export const RMV_TYPE_FROM_CART = "RMV_TYPE_FROM_CART";
 export const RMV_FROM_FAVOUR = "RMV_FROM_FAVOUR";
 export const ADD_TO_CART = "ADD_TO_CART";
 export const ADD_TO_FAVOUR = "ADD_TO_FAVOUR";
