@@ -1,6 +1,6 @@
 import { store } from "../../manageState/store";
 import { actualBeerAndCartPreviev } from "../AddToCartAndOpenPreviev/previevOfCartContent/actualBeerAndCartPreviev/actualBeerAndCartPreviev";
-import { setCurrentBeerAction, addToCartAction, removeFromCartAction, rmvWholeTypeFromCartAction } from "../../manageState/actionCreators";
+import { setCurrentBeerAction, addToCartAction, addToFavoriteAction, removeFromCartAction, rmvWholeTypeFromCartAction } from "../../manageState/actionCreators";
 import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
 
 
@@ -8,7 +8,7 @@ export const dispatchAddToCart = (beer) => store.dispatch(addToCartAction(beer))
 
 export const dispatchRemoveFromCart = (beer) => store.dispatch(removeFromCartAction(beer));
 
-export const dispatchAddToFavour = () => console.log("addToFavour");
+export const dispatchAddToFavour = (beer) => store.dispatch(addToFavoriteAction(beer));
 
 export const dispatchAddToCurrentBeer = (beer) => store.dispatch(setCurrentBeerAction(beer));
 

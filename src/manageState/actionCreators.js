@@ -1,8 +1,8 @@
 import { ADD_TO_CART,
-        ADD_TO_FAVOUR,
+        ADD_TO_FAVORITE,
         RMV_FROM_CART,
         RMV_TYPE_FROM_CART,
-        RMV_FROM_FAVOUR,
+        RMV_FROM_FAVORITE,
         CLEAR_CART,
         CLEAR_FAVOUR,
         CURRENT_BEER,
@@ -12,7 +12,8 @@ import { ADD_TO_CART,
         DECR_ORDER,
         INCR_ORDER,
         VALID,
-        NOT_VALID
+        NOT_VALID,
+        RMV_TYPE_FROM_FAVORITE
         } from "./actions";
 
 
@@ -67,5 +68,21 @@ export const NoValidationAction = (error) => ({
 
 export const rmvWholeTypeFromCartAction = (value) => ({
     type: RMV_TYPE_FROM_CART,
+    value
+})
+
+export const addToFavoriteAction = (value) => ({
+    type: ADD_TO_FAVORITE,
+    value  
+});
+
+
+export const removeFromFavoriteAction = (value) => ({
+    type: RMV_FROM_FAVORITE,
+    value
+})
+
+export const rmvWholeTypeFromFavoriteAction = (value) => ({
+    type: RMV_TYPE_FROM_FAVORITE,
     value
 })

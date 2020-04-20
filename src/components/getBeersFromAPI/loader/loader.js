@@ -5,5 +5,5 @@ export const insertLoader = () => {
 
     const header = document.querySelector("header");
 
-    createText("loader")("ładowanie ...")(header)
+    createText("loader")("ładowanie...")(header)
 }

@@ -103,6 +103,20 @@ nav{
             right: -8%;
             content: attr(beerAmount);
         }
+
+        &.favorite{
+            position: relative;
+        }
+
+        &.favorite::after{
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            display: block;
+            top: 0;
+            right: -8%;
+            content: attr(beerAmount);
+        }
     }
 
     

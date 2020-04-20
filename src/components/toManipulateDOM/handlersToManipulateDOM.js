@@ -2,6 +2,7 @@ import { dispatchAddToFavour } from "../handlersToShopping/handlersToShopping";
 import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
 import { rmvGroupOfBeerAndUpdateViev } from '../showContentOf/rmvGroupOfBeerAndUpdateViev';
 import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
+import { addToFavorite } from '../FavoriteCart/addToFavorite';
 import { pipeline as compose } from "../../pipeline";
 //import { clearContentOf } from "./basisHandlersToManipulateDOM"
 
@@ -16,7 +17,7 @@ export const createBtnAddToFavour = (cl) => (txtContent) => (arg) => (element) =
     const btn = compose(
             setClss(cl),
             setTextContent(txtContent),
-            setOnclickFn(dispatchAddToFavour)(arg)
+            setOnclickFn(addToFavorite)(arg)
        )(document.createElement("button"));
         
     element.appendChild(btn);
