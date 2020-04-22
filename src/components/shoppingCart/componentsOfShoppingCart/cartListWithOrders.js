@@ -7,7 +7,7 @@ import { createElementWithCartContent } from "../../showContentOf/createElementW
 export const cartListWithOrders = (cartContent) => (element) => {
       
     const wrapperDiv = compose(            
-            createElementWithCartContent(cartContent)
+            createElementWithCartContent("shoppingCart-content")(cartContent)
       )(createDiv("cart-listWithOrders"))
 
     element.appendChild(wrapperDiv);

@@ -9,7 +9,7 @@ import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
 
 
 
- export const createElementWithCartContent = (cartContent) => (element) => {
+ export const createElementWithCartContent = (clss) => (cartContent) => (element) => {
        
        groupBeersByLabels(cartContent).map(group => {
 
@@ -22,7 +22,7 @@ import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
                         createSpanElem("amount")(group.length),
                         createButtonToDecreaseOrder("")(rmvFromCartAndUpdateCartView)(group[0]),
                         createSpanElem("sum")(`${sumOfGroup(group[0].abv, group.length)} $`)
-                  )(createDiv("cart-content"))
+                  )(createDiv(clss))
 
               element.appendChild(wrapperDiv);
             })

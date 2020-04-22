@@ -3,7 +3,7 @@ import { createText, createDiv } from "../../toManipulateDOM/basisHandlersToMani
 
 
 
-export const cartColumnTitles = (element) => {
+export const cartColumnTitles = (clss) =>  (element) => {
       
     const wrapperDiv = compose(            
             createText("")("usuń"),
@@ -11,7 +11,7 @@ export const cartColumnTitles = (element) => {
             createText("")("cena"),
             createText("")("ilość"),
             createText("")("wartość"),
-     )(createDiv("cart-columnTitles"))
+     )(createDiv(clss))
 
     element.appendChild(wrapperDiv);
  return element;

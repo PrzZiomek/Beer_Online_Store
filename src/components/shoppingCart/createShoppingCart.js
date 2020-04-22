@@ -2,7 +2,7 @@ import { pipeline as compose } from '../../pipeline';
 import { createDiv } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { cartProgressBar } from "./componentsOfShoppingCart/cartProgressBar";
 import { cartHeader } from "./componentsOfShoppingCart/cartHeader";
-import { cartColumnTitles } from "./componentsOfShoppingCart/cartColumnTitles";
+import { shoppingCartColumnTitles } from "../showContentOf/cartColumnTitles/shoppingCartColumnTitles";
 import { cartRecapCosts } from "./componentsOfShoppingCart/cartRecapCosts";
 import { cartButtons1 } from "./componentsOfShoppingCart/cartButtons1";
 import { cartButtons2 } from "./componentsOfShoppingCart/cartButtons2";
@@ -17,7 +17,7 @@ export const createShoppingCart = (cartContent) => {
     const mainWrapper = compose(
             cartProgressBar,
             cartHeader(cartContent),
-            cartColumnTitles, 
+            shoppingCartColumnTitles, 
             cartListWithOrders(cartContent), 
             cartRecapCosts(cartContent),   
             cartButtons1,              
