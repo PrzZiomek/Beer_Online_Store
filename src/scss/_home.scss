@@ -106,7 +106,7 @@ nav{
         }
 
         &.favorite::after{
-            @include orderCounter(0, -12%)
+            @include orderCounter(0, -14%)
         }
     }
 

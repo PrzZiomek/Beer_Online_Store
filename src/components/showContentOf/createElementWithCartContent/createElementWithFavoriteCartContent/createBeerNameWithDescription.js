@@ -3,4 +3,14 @@ import { createDiv, createSpanElem, createText, createImgElem } from "../../../t
 import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../buttonsToChangeOrderQuantity";
 
 
-createSpanElem("beerTitle")(group[0].name),
+
+export const createBeerNameWithDescription = (beer) => (element) => {
+      
+    const wrapperDiv = compose(            
+             createSpanElem("beerTitle")(beer.name),
+             createText("description")(beer.description)
+      )(createDiv("nameWithDescr"))
+
+    element.appendChild(wrapperDiv);
+ return element;
+}

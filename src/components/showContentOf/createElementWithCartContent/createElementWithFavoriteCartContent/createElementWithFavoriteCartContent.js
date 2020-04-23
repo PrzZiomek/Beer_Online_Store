@@ -6,23 +6,25 @@ import { createBtnToRemoveGroupOfBeers } from "../../../toManipulateDOM/handlers
 import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
 import { addToFavoriteAndUpdateCartView } from "../createElementWithFavoriteCartContent/addToFavoriteAndUpdateCartViev";
 import { rmvFromFavoriteAndUpdateCartView } from "../createElementWithFavoriteCartContent/rmvFromFavoriteAndUpdateCartView"
-
+import { createBeerNameWithDescription }  from "./createBeerNameWithDescription";
 
 
 
  export const createElementWithFavoriteCartContent = (cartContent) => (element) => {
        
-       groupBeersByLabels(cartContent).map(group => {
+       groupBeersByLabels(cartContent).map(group => {  
 
+            const beer = group[0];
+            
                 const wrapperDiv = compose(   
-                        createBtnToRemoveGroupOfBeers("remove")("X")(group[0]),  
-                        createImgElem("")(group[0].image_url),       
-                        //createSpanElem("beerTitle")(group[0].name),
-                        createText("price")(`${group[0].abv} $`),
-                        createButtonToIncreaseOrder("")(addToFavoriteAndUpdateCartView)(group[0]),
+                        createBtnToRemoveGroupOfBeers("remove")("X")(beer),  
+                        createImgElem("")(beer.image_url),       
+                        createBeerNameWithDescription(beer),
+                        createText("price")(`${beer.abv} $`),
+                        createButtonToIncreaseOrder("")(addToFavoriteAndUpdateCartView)(beer),
                         createSpanElem("amount")(group.length),
-                        createButtonToDecreaseOrder("")(rmvFromFavoriteAndUpdateCartView)(group[0]),
-                        createSpanElem("sum")(`${sumOfGroup(group[0].abv, group.length)} $`)
+                        createButtonToDecreaseOrder("")(rmvFromFavoriteAndUpdateCartView)(beer),
+                        createSpanElem("sum")(`${sumOfGroup(beer.abv, group.length)} $`)
                   )(createDiv("favoriteCart-content"))
 
               element.appendChild(wrapperDiv);
