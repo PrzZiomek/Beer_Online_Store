@@ -1,3 +1,7 @@
+@import "abstract";
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -64,7 +68,6 @@ header{
     grid-template-areas: "menu main";
     grid-template-columns: 1fr 7fr;
     margin-top: 2%;
-
 }
 
 
@@ -95,13 +98,7 @@ nav{
         }
 
         &.cart::after{
-            position: absolute;
-            color: white;
-            font-weight: bold;
-            display: block;
-            top: 0;
-            right: -8%;
-            content: attr(beerAmount);
+           @include orderCounter(0, -9%)
         }
 
         &.favorite{
@@ -109,13 +106,7 @@ nav{
         }
 
         &.favorite::after{
-            position: absolute;
-            color: white;
-            font-weight: bold;
-            display: block;
-            top: 0;
-            right: -8%;
-            content: attr(beerAmount);
+            @include orderCounter(0, -12%)
         }
     }
 
@@ -155,11 +146,5 @@ main{
     justify-content: space-evenly;
 
 }
-
-
-
-
-
-
 
 

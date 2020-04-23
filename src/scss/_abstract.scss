@@ -76,3 +76,16 @@
     border-radius: 5%;
 
 }
+
+
+
+@mixin orderCounter($top:0, $right:0) {
+
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    display: block;
+    top: $top;
+    right: $right;
+    content: attr(beerAmount);
+}

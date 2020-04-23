@@ -2,7 +2,7 @@ import { pipeline as compose } from '../../../../../pipeline';
 import { createDiv, createSpanElem, createText } from "../../../../toManipulateDOM/basisHandlersToManipulateDOM";
 import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../../../showContentOf/buttonsToChangeOrderQuantity";
 import { groupBeersByLabels } from "../../../../groupBeersByLabels/groupBeersByLabels";
-import { addToCartAndUpdatePreviev, rmvFromCartAndUpdatePreviev } from "../../../../handlersToShopping/handlersToShopping";
+import { addToCartAndUpdatePreviev, rmvFromCartAndUpdatePreviev } from "../../../addToCartAndRemoveWithUpdatePreviev";
 import sumOfGroup from "../../sumOfGroup";
 
 

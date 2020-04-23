@@ -1,13 +1,13 @@
 import { pipeline as compose } from '../../../pipeline';
 import { createDiv } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createElementWithCartContent } from "../../showContentOf/createElementWithCartContent";
+import { createElementWithShoppingCartContent} from "../../showContentOf/createElementWithCartContent/createElementWithShoppingCartContent/createElementWithShoppingCartContent";
 
 
 
 export const cartListWithOrders = (cartContent) => (element) => {
       
     const wrapperDiv = compose(            
-            createElementWithCartContent("shoppingCart-content")(cartContent)
+            createElementWithShoppingCartContent(cartContent)
       )(createDiv("cart-listWithOrders"))
 
     element.appendChild(wrapperDiv);
