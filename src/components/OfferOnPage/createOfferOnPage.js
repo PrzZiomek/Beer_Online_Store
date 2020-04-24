@@ -1,6 +1,6 @@
 import { pipeline as compose } from "../../pipeline";
 import { createDiv, createImgElem, createSpanElem, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createBtnAddToCart } from "../toManipulateDOM/handlersToManipulateDOM";
+import { createBtnAddToCartAndOpenPreviev } from "../toManipulateDOM/handlersToManipulateDOM";
 import {  createLinkRedirectToDescription } from "./createLinkRedirectToDescription";
 
 
@@ -15,7 +15,7 @@ export const createOfferOnPage = (beers) => {
                     createSpanElem("beerTitle")(beer.name),
                     createImgElem("")(beer.image_url),
                     createText("price")(`${beer.abv} $`),
-                    createBtnAddToCart("cartBtn")("koszyk")(beer),
+                    createBtnAddToCartAndOpenPreviev("cartBtn")("koszyk")(beer),
                     createLinkRedirectToDescription("")(beer),
             )(createDiv("beer-label"))
                 

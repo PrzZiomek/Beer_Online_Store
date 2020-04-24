@@ -21,6 +21,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "url-loader": "^4.1.0",
     "webpack-icons-installer": "^2.0.0"
   }

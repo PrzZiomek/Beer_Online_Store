@@ -1,4 +1,4 @@
-import { dispatchAddToFavour } from "../handlersToShopping/handlersToShopping";
+import { addToCart } from "../showContentOf/createElementWithCartContent/createElementWithFavoriteCartContent/addToCart";
 import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
 import { rmvGroupOfBeerAndUpdateViev } from '../showContentOf/rmvGroupOfBeerAndUpdateViev';
 import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
@@ -25,7 +25,7 @@ export const createBtnAddToFavour = (cl) => (txtContent) => (arg) => (element) =
 }
 
 
-export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => {
+export const createBtnAddToCartAndOpenPreviev = (cl) => (txtContent) => (arg) => (element) => {
 
     const btn = compose(
             setClss(cl),
@@ -35,6 +35,19 @@ export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => 
 
      element.appendChild(btn);
   return element;
+}
+
+
+export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => {
+
+  const btn = compose(
+          setClss(cl),
+          setTextContent(txtContent),
+          setOnclickFn(addToCart)(arg)
+    )(document.createElement("button"));
+
+   element.appendChild(btn);
+return element;
 }
 
 

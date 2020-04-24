@@ -1,6 +1,6 @@
 import { pipeline as compose } from '../../../pipeline';
 import { createDiv, createImgElem, createSpanElem, createTitle, createLinkTo, createWrapperDiv } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createBtnAddToFavour, createBtnAddToCart } from "../../toManipulateDOM/handlersToManipulateDOM"
+import { createBtnAddToFavour, createBtnAddToCartAndOpenPreviev } from "../../toManipulateDOM/handlersToManipulateDOM"
 
 
 export const descriptionPart = (beer) => (element) => {
@@ -11,7 +11,7 @@ export const descriptionPart = (beer) => (element) => {
             createImgElem("")(beer.image_url),
             createSpanElem("description")(beer.description),
             createBtnAddToFavour("favourBtn")("dodaj do ulubionych")(beer),
-            createBtnAddToCart("cartBtn")("dodaj do koszyka")(beer),   
+            createBtnAddToCartAndOpenPreviev("cartBtn")("dodaj do koszyka")(beer),   
         )(createDiv("description-part"));
 
     element.appendChild(wrapperDiv);

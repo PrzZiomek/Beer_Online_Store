@@ -7,6 +7,7 @@ import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/su
 import { addToFavoriteAndUpdateCartView } from "../createElementWithFavoriteCartContent/addToFavoriteAndUpdateCartViev";
 import { rmvFromFavoriteAndUpdateCartView } from "../createElementWithFavoriteCartContent/rmvFromFavoriteAndUpdateCartView"
 import { createBeerNameWithDescription }  from "./createBeerNameWithDescription";
+import { createBtnAddToCart } from '../../../toManipulateDOM/handlersToManipulateDOM';
 
 
 
@@ -24,7 +25,8 @@ import { createBeerNameWithDescription }  from "./createBeerNameWithDescription"
                         createButtonToIncreaseOrder("")(addToFavoriteAndUpdateCartView)(beer),
                         createSpanElem("amount")(group.length),
                         createButtonToDecreaseOrder("")(rmvFromFavoriteAndUpdateCartView)(beer),
-                        createSpanElem("sum")(`${sumOfGroup(beer.abv, group.length)} $`)
+                        createSpanElem("sum")(`${sumOfGroup(beer.abv, group.length)} $`),
+                        createBtnAddToCart("")("dodaj do koszyka")(beer)
                   )(createDiv("favoriteCart-content"))
 
               element.appendChild(wrapperDiv);

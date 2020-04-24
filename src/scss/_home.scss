@@ -98,7 +98,7 @@ nav{
         }
 
         &.cart::after{
-           @include orderCounter(0, -9%)
+           @include orderCounter(0, -10%)
         }
 
         &.favorite{
@@ -106,7 +106,7 @@ nav{
         }
 
         &.favorite::after{
-            @include orderCounter(0, -14%)
+            @include orderCounter(0, -16%)
         }
     }
 
