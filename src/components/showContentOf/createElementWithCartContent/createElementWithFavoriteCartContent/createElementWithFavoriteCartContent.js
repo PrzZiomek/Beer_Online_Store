@@ -26,7 +26,7 @@ import { createBtnAddToCart } from '../../../toManipulateDOM/handlersToManipulat
                         createSpanElem("amount")(group.length),
                         createButtonToDecreaseOrder("")(rmvFromFavoriteAndUpdateCartView)(beer),
                         createSpanElem("sum")(`${sumOfGroup(beer.abv, group.length)} $`),
-                        createBtnAddToCart("")("dodaj do koszyka")(beer)
+                        createBtnAddToCart("addToCart-btn")("dodaj do koszyka")(beer)
                   )(createDiv("favoriteCart-content"))
 
               element.appendChild(wrapperDiv);
