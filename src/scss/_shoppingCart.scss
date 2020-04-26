@@ -110,18 +110,18 @@
         }
 
         > :nth-child(2){
-            margin-left: 25%;
+            margin-left: 20%;
         }
 
         > :nth-child(3){
-            margin-left: 15%;
+            margin-left:20%;
         }
 
         > :nth-child(4){
-            margin-left: 8%;
+            margin-left: 13%;
         }
         > :nth-child(5){
-            margin-left: 15%;
+            margin-left: 10%;
         }
 
         > p{
@@ -151,11 +151,11 @@
             > img{
                 width: 2.5vw;
                 height: 13vh;
-                margin: 1% 4%;
+                margin: 1% 8% 1% 4%;
             }
 
             > :nth-child(3){
-                flex-basis: 40%;
+                flex-basis: 35%;
                 overflow: hidden;
                 margin-left: 6%;
                 margin-right: 5%;
@@ -163,7 +163,7 @@
 
             > :nth-child(4){
                 flex-basis: 10%;
-                margin-left: 10%;
+                margin-left: 6%;
                 margin-right: 5%;
             }
 

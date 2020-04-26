@@ -52,15 +52,5 @@ return element;
 
 
 
-export const createBtnToRemoveGroupOfBeers = (cl) => (txtContent) => (arg) => (element) => {
 
-    const btn = compose(
-            setClss(cl),
-            setTextContent(txtContent),
-            setOnclickFn(rmvGroupOfBeerAndUpdateViev)(arg)
-      )(document.createElement("button"));
-
-    element.appendChild(btn);
-  return element;
-}
 

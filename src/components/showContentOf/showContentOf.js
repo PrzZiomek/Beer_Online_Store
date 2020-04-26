@@ -1,4 +1,4 @@
 
 
 
-export const createElementWithShoppingCartContent = (clss) => 
+//export const createElementWithShoppingCartContent = (clss) => 

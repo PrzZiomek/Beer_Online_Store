@@ -2,9 +2,7 @@ import { pipeline as compose } from '../../../../pipeline';
 import { createDiv, createSpanElem, createText, createImgElem } from "../../../toManipulateDOM/basisHandlersToManipulateDOM";
 import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../buttonsToChangeOrderQuantity";
 import { groupBeersByLabels } from "../../../groupBeersByLabels/groupBeersByLabels";
-import { createBtnToRemoveGroupOfBeers } from "../../../toManipulateDOM/handlersToManipulateDOM"
-import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
-import { addToCartAndUpdateCartView } from "./addToCartAndUpdateCartViev";
+import { createBtnToRemoveGroupOfBeersFromCart } from '../../createBtnToRemoveGroupOfBeers/createBtnToRemoveGroupOfBeersFromCart';
 import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
 
 
@@ -14,7 +12,7 @@ import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
        groupBeersByLabels(cartContent).map(group => {
 
                 const wrapperDiv = compose(   
-                        createBtnToRemoveGroupOfBeers("remove")("X")(group[0]),  
+                        createBtnToRemoveGroupOfBeersFromCart("remove")("X")(group[0]),  
                         createImgElem("")(group[0].image_url),       
                         createSpanElem("beerTitle")(group[0].name),
                         createText("price")(`${group[0].abv} $`),

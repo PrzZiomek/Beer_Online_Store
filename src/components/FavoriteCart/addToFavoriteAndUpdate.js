@@ -1,11 +1,11 @@
 import { dispatchAddToFavour } from '../handlersToShopping/handlersToShopping';
-import { displayCounterOfBeersInCart } from './displayCounterOfBeersInFavorite';
+import { displayCounterOfBeersInFavorite } from './displayCounterOfBeersInFavorite';
 import { FavoriteCart } from './FavoriteCart';
 
 
 export const addToFavoriteAndUpdate = (beer) => {
 
     dispatchAddToFavour(beer);
-    displayCounterOfBeersInCart();
+    displayCounterOfBeersInFavorite();
     FavoriteCart();
 }
