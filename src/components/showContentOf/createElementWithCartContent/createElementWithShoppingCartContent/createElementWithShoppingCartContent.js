@@ -3,7 +3,9 @@ import { createDiv, createSpanElem, createText, createImgElem } from "../../../t
 import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../buttonsToChangeOrderQuantity";
 import { groupBeersByLabels } from "../../../groupBeersByLabels/groupBeersByLabels";
 import { createBtnToRemoveGroupOfBeersFromCart } from '../../createBtnToRemoveGroupOfBeers/createBtnToRemoveGroupOfBeersFromCart';
-import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView"
+import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView";
+import { addToCartAndUpdateCartView } from "./addToCartAndUpdateCartViev";
+import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
 
 
 

@@ -1,5 +1,5 @@
 import { store } from "../../manageState/store";
-import { setCurrentBeerAction, addToCartAction, addToFavoriteAction, removeFromFavoriteAction, removeFromCartAction, rmvWholeTypeFromCartAction } from "../../manageState/actionCreators";
+import { setCurrentBeerAction, addToCartAction, addToFavoriteAction, removeFromFavoriteAction,rmvWholeTypeFromFavoriteAction, removeFromCartAction, rmvWholeTypeFromCartAction } from "../../manageState/actionCreators";
 
 
 export const dispatchAddToCart = (beer) => store.dispatch(addToCartAction(beer));
@@ -15,5 +15,7 @@ export const dispatchAddToCurrentBeer = (beer) => store.dispatch(setCurrentBeerA
 export const dispatchSetCurrentBeer = (beer) =>  store.dispatch(setCurrentBeerAction(beer))
 
 export const dispatchRmvWholeTypeFromCart = (beer) => store.dispatch(rmvWholeTypeFromCartAction(beer));
+
+export const dispatchRmvWholeTypeFromFavoriteCart = (beer) => store.dispatch(rmvWholeTypeFromFavoriteAction(beer));
 
 

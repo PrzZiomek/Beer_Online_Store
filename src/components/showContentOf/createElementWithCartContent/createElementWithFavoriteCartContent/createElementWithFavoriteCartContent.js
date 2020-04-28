@@ -2,10 +2,10 @@ import { pipeline as compose } from '../../../../pipeline';
 import { createDiv, createSpanElem, createText, createImgElem } from "../../../toManipulateDOM/basisHandlersToManipulateDOM";
 import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../buttonsToChangeOrderQuantity";
 import { groupBeersByLabels } from "../../../groupBeersByLabels/groupBeersByLabels";
-import { createBtnToRemoveGroupOfBeers } from "../../../toManipulateDOM/handlersToManipulateDOM"
+import { createBtnToRemoveGroupOfBeersFromFavorite } from "../../createBtnToRemoveGroupOfBeers/createBtnToRemoveGroupOfBeersFromFavorite"
 import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
-import { addToFavoriteAndUpdateCartView } from "../createElementWithFavoriteCartContent/addToFavoriteAndUpdateCartViev";
-import { rmvFromFavoriteAndUpdateCartView } from "../createElementWithFavoriteCartContent/rmvFromFavoriteAndUpdateCartView"
+import { addToFavoriteAndUpdateCartView } from "./addToFavoriteAndUpdateCartViev";
+import { rmvFromFavoriteAndUpdateCartView } from "./rmvFromFavoriteAndUpdateCartView"
 import { createBeerNameWithDescription }  from "./createBeerNameWithDescription";
 import { createBtnAddToCart } from '../../../toManipulateDOM/handlersToManipulateDOM';
 
@@ -18,7 +18,7 @@ import { createBtnAddToCart } from '../../../toManipulateDOM/handlersToManipulat
             const beer = group[0];
             
                 const wrapperDiv = compose(   
-                        createBtnToRemoveGroupOfBeers("remove")("X")(beer),  
+                        createBtnToRemoveGroupOfBeersFromFavorite("remove")("X")(beer),  
                         createImgElem("")(beer.image_url),       
                         createBeerNameWithDescription(beer),
                         createText("price")(`${beer.abv} $`),

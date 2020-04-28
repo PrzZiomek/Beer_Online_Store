@@ -13,6 +13,7 @@
             text-align: center;
             text-transform: none;
             font-size: 2.4rem;
+            color:  rgb(114, 33, 33);
         }
 
 
@@ -29,10 +30,10 @@
 
         font-weight: bold;
         text-transform: capitalize;
-        color: brown;
+        color: rgb(114, 33, 33);
         width: 90%;
         margin: 2% auto;
-        border-bottom: 2px solid brown;
+        border-bottom: 2px solid  rgb(114, 33, 33);
 
 
         > :nth-child(1){
@@ -92,12 +93,12 @@
             }
 
             > :nth-child(5){
-                margin-left: 2%;
-                flex-basis: 5%;
+                margin-left: 2%
             }
 
             > :nth-child(6){
                 flex-basis: 5%;
+                text-align: center;
             }
 
             > :nth-last-child(2){
@@ -117,7 +118,7 @@
 
                 @include greenButton(1.2rem, 1%);
                 margin: 0 1%;
-                flex-basis: 7%;
+                flex-basis: 6%;
 
                 &:hover{
                     @include greenButtonHover();
