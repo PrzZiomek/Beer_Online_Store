@@ -1,0 +1,19 @@
+.cart-recapCosts{
+
+    margin: 3% 0 3% 0;
+    margin-left: 77%;
+
+    > p{
+        text-transform: uppercase;
+        color: brown;
+        display: inline-block;
+        font-size: 1.4rem;
+    }
+
+    > .sum{
+        font-weight: bold;
+        color: black;
+        margin-left: 7%;
+        font-size: 1.3rem;
+    }
+} 

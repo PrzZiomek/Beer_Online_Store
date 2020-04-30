@@ -1,0 +1,43 @@
+.cart-header{
+
+    width: 90%;
+    margin: 0 auto;        
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(114, 33, 33);
+
+    > .title{    
+        margin: 0 2% 0 7%;
+        display: inline-block;
+        position: relative;
+
+        &::before{
+            position: absolute;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 8%;
+            left: -25%;
+            display: block;
+            content: "1";
+            height: 145%;
+            width: 20%;
+            background-color: green;
+            margin-right: 1%;
+        }
+    }
+
+    > .amount{
+        font-size: 2rem;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    > p{
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-left: 7%;
+        text-transform: none;
+    }
+}

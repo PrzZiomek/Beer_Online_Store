@@ -1,0 +1,21 @@
+.cartContent-details{
+    font-weight: bold;
+    text-transform: capitalize;
+    background-color: rgb(2, 80, 2);
+    color:  rgb(241, 175, 89);
+    text-align: center;
+
+    > p{
+        margin: 1%;
+        width: 15%;
+        display: inline-block;
+    }
+
+    > :nth-child(1){
+        width: 40%;
+    }
+
+    > :nth-child(3){
+        width: 20%;
+    }
+}

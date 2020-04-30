@@ -1,4 +1,4 @@
-@import "abstract";
+//@import "abstract";
 
 
 
@@ -14,7 +14,7 @@
     font-weight: bold;
     margin: 2% 0 3% 0;
     padding-bottom: 1%;
-    background-color: rgba(50, 205, 50, 0.9);
+    background-color: $universalBackgroundColor;
     border: 2px solid green;
     border-radius: 5%;
 

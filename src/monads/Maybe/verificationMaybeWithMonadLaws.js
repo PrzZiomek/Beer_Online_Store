@@ -1,5 +1,6 @@
 import { Maybe } from './Maybe';
 
+const log = console.log;
 
 /* Verification monad Maybe by using Monad Laws, according to mathematical Theory of Category.  */
 
@@ -13,16 +14,16 @@ they are composed, because always give the same result.
 
 
 
-console.log( (Maybe.of(2) + Maybe.of(3)) + 1 === 1 + Maybe.of(5) );   // true
-console.log(  Maybe.of(2) + (Maybe.of(3) + 1) === 1 + Maybe.of(5) );   // true
-console.log( (Maybe.of(2) + Maybe.of(3)) + 1 );  // 6
-console.log( (Maybe.of(2) + 1) + Maybe.of(3)  ); // 6 
+log( (Maybe.of(2) + Maybe.of(3)) + 1 === 1 + Maybe.of(5) );   // true
+log(  Maybe.of(2) + (Maybe.of(3) + 1) === 1 + Maybe.of(5) );   // true
+log( (Maybe.of(2) + Maybe.of(3)) + 1 );  // 6
+log( (Maybe.of(2) + 1) + Maybe.of(3)  ); // 6 
 
 const add2 = (n) => Maybe.of(n + 2);
 const multiply2 = (n) => Maybe.of(n * 2);
 
-console.log( Maybe.of(10).chain(add2).chain(multiply2).valueOf() );   // 24
-console.log( Maybe.of(10).chain(x => add2(x).chain(multiply2)).valueOf() );   // 24
+log( Maybe.of(10).chain(add2).chain(multiply2).valueOf() );   // 24
+log( Maybe.of(10).chain(x => add2(x).chain(multiply2)).valueOf() );   // 24
 
 
 /*
@@ -39,7 +40,7 @@ Monad with a value that chain function, return the same result as this function 
 takes the same type of value and returns the same type of monad.
 */
 
-console.log(Maybe.of(100).chain(multiply2).valueOf() === multiply2(100).valueOf());  // true
+log(Maybe.of(100).chain(multiply2).valueOf() === multiply2(100).valueOf());  // true
 
 /*
  Right identity
@@ -48,5 +49,5 @@ If monad with value chain with the same type of monad, that after flatten this v
 will be unchanged.
 */
 
-console.log(Maybe.of(100).chain(Maybe.of).valueOf() === Maybe.of(100).valueOf());    // true
+log(Maybe.of(100).chain(Maybe.of).valueOf() === Maybe.of(100).valueOf());    // true
 

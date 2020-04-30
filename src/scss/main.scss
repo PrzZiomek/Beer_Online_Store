@@ -1,10 +1,38 @@
-@import "home";
+@import "Abstracts/variables";
+@import "Abstracts/mixins";
+
+
+@import "Home/generalRules";
+@import "wrap";
+@import "Home/header";
+@import "Home/nav";
+@import "Home/menuAndArea";
+@import "Home/homeMain";
+
+@import "BeerDescription/beerDescription";
+@import "BeerDescription/params";
+@import "BeerDescription/partOfDescription";
+
 @import "loader";
-@import "beerLabel";
-@import "beerDescription";
-@import "cartPrevievModal";
+@import "BeerLabel/beerLabel";
+
+@import "CartPrevievModal/underlayModal";
+@import "CartPrevievModal/cartPreviev";
+@import "CartPrevievModal/actualBeer";
+@import "CartPrevievModal/cartContent/cartContent";
+
 @import "errorStatement";
 @import "favoriteCart";
-@import "shoppingCart";
+
+@import "ShoppingCart/generalRules";
+@import "ShoppingCart/progressBar";
+@import "ShoppingCart/header";
+@import "ShoppingCart/listWithOrders";
+@import "ShoppingCart/columnTitles";
+@import "ShoppingCart/recapCosts";
+@import "ShoppingCart/buttons1";
+@import "ShoppingCart/buttons2";
+
 @import "registrationForm";
+
 @import url('../../node_modules/font-awesome/css/font-awesome.min.css');

@@ -1,0 +1,41 @@
+.cart-progressBar{
+
+    width: 60%;
+    height: 2vh;
+    background-color: rgb(182, 201, 143);
+    margin: 5% auto;
+    position: relative;
+
+    > div{
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        position: absolute;
+        background-color: rgb(182, 201, 143);
+        font-size: 1.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+        &:nth-child(1){
+            left: 0;
+            background-color: green;
+            color: rgb(182, 201, 143);
+            border: 6px solid rgb(182, 201, 143);
+        }
+
+        &:nth-child(2){
+            left: 33%;
+        }
+
+        &:nth-child(3){
+            left: 66%;
+        }
+
+        &:nth-child(4){
+            left: 100%;
+        }
+    }       
+}

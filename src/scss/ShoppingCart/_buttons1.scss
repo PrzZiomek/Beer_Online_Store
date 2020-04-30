@@ -1,0 +1,27 @@
+.cart-buttons1{
+
+    margin:auto;
+    text-align: center;
+
+    > p{
+        font-size: 1.5rem;
+        text-transform: none;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    > a{
+        @include greenButton(1.2rem, 0.5%);
+        padding: 1% 1.25%;
+        box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+        display: inline-block;
+
+        &:hover{
+            @include greenButtonHover();
+            background-color: brown;
+        }
+
+       
+    }
+}

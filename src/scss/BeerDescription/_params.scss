@@ -1,0 +1,24 @@
+.description-params{
+
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    justify-content: center;
+    text-align: left;
+    right: 28%;
+    bottom: 13%;
+    width: 45%;
+    height: 25%;
+    font-size: 1.2rem;
+
+    & > p{
+        flex-basis: 40%;
+        margin-top: 1%;
+    }
+
+    & > span{
+        flex-basis: 40%;
+        margin-top: 1%;
+        text-transform: lowercase;
+    }
+}

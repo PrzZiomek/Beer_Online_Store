@@ -1,9 +1,9 @@
- @mixin  greenButton($size:1rem, $padding:0) {
+@mixin  greenButton($size:1rem, $padding:0) {
 
     text-transform: uppercase;
     font-weight: normal;
     font-size: $size;
-    color: rgb(0, 71, 0);
+    color: $titleFontColor;
     letter-spacing: 2px;
     border: 1px solid green;
     background-color: limegreen;
@@ -35,7 +35,8 @@
     letter-spacing: 1px;
     font-size: 1.3rem;
     cursor: pointer;
-    color: darkgreen;
+    color: $titleFontColor;
+    font-weight: bold;
 
     @at-root{
         #{$element}:after{
@@ -43,10 +44,10 @@
             display: block;
             position: absolute;
             width: 30%;
-            height: 2px;
+            height: 3px;
             right: 11%;
             bottom: -10%;
-            background-color: darkgreen;
+            background-color: $titleFontColor;
         }
 
         #{$element}:hover:after{
@@ -70,13 +71,12 @@
 
     width: 95%;
     height: 70vh;
-    background-color: rgba(50, 205, 50, 0.9);
+    background-color: $universalBackgroundColor;
     padding-bottom: 10%;
-    box-shadow: 3px 3px 5px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: $universalBorderShadow;
     border-radius: 5%;
 
 }
-
 
 
 @mixin orderCounter($top:0, $right:0) {

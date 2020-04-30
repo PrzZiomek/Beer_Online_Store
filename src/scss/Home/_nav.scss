@@ -1,0 +1,59 @@
+nav{
+
+    &.menu{
+        grid-area: menu;
+        position: fixed;
+        left: 0;
+        top: 28vh;
+        font-size: 1.8rem;
+    } 
+
+
+    &.menu li{
+        list-style: none;
+        cursor: pointer;
+        text-align: center;   
+
+        &:nth-child(5){
+            font-size: 1.4rem;
+        }
+
+        &.cart{
+            position: relative;
+        }
+
+        &.cart::after{
+           @include orderCounter(0, -10%)
+        }
+
+        &.favorite{
+            position: relative;
+        }
+
+        &.favorite::after{
+            @include orderCounter(0, -16%)
+        }
+    }
+
+    
+    &.menu li a{
+        text-decoration: none;
+        background-color: darkorange;
+        text-align: center;
+        color: black;
+        display: block;
+        width: 100%;
+        height: 15%;
+        border-radius: 13%;
+        padding:5%;
+        margin: 12%;
+        box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    
+    &.menu li a:hover{
+        background-color: green;
+        color: lawngreen;
+        transition: 0.7s;
+    }
+}

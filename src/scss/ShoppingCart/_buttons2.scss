@@ -1,0 +1,21 @@
+.cart-buttons2{
+
+    width: 100%;
+    margin: 4% 0 2% 4%;
+
+    > a{
+        @include greenButton(1.2rem, 0.5%);
+        padding: 1%;
+        box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+
+        &:hover{
+            @include greenButtonHover();
+            background-color: brown;
+        }
+
+       &:nth-child(2){
+           margin-left: 45%;
+       }
+    }
+}

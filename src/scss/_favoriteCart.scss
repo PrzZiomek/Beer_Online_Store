@@ -1,9 +1,11 @@
+//@import "Abstracts/variables";
+
 .favorite-cart{
 
     width: 95%;
     min-height: 75vh;
-    background-color: rgba(50, 205, 50, 0.9);
-    box-shadow: 3px 3px 5px 8px rgba(0, 0, 0, 0.4);
+    background-color: $universalBackgroundColor;
+    box-shadow: $universalBorderShadow;
     border-radius: 5%;
 
 
@@ -13,27 +15,19 @@
             text-align: center;
             text-transform: none;
             font-size: 2.4rem;
-            color:  rgb(114, 33, 33);
+            color: $titleFontColor;
         }
 
-
-      /*  > p{
-            font-size: 1.5rem;
-            font-weight: normal;
-            margin-left: 7%;
-            text-transform: none;
-        }
-    */
    
 
     & > .favoriteCart-columnTitles{
 
         font-weight: bold;
         text-transform: capitalize;
-        color: rgb(114, 33, 33);
+        color:$titleFontColor;
         width: 90%;
         margin: 2% auto;
-        border-bottom: 2px solid  rgb(114, 33, 33);
+        border-bottom: 2px solid $titleFontColor;
 
 
         > :nth-child(1){
@@ -67,7 +61,8 @@
 
             display: flex;
             width: 90%;
-            min-height: 6vh;
+            height: 15vh;
+            overflow: hidden;
             color:brown;
             border: 1px solid rgb(2, 80, 2);
             align-items: center;
