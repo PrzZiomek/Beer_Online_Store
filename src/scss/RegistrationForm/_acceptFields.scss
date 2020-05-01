@@ -1,0 +1,35 @@
+.form-acceptFields{
+
+    flex-basis: 45%;
+    height: 60%;
+    margin: 10% auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-transform: none;
+
+     > input{
+        flex-basis: 10%;
+    }
+
+    > :nth-child(even){
+        flex-basis: 90%;
+        text-align: left;
+        height: 30%;
+    }
+
+    > .agreementOnRules{
+        display: inline;
+        
+        > p{
+            display: inline;
+        }
+    }
+
+    & a{
+        text-transform: capitalize;
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+    }
+}
+

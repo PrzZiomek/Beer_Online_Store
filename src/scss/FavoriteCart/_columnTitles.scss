@@ -1,0 +1,35 @@
+.favoriteCart-columnTitles{
+
+    font-weight: bold;
+    text-transform: capitalize;
+    color:$titleFontColor;
+    width: 90%;
+    margin: 2% auto;
+    border-bottom: 2px solid $titleFontColor;
+
+
+    > :nth-child(1){
+        margin-left: 1%;
+    }
+
+    > :nth-child(2){
+        margin-left: 20%;
+    }
+
+    > :nth-child(3){
+        margin-left: 14%;
+    }
+
+    > :nth-child(4){
+        margin-left: 10%;
+    }
+    > :nth-child(5){
+        margin-left: 5%;
+    }
+
+    > p{
+        margin: 1%;
+        display: inline-block;
+        font-size: 1.2rem;
+    }
+}

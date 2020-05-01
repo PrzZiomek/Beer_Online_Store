@@ -4,6 +4,7 @@
 
     & > a{
         @include yellowLink(&);
+        font-size: 1.2rem;
     }
 
 

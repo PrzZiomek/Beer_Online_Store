@@ -20,9 +20,14 @@
 @import "CartPrevievModal/cartPreviev";
 @import "CartPrevievModal/actualBeer";
 @import "CartPrevievModal/cartContent/cartContent";
+@import "CartPrevievModal/cartContent/details";
+@import "CartPrevievModal/cartContent/listWithOrders";
+@import "CartPrevievModal/cartContent/recapCosts";
 
 @import "errorStatement";
-@import "favoriteCart";
+@import "FavoriteCart/favoriteCart";
+@import "FavoriteCart/columnTitles";
+@import "FavoriteCart/content";
 
 @import "ShoppingCart/generalRules";
 @import "ShoppingCart/progressBar";
@@ -33,6 +38,9 @@
 @import "ShoppingCart/buttons1";
 @import "ShoppingCart/buttons2";
 
-@import "registrationForm";
+@import "RegistrationForm/generalRules";
+@import "RegistrationForm/header";
+@import "RegistrationForm/textFields";
+@import "RegistrationForm/acceptFields";
 
 @import url('../../node_modules/font-awesome/css/font-awesome.min.css');
