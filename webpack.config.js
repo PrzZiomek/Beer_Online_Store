@@ -1,4 +1,5 @@
 const path = require("path");
+const MediaQueryPlugin  = require("media-query-plugin");
 
 
 module.exports = {
@@ -17,7 +18,12 @@ module.exports = {
 
             {
                 test: /\.scss$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    MediaQueryPlugin.loader,
+                    "sass-loader"
+                    ]
             },
 
             {

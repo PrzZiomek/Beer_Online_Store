@@ -18,6 +18,11 @@
         right: 0;
         position: fixed;
         z-index: -1;   
+
+        @media screen and (max-width: 1920) and (max-height:1080) {
+          background-repeat: no-repeat;
+          background-size: cover;
+      }
       }
          
 }

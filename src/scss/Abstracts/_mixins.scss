@@ -48,6 +48,10 @@
             right: 11%;
             bottom: -10%;
             background-color: $titleFontColor;
+
+            @media screen and (max-width: 1920) and (max-height:1080) {
+                right: 0;
+            }
         }
 
         #{$element}:hover:after{
@@ -89,4 +93,8 @@
     right: $right;
     font-size: 1.8rem;
     content: attr(beerAmount);
+
+    @media screen and (max-width: 1920) and (max-height:1080) {
+        right:  $right + 5%;
+    }
 }
