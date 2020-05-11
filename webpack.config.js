@@ -1,5 +1,7 @@
 const path = require("path");
 const MediaQueryPlugin  = require("media-query-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 
 module.exports = {
@@ -8,22 +10,37 @@ module.exports = {
     
     entry: "./src/index.js",
 
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].scss",
+            chunkFilename: "[id].scss"
+        })
+    ],
+
     output: {
         filename: "main.js",
         path: path.resolve(__dirname, "dist")
     },
 
     module: {
-        rules:[
+        rules: [
 
             {
                 test: /\.scss$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    MediaQueryPlugin.loader,
-                    "sass-loader"
-                    ]
+                use: [          
+                    /*   {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            esModule: true,
+                            hmr: process.env.NODE_ENV === "development",   // if hmr not work reloadAll: true
+                            publicPath: "../",     // ???????
+                        }
+                       }, */
+                       "style-loader",
+                       "css-loader",                      
+                     //  MediaQueryPlugin.loader,
+                       "sass-loader"
+                    ],
             },
 
             {
@@ -62,3 +79,60 @@ module.exports = {
     }
 
 }
+
+
+
+
+
+/*
+
+        {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/public/path/to/',
+            },
+        },
+
+
+
+        {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: (resourcePath, context) => {
+                return path.relative(path.dirname(resourcePath), context) + '/';
+              },
+            },
+        },
+
+
+
+
+        {
+                test: /\.scss$/,
+                use: [          
+                        "style-loader",   // replaced MiniCssExtractPlugin.loader,  
+                        {
+                        loader: "css-loader",
+                        options: {
+                            importLoaders: 1,
+                            modules: true,
+                        }
+                        },
+                        
+                        MediaQueryPlugin.loader,
+                        "sass-loader"
+                    ],
+                    include: /\.module\.scss$/
+            },
+
+            {
+                test: /\.scss$/,
+                use: [          
+                        "style-loader",                        
+                        "css-loader",                     
+                        MediaQueryPlugin.loader,
+                        "sass-loader"
+                    ],
+                    exclude: /\.module\.scss$/
+            },
+*/

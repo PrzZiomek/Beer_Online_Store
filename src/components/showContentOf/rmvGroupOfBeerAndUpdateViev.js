@@ -5,6 +5,20 @@ import { displayCounterOfBeersInCart } from '../AddToCartAndOpenPreviev/displayC
 import { displayCounterOfBeersInFavorite } from '../FavoriteCart/displayCounterOfBeersInFavorite';
 
 
+/*
+const rmvFromShopOrFavAndUpdateView = (type) => type === "SHOPPING" ?  
+[dispatchRmvWholeTypeFromCart, displayCounterOfBeersInCart, ShoppingCart] : 
+ type === "FAVORITE" ?
+[dispatchRmvWholeTypeFromFavoriteCart, displayCounterOfBeersInFavorite, FavoriteCart] :
+ "invalid type";
+
+
+const removeFromCartAndUpdateView = (fnAsArray) => (beer) => {
+    const [dispatch, displayCount, Cart ] = fnAsArray;
+
+}
+*/
+
 export const rmvGroupFromShoppigCartAndUpdateViev = (beer) => {
  
     dispatchRmvWholeTypeFromCart(beer);
@@ -21,3 +35,4 @@ export const rmvGroupFromFavoriteCartAndUpdateViev = (beer) => {
     displayCounterOfBeersInFavorite();
     FavoriteCart();
 }
+

@@ -1,5 +1,5 @@
 import { matchInputWithFn } from "./matchInputs";
-import { toEither } from "./toEither";
+import { toEitherForValidateForm } from "./toEitherToValidateForm";
 
 
 
@@ -10,6 +10,6 @@ export const validation = (form) => {
 
     formInputs.map(input => {
         const checkFn = matchInputWithFn(input)[input.type];
-        toEither(checkFn)
+        toEitherForValidateForm(checkFn)
     })  
 }

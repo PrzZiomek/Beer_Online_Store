@@ -1,4 +1,4 @@
-import { createStore } from "./createStore";
+import { createStore } from "./createStore/createStore";
 import { mainReducer } from "./reducers/mainReducer";
 import { applyMiddleware } from "./applyMiddleware";
 import { thunk, loggingMiddleware } from "./middlewares";
