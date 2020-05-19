@@ -1,6 +1,6 @@
 const path = require("path");
-const MediaQueryPlugin  = require("media-query-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//const MediaQueryPlugin  = require("media-query-plugin");
+//const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 
@@ -9,13 +9,6 @@ module.exports = {
     mode: "development",
     
     entry: "./src/index.js",
-
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "[name].scss",
-            chunkFilename: "[id].scss"
-        })
-    ],
 
     output: {
         filename: "main.js",
@@ -28,17 +21,8 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [          
-                    /*   {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            esModule: true,
-                            hmr: process.env.NODE_ENV === "development",   // if hmr not work reloadAll: true
-                            publicPath: "../",     // ???????
-                        }
-                       }, */
                        "style-loader",
                        "css-loader",                      
-                     //  MediaQueryPlugin.loader,
                        "sass-loader"
                     ],
             },
@@ -85,6 +69,14 @@ module.exports = {
 
 
 /*
+
+
+ plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].scss",
+            chunkFilename: "[id].scss"
+        })
+    ],
 
         {
             loader: MiniCssExtractPlugin.loader,

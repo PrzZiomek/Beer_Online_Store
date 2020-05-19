@@ -13,3 +13,6 @@ export const removePos = (arr) => (beer) => {
                 }
                 }
             }
+
+
+export const removeSpecifyBeer = (beers) => (givenName) =>  beers.filter((x) => x.name !==  givenName )

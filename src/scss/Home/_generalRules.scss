@@ -10,7 +10,7 @@ html{
 }
 
 
-@media screen and (max-width: 1920) and (max-height:1080) {
+@media screen and (orientation: landscape) and (max-height:1080) {
 
     html{
         font-size: 20px;

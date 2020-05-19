@@ -5,6 +5,10 @@
     & > a{
         @include yellowLink(&);
         font-size: 1.2rem;
+
+        &::after{
+            right: 18%;
+        }
     }
 
 

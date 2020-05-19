@@ -20,11 +20,19 @@
             margin: 1% 8% 1% 4%;
         }
 
-        > :nth-child(3){
+        .beerTitle{
+            color: white;
+            text-decoration: none;
             flex-basis: 35%;
             overflow: hidden;
-            margin-left: 6%;
-            margin-right: 5%;
+            margin-left: 4%;
+            margin-right: 3%;
+
+            &:hover{
+                color: darkred;
+                text-decoration-line: underline;
+                font-size: 1.5rem;
+            }
         }
 
         > :nth-child(4){

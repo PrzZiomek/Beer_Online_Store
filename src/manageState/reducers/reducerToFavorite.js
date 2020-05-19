@@ -1,5 +1,9 @@
-import { removePos } from './alghoritmsToUseInReducers';
-import { ADD_TO_FAVORITE, RMV_FROM_FAVORITE, CLEAR_FAVORITE, RMV_TYPE_FROM_FAVORITE } from "../actions";
+import { removePos, removeSpecifyBeer } from './alghoritmsToUseInReducers';
+import { ADD_TO_FAVORITE,
+         RMV_FROM_FAVORITE,
+         CLEAR_FAVORITE,
+         RMV_TYPE_FROM_FAVORITE } from "../actions";
+
 
 
 const initState = [];
@@ -13,7 +17,7 @@ export const reducerToFavorite = (state = initState, action) => {
         case RMV_FROM_FAVORITE: 
             return removePos(state)(action.value);
         case RMV_TYPE_FROM_FAVORITE:
-            return state.filter((x) => x.name !==  action.value.name )
+            return removeSpecifyBeer(state)(action.value.name)
         case CLEAR_FAVORITE:
              return [];
         default:

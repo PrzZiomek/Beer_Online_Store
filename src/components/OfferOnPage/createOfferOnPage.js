@@ -16,7 +16,7 @@ export const createOfferOnPage = (beers) => {
                     createImgElem("")(beer.image_url),
                     createText("price")(`${beer.abv} $`),
                     createBtnAddToCartAndOpenPreviev("cartBtn")("koszyk")(beer),
-                    createLinkRedirectToDescription("")(beer),
+                    createLinkRedirectToDescription("")("opis")(beer),
             )(createDiv("beer-label"))
                 
        area.appendChild(wrapperDiv);

@@ -5,6 +5,7 @@ import { groupBeersByLabels } from "../../../groupBeersByLabels/groupBeersByLabe
 import { createBtnToRemoveGroupOfBeersFromCart } from '../../createBtnToRemoveGroupOfBeers/createBtnToRemoveGroupOfBeersFromCart';
 import { rmvFromCartAndUpdateCartView } from "./rmvFromCartAndUpdateCartView";
 import { addToCartAndUpdateCartView } from "./addToCartAndUpdateCartViev";
+import { createLinkRedirectToDescription } from '../../../OfferOnPage/createLinkRedirectToDescription';
 import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/sumOfGroup";
 
 
@@ -12,16 +13,17 @@ import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/su
  export const createElementWithShoppingCartContent = (cartContent) => (element) => {
        
        groupBeersByLabels(cartContent).map(group => {
+            const beer = group[0];
 
                 const wrapperDiv = compose(   
-                        createBtnToRemoveGroupOfBeersFromCart("remove")("X")(group[0]),  
-                        createImgElem("")(group[0].image_url),       
-                        createSpanElem("beerTitle")(group[0].name),
-                        createText("price")(`${group[0].abv} $`),
-                        createButtonToIncreaseOrder("")(addToCartAndUpdateCartView)(group[0]),
+                        createBtnToRemoveGroupOfBeersFromCart("remove")("X")(beer),  
+                        createImgElem("")(beer.image_url),       
+                        createLinkRedirectToDescription("beerTitle")(beer.name)(beer),
+                        createText("price")(`${beer.abv} $`),
+                        createButtonToIncreaseOrder("")(addToCartAndUpdateCartView)(beer),
                         createSpanElem("amount")(group.length),
-                        createButtonToDecreaseOrder("")(rmvFromCartAndUpdateCartView)(group[0]),
-                        createSpanElem("sum")(`${sumOfGroup(group[0].abv, group.length)} $`)
+                        createButtonToDecreaseOrder("")(rmvFromCartAndUpdateCartView)(beer),
+                        createSpanElem("sum")(`${sumOfGroup(beer.abv, group.length)} $`)
                   )(createDiv("shoppingCart-content"))
 
               element.appendChild(wrapperDiv);

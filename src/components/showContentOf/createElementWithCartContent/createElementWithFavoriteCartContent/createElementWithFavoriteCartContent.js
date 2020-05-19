@@ -14,7 +14,6 @@ import { createBtnAddToCart } from '../../../toManipulateDOM/handlersToManipulat
  export const createElementWithFavoriteCartContent = (cartContent) => (element) => {
        
        groupBeersByLabels(cartContent).map(group => {  
-
             const beer = group[0];
             
                 const wrapperDiv = compose(   

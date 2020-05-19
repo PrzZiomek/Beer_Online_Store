@@ -1,13 +1,13 @@
 import { pipeline as compose } from '../../../../pipeline';
-import { createDiv, createSpanElem, createText, createImgElem } from "../../../toManipulateDOM/basisHandlersToManipulateDOM";
-import {  createButtonToIncreaseOrder, createButtonToDecreaseOrder } from "../../buttonsToChangeOrderQuantity";
+import { createDiv, createText } from "../../../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createLinkRedirectToDescription } from "../../../OfferOnPage/createLinkRedirectToDescription";
 
 
 
 export const createBeerNameWithDescription = (beer) => (element) => {
-      
+
     const wrapperDiv = compose(            
-             createSpanElem("beerTitle")(beer.name),
+             createLinkRedirectToDescription("beerTitle")(beer.name)(beer),
              createText("description")(beer.description)
       )(createDiv("nameWithDescr"))
 

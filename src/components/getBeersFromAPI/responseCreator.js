@@ -1,9 +1,27 @@
-import { doFetch } from "./doFetch";
+import { doFetch, coroutine } from "./doFetch";
 import { fetchSuccessAction, fetchFailAction } from "../../manageState/actionCreators";
 import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
 import { removeLoader } from './loader/removeLoader';
 
 
+
+export const createResponse = () => {
+
+   return (dispatch) => coroutine(function* (){
+
+      const beers = yield * doFetch() //.catch(err => dispatch(fetchFailAction(err)));;
+      console.log(beers);
+       
+      if(beers){ 
+         dispatch(fetchSuccessAction(beers));
+         removeLoader();
+         OfferOnPage();
+      }
+   })
+  
+}
+
+/*
 
  export const createResponse = () => {
 
@@ -18,3 +36,6 @@ import { removeLoader } from './loader/removeLoader';
          }
     }
  }
+
+
+ */

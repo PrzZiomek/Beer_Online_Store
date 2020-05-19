@@ -4,7 +4,7 @@ import { rmvGroupOfBeerAndUpdateViev } from '../showContentOf/rmvGroupOfBeerAndU
 import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
 import { addToFavorite } from '../FavoriteCart/addToFavorite';
 import { pipeline as compose } from "../../pipeline";
-//import { clearContentOf } from "./basisHandlersToManipulateDOM"
+
 
 
 
