@@ -1,6 +1,6 @@
 import { addToCart } from "../showContentOf/createElementWithCartContent/createElementWithFavoriteCartContent/addToCart";
 import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
-import { rmvGroupOfBeerAndUpdateViev } from '../showContentOf/rmvGroupOfBeerAndUpdateViev';
+//import { rmvGroupOfBeerAndUpdateViev } from '../showContentOf/rmvGroupOfBeerAndUpdateViev';
 import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
 import { addToFavorite } from '../FavoriteCart/addToFavorite';
 import { pipeline as compose } from "../../pipeline";
