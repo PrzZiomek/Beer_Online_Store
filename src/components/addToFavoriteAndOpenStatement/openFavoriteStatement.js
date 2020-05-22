@@ -1,4 +1,9 @@
-import { previevOfActualBeer } from '../AddToCartAndOpenPreviev/previevOfCartContent/actualBeerAndCartPreviev/componentsOfCartPreviev/previevActualBeer';
+import { previevOfActualFavorBeer } from './previevOfActualFavorBeer';
+import { pipeline as compose } from '../../pipeline';
+//import { store } from "../../../../manageState/store";
+import { createDiv, createTitle } from "../toManipulateDOM/basisHandlersToManipulateDOM";
+
+
 
 
 export const openFavoriteStatement = (beer) => {
@@ -10,7 +15,7 @@ export const openFavoriteStatement = (beer) => {
     
     const cartPreviev = compose(
             createTitle("statement")("Dodałeś do ulubionych!"),
-            previevOfActualBeer(beer),
+            previevOfActualFavorBeer(beer),
         )(createDiv("actualFavoritePreviev")); 
 
     favorStatementModal.appendChild(cartPreviev);

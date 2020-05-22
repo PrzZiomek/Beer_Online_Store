@@ -1,5 +1,5 @@
 import { pipeline as compose } from '../../../../../pipeline';
-import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo} from "../../../../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createDiv, createImgElem, createSpanElem, createText, createTitle, createLinkTo } from "../../../../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createButtonToCloseModal } from "../../../createButtonToCloseModal";
 
 

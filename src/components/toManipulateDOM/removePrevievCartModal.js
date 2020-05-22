@@ -1,5 +1,5 @@
 
-export const removePrevievCartModal = () =>{ 
+export const removePrevievCartModal = () => { 
 
     const modal = document.querySelector(".previevModal");
     const page = document.querySelector("body");
