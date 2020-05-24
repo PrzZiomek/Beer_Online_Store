@@ -11,7 +11,7 @@ export const previevOfActualFavorBeer = (beer) => (element) => {
             createTitle("")(beer.name),
             createSpanElem("price")(`${beer.abv} $`),         
             createText("description")(beer.description),
-            createButtonToCloseFavorModal("")("kontynuuj zakupy"),
+            createButtonToCloseFavorModal("close")("ok"),
             createLinkTo("")("zobacz wszystkie")("#/ulubione"),
         )(createDiv("previevActualFavorBeer"));
 

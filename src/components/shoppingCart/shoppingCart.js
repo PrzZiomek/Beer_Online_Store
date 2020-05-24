@@ -1,5 +1,5 @@
 import { store } from "../../manageState/store";
-import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
+import { removePrevievCartModal } from "../toManipulateDOM/removeModal/removePrevievCartModal";
 import { clearContentOf } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createShoppingCart } from "./createShoppingCart";
 

@@ -13,7 +13,7 @@ export const routes = () => ({
                 "/opis" : () => BeerDescription(),
                 "/koszyk" : () => ShoppingCart(),
                 "/rejestracja": () => RegistrationForm(),
-                "/ulubione" : () => FavoriteCart()
+                "/ulubione" : () => FavoriteCart(),
             });
 
 

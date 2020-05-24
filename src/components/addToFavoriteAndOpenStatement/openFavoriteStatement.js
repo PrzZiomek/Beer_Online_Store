@@ -12,7 +12,7 @@ export const openFavoriteStatement = (beer) => {
     const favorStatementModal = createDiv("favoriteModal");
     //const cartContent = store.getState().reducerToCart;
     //const beer = store.getState().reducerToCurrentBeer;
-    
+    console.log("open!");
     const cartPreviev = compose(
             createTitle("statement")("Dodałeś do ulubionych!"),
             previevOfActualFavorBeer(beer),

@@ -6,6 +6,6 @@ import { openFavoriteStatement } from './openFavoriteStatement';
 export const addToFavoriteAndOpenStatement = (beer) => {
 
     dispatchAddToFavour(beer);
-    displayCounterOfBeersInFavorite()
-    openFavoriteStatement(beer)
+    displayCounterOfBeersInFavorite();
+    openFavoriteStatement(beer);
 }

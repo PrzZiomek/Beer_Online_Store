@@ -1,5 +1,5 @@
 import { setClss, setOnclickFn, setTextContent } from "../toManipulateDOM/handlersToCreateElements";
-import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
+import { removePrevievCartModal } from "../toManipulateDOM/removeModal/removePrevievCartModal";
 import { pipeline as compose } from "../../pipeline";
 import { displayCounterOfBeersInCart } from "./displayCounterOfBeersInCart";
 

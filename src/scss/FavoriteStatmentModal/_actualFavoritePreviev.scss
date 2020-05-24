@@ -25,6 +25,7 @@
         height: 45vh;
         width: 45vw;
         margin: 0 auto;
+        margin-bottom: 2%;
         border: 2px solid green;
         position: relative;
 
@@ -72,20 +73,23 @@
             }
         }
 
-        > button{
+        > .close{
             left: 28%;
-            width: 37%;
+            width: 20%;
         }
 
         > a{
-            background-color: green;
             color: rgb(139, 34, 34);
-            left: 75%;
-            width: 18%;
+            left: 55%;
+            width: 40%;
 
             &:hover{
                 background-color: brown
             }
+        }
+
+        > .close{
+            text-transform: uppercase;
         }
     }
 }

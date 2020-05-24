@@ -1,5 +1,5 @@
 import { store } from "../../manageState/store";
-import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
+import { removePrevievFavorModal } from '../toManipulateDOM/removeModal/removePrevievFavorModal';
 import { clearContentOf } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createFavoriteCart } from "./createFavoriteCart";
 
@@ -11,8 +11,7 @@ export const FavoriteCart = () => {
     const favoriteContent = store.getState().reducerToFavorite;
 
     clearContentOf(area);
-  //  removePrevievCartModal();
-
+    removePrevievFavorModal()
     createFavoriteCart(favoriteContent)
 }
 

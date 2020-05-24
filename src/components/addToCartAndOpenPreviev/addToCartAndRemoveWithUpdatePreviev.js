@@ -1,6 +1,6 @@
 import { actualBeerAndCartPreviev } from "../AddToCartAndOpenPreviev/previevOfCartContent/actualBeerAndCartPreviev/actualBeerAndCartPreviev";
 import { dispatchAddToCart, dispatchRemoveFromCart } from "../handlersToShopping/handlersToShopping";
-import { removePrevievCartModal } from "../toManipulateDOM/removePrevievCartModal";
+import { removePrevievCartModal } from "../toManipulateDOM/removeModal/removePrevievCartModal";
 
 
 

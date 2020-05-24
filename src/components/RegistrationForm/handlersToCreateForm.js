@@ -23,6 +23,7 @@ export const createTextInput = (cl) => (name) => (element) => {
  return element;
 }
 
+
 export const createPasswordInput = (cl) => (name) => (element) => {
 
     const passwordInput = compose(
@@ -34,6 +35,20 @@ export const createPasswordInput = (cl) => (name) => (element) => {
   element.appendChild(passwordInput);
  return element;
 }
+
+
+export const createCheckboxInput = (cl) => (name) => (element) => {
+
+    const passwordInput = compose(
+            setClss(cl),
+            setName(name),
+            setType("checkbox")
+    )(document.createElement("input"));
+
+  element.appendChild(passwordInput);
+return element;
+}
+
 
 export const createEmailInput = (cl) => (name) => (element) => {
 

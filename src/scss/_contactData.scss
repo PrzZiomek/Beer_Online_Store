@@ -1,0 +1,43 @@
+.contact{
+
+    position: relative;
+}
+
+
+.contactData{
+
+    display: none;
+    position: absolute;
+    padding: 3%;
+    right: -26.5vw;
+    top: 0;
+    height: 30vh;
+    width: 0;
+    font-size: 1.2rem;
+    text-transform: none;
+    background-color: rgb(243, 193, 127);
+    border: 4px solid darkgreen;
+
+    > span{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 2%;
+    }
+
+    > :nth-child(1){
+        margin-bottom: 5%;
+    }
+
+    > :nth-last-child(){
+        margin-bottom: 0;
+    }
+
+}
+
+
+.contact:hover > .contactData{
+    
+    display: block;
+    width: 25vw;   
+    transition: 0.8s;
+}
