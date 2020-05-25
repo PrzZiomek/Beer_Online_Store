@@ -3,8 +3,19 @@
     position: absolute;
     text-align: center;
     border-radius: 50%;
+    font-size: 1.2rem;
+    height: 8%;
+    width: 8%;
     right: 0;
     top: 0;
-    border: 1px solid green;
+    color: darkgreen;
+    transform: translate(50%,-50%);
+    border: 3px solid green;
     background-color: rgb(196, 151, 93);
+    padding: 1%;
+    cursor: pointer;
+
+    &:hover{
+        @include greenButtonHover();
+    }
 }

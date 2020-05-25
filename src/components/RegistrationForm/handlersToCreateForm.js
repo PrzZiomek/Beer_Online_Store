@@ -106,6 +106,20 @@ export const createStrongWithAbbrAtr = (abbrTitle) => (element) => {
   }
 
 
+  export const createLabel = (cl) => (to) => (textContent) => (element) => {
+
+      const label = compose(
+              setClss(cl),
+              setforAtr(to),
+              setTextContent(textContent),
+        )(document.createElement("label"));
+
+    element.appendChild(label);
+  return element;
+  
+}
+
+
   export const createBtn = (cl) =>  (textContent) => (element) => {
 
         const btn = compose(

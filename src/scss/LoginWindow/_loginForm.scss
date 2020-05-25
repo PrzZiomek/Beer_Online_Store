@@ -1,5 +1,46 @@
 .login-form{
+
     margin: 0 2%;
     border: 1px solid green;
     height: 50%;
-}
+    width: 96%;
+    padding: 2% 0;
+    
+    > label{
+        width: 20%;
+        margin: 0 3% 5% 18%;
+        font-size: 1.3rem;
+    }
+
+    :nth-child(3){
+        margin-right: 4%;
+    }
+
+    > input{
+        width: 40%;
+        height: 7%;
+        margin: 0 20% 5% 0;
+    }
+
+    > input[type = checkbox]{
+        width: 20%;
+        margin-top: 5%;
+    }
+
+    > label:nth-last-of-type(){
+        width: 40%;
+        margin: 5% 10% 5% 2%;
+        font-size: 1rem;
+    }
+
+    > button{
+        width: 30%;
+        @include greenButton(1.2rem, 0.8%);
+        margin: 5% auto;
+
+        &:hover{
+            @include greenButtonHover();
+        }
+    }
+
+} 

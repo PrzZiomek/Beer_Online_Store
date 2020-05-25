@@ -14,9 +14,11 @@ export const createLoginWindow = () =>
                     ),
                     createLoginForm,
                     createWrapperDiv("loginWindow-questions")(
-                    createText("")("Nie posiadasz jeszcze konta?"),
-                    createLinkTo("")("zarejestruj się")("#/rejestracja"),
-                    createLinkTo("")("nie pamiętasz hasła?")("#/przypomnij-haslo"), 
+                        createWrapperDiv("")(
+                            createText("")("Nie posiadasz jeszcze konta? "),
+                            createLinkTo("")("zarejestruj się")("#/rejestracja"),
+                        ),             
+                        createLinkTo("")("nie pamiętasz hasła?")("#/przypomnij-haslo"), 
                     ),
                 )(createDiv("loginWindow"));
             
