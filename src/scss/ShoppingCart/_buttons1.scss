@@ -10,7 +10,8 @@
         display: inline-block;
     }
 
-    > a{
+    > a,
+    > button{
         @include greenButton(1.2rem, 0.5%);
         padding: 1% 1.25%;
         box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);

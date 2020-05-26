@@ -9,6 +9,11 @@ export const setforAtr = (to) => (element) => {
   return element;
 }
 
+export const setAlt = (alt) => (element) => {
+  element.alt = alt;
+return element;
+}
+
 export const setName = (name) => (element) => {
     element.name = name;
   return element;

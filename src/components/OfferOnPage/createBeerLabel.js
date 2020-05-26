@@ -7,7 +7,7 @@ import {  createLinkRedirectToDescription } from "./createLinkRedirectToDescript
 
 export const createBeerLabel = (beer) => compose(            
                                             createSpanElem("beerTitle")(beer.name),
-                                            createImgElem("")(beer.image_url),
+                                            createImgElem("")("piwo")(beer.image_url),
                                             createText("price")(`${beer.abv} $`),
                                             createBtnAddToCartAndOpenPreviev("cartBtn")("koszyk")(beer),
                                             createLinkRedirectToDescription("")("opis")(beer),

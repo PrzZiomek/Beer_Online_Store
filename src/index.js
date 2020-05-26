@@ -1,7 +1,7 @@
 import "./components/getBeersFromAPI/loadPage";
 import "./scss/main.scss";
 import "./components/contact";
-import "./components/LoginWindow/openLoginWindow";
+import "./components/LoginWindow/LoginWindow";
 
 
 

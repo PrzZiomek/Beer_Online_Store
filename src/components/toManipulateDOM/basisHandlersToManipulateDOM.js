@@ -1,4 +1,4 @@
-import { setClss, setPath, setSrc, setTextContent } from "./handlersToCreateElements";
+import { setClss, setPath, setSrc, setTextContent, setAlt } from "./handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 
 
@@ -26,10 +26,10 @@ export const createDiv = (cl) => {
 export const createSpanElem = (cl) => (txtContent) => (element) =>{ 
 
     const span = compose(
-            setClss(cl),
-            setTextContent(txtContent)
-      )(document.createElement("span"));
-        
+                    setClss(cl),
+                    setTextContent(txtContent)
+              )(document.createElement("span"));
+          
       element.appendChild(span);
     return element
   }
@@ -70,11 +70,12 @@ export const createTitle = (cl) => (txtContent) => (element) =>{
  } 
 
 
-export const createImgElem = (cl) => (src) => (element) => {
+export const createImgElem = (cl) => (alt) => (src) => (element) => {
 
     const img = compose(
             setClss(cl),
             setSrc(src),
+            setAlt(alt),
       )(document.createElement("img"));
 
     element.appendChild(img);

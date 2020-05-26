@@ -7,7 +7,7 @@ import { createButtonToCloseLoginWindow } from './createBtnToCloseLoginWindow';
 
 export const createLoginWindow = () => 
                 compose(    
-                    createButtonToCloseLoginWindow("loginWindow-close")("X"),       
+                    createButtonToCloseLoginWindow("loginWindow-close")("x"),       
                     createWrapperDiv("loginWindow-header")(
                         createTitle("")("beers"),
                         createText("")("zaloguj się"),

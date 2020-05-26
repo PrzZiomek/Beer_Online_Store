@@ -9,9 +9,10 @@ import sumOfGroup from "../../../AddToCartAndOpenPreviev/previevOfCartContent/su
 
 
 
-export const createPrevievOfBeerInCart = (group) => compose(   
+export const createPrevievOfBeerInCart = (group) => 
+                compose(   
                     createBtnToRemoveGroupOfBeersFromCart("remove")("X")(group[0]),  
-                    createImgElem("")(group[0].image_url),       
+                    createImgElem("")("piwo")(group[0].image_url),       
                     createLinkRedirectToDescription("beerTitle")(group[0].name)(group[0]),
                     createText("price")(`${group[0].abv} $`),
                     createButtonToIncreaseOrder("")(addToCartAndUpdateCartView)(group[0]),

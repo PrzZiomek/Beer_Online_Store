@@ -7,7 +7,7 @@ export const OfferOnPage = () => {
 
     const area = document.querySelector("main");
     const beers = store.getState().reducerToResponse.items;
-    
+    console.log("offer");
     clearContentOf(area);
     createOfferOnPage(beers);
   };

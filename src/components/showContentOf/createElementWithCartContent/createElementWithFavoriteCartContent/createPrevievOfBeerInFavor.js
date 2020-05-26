@@ -11,9 +11,10 @@ import { createBtnAddToCart } from '../../../toManipulateDOM/handlersToManipulat
 
 
 
-export const createPrevievOfBeerInFavor = (group) => compose(   
+export const createPrevievOfBeerInFavor = (group) => 
+            compose(   
                 createBtnToRemoveGroupOfBeersFromFavorite("remove")("X")(group[0]),  
-                createImgElem("")(group[0].image_url),       
+                createImgElem("")("piwo")(group[0].image_url),       
                 createBeerNameWithDescription(group[0]),
                 createText("price")(`${group[0].abv} $`),
                 createButtonToIncreaseOrder("")(addToFavoriteAndUpdateCartView)(group[0]),

@@ -13,6 +13,7 @@ import { cartListWithOrders } from "./componentsOfShoppingCart/cartListWithOrder
 export const createShoppingCart = (cartContent) => {
 
     const area = document.querySelector("main");
+    console.log("createshopingCart");
 
     const mainWrapper = compose(
             cartProgressBar,

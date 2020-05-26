@@ -1,17 +1,9 @@
 import { createLoginWindow } from './createLoginWindow';
 
 
+export const openLoginWindow = () => {
 
-const openLoginWindow = () => {
-
-    const liElement = document.querySelector("li.account");
-    const area = document.querySelector("main");
-
-    liElement.addEventListener("click", (e) => {
-        e.preventDefault();
-        area.appendChild(createLoginWindow());
-    })
-};
-
-
-openLoginWindow();
+    const body = document.querySelector("body");
+    body.appendChild(createLoginWindow());
+}
+  
