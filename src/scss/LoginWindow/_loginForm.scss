@@ -23,13 +23,14 @@
     }
 
     > .check{
-        width: 20%;
-        margin: 5% 3% 5% 0;
+        width: unset;
+        height: unset;
+        margin: 2% 1% 2% 30%;
     }
 
     > label:nth-last-of-type(1){
         width: 40%;
-        margin: 5% 10% 5% 2%;
+        margin: 5% 10% 5% 0;
         font-size: 0.8rem;
     }
 
@@ -37,7 +38,7 @@
         @include greenButton(1.2rem, 0.8%);
         width: 30%;
         display: block;
-        margin: 2% auto;
+        margin: 6% auto 0 auto;
 
         &:hover{
             @include greenButtonHover();
