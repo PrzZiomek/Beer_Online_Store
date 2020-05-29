@@ -15,7 +15,7 @@ export const createRegistrationForm = () => {
             formHeader,
             formTextFields,
             formAcceptFields,
-            createBtn("")('dokończ rejestrację')             
+            createBtn("")('dokończ rejestrację'),         
         )(createForm("registration-form"))
             
     area.appendChild(wrapper);

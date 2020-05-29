@@ -1,5 +1,5 @@
 import { createBeerLabel } from './createBeerLabel';
-
+import { createDiv } from '../toManipulateDOM/basisHandlersToManipulateDOM';
 
 
 export const createOfferOnPage = (beers) => {
@@ -11,4 +11,5 @@ export const createOfferOnPage = (beers) => {
         const wrapperDiv = createBeerLabel(beer)
           area.appendChild(wrapperDiv);
     });
+
 };

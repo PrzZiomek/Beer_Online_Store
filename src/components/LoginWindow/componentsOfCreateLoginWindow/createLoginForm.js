@@ -1,6 +1,5 @@
-import { createLabelWithRequired, createForm, createCheckboxInput, createLabel, createBtn, createRadioInput, createTextInput, createEmailInput, createPasswordInput } from "../RegistrationForm/handlersToCreateForm";
-import { createWrapperDiv, createDiv, createLinkTo, createText, createTitle } from "../toManipulateDOM/basisHandlersToManipulateDOM";
-import { pipeline as compose } from "../../pipeline";
+import { createLabelWithRequired, createForm, createCheckboxInput, createLabel, createBtn, createRadioInput, createTextInput, createEmailInput, createPasswordInput } from "../../RegistrationForm/handlersToCreateForm";
+import { pipeline as compose } from "../../../pipeline";
 
 
 export const createLoginForm = (element) => {

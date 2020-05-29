@@ -1,6 +1,5 @@
 import { setClss, setTextContent, setName, setType, setValue, setforAtr, setOnclickFn } from "../toManipulateDOM/handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
-import{ registrationFormValidator } from "./validation/registrationFormValidator";
 
 
 export const createForm = (cl) => { 

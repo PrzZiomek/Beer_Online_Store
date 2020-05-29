@@ -3,9 +3,7 @@ import { removeLoginWindowModal } from "../toManipulateDOM/removeModal/removeLog
 import { pipeline as compose } from "../../pipeline";
 
 
-
-
-export const createButtonToCloseLoginWindow = (cl) => (txtContent) => (element) => {
+const createButtonToCloseLoginWindow = (cl) => (txtContent) => (element) => {
 
     const btn = compose(
             setClss(cl),
@@ -16,3 +14,7 @@ export const createButtonToCloseLoginWindow = (cl) => (txtContent) => (element) 
     element.appendChild(btn);
  return element;
 }
+
+
+
+export const buttonToCloseLoginWindow = (element) => createButtonToCloseLoginWindow("loginWindow-close")("x")(element);  
