@@ -12,8 +12,7 @@ import { removeLoader } from './loader/removeLoader';
 
     return async (dispatch) => {
         
-        const beers = await getBeersFromApi().catch(err => dispatch(fetchFailAction(err)));
-        
+        const beers = await getBeersFromApi().catch(err => dispatch(fetchFailAction(err)));    
          if(beers){ 
             dispatch(fetchSuccessAction(beers));
             removeLoader();

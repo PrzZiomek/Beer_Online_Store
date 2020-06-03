@@ -14,7 +14,7 @@ export const getBeersFromApi = async () => {
  
 export function* getBeersFromApi(){
     
-    const res = yield fetch("https://api.punkapi.com/v2/beers?per_page=12");    
+    const res = yield fetch("https://api.punkapi.com/v2/beers?per_page=40");   //12 
     const beers = yield res.json();
 
     return beers;

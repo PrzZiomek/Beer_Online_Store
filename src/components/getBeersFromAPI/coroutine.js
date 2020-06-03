@@ -1,11 +1,11 @@
 export const coroutine = (gen) => {
 
-    const iter = gen();
+    const genObj = gen();
 
     const contin = ({ done, value }) => done ? value : Promise.resolve(value)
                                                             .then(
-                                                                res => contin(iter.next(res)),
-                                                                err => contin(iter.throw(err))
+                                                                res => contin(genObj.next(res)),
+                                                                err => contin(genObj.throw(err))
                                                             );
-    return contin(iter.next())
+    return contin(genObj.next())
 }
