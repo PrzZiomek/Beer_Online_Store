@@ -2,12 +2,37 @@ import { setClss, setTextContent, setName, setType, setValue, setforAtr, setOncl
 import { pipeline as compose } from "../../pipeline";
 
 
+
 export const createForm = (cl) => { 
 
     const element = document.createElement("form");
     const elementWithClss =  setClss(cl)(element);
   return elementWithClss;
 };
+
+
+export const createSelect = (cl) => (name) => { 
+
+    const select = compose(
+              setClss(cl),
+              setName(name),
+          )(document.createElement("select"));
+
+ return select;
+};
+
+
+export const createOption = (cl) => (value) => (textContent) => (element) => {
+
+  const textInput = compose(
+          setClss(cl),
+          setValue(value),
+          setTextContent(textContent)
+  )(document.createElement("input"));
+
+element.appendChild(textInput);
+return element;
+}
 
 
 export const createTextInput = (cl) => (name) => (element) => {
@@ -36,15 +61,16 @@ export const createPasswordInput = (cl) => (name) => (element) => {
 }
 
 
-export const createCheckboxInput = (cl) => (name) => (element) => {
+export const createCheckboxInput = (cl) => (name) => (value) => (element) => {
 
-    const passwordInput = compose(
+    const checkboxInput = compose(
             setClss(cl),
             setName(name),
+            setValue(value),
             setType("checkbox")
     )(document.createElement("input"));
 
-  element.appendChild(passwordInput);
+  element.appendChild(checkboxInput);
 return element;
 }
 

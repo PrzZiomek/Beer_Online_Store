@@ -1,21 +1,16 @@
 import { pipeline as compose } from '../../pipeline';
 import { createDiv, createSpanElem, createText } from "../toManipulateDOM/basisHandlersToManipulateDOM";
-
+import { createForm, createBtn, createOption, createSelect, createCheckboxInput } from '../RegistrationForm/handlersToCreateForm';
+import { degreeOfColorOption } from './componentsOfFilters/degreeOfColorOption';
 
 
 export const createFilterOptions = () => {
 
-        const wrapperDiv = compose(            
-                createSpanElem("beerTitle")(group[0].name),
-                createText("price")(`${group[0].abv} $`),
-                createButtonToIncreaseOrder("")(addToCartAndUpdatePreviev)(group[0]),
-                createSpanElem("amount")(group.length),
-                createButtonToDecreaseOrder("")(rmvFromCartAndUpdatePreviev)(group[0]),
-                createSpanElem("sum")(`${sumOfGroup(group[0].abv, group.length)} $`)
-            )(createDiv("beer-paramsPreviev"))
+        const wrapperDiv = compose( 
+                    degreeOfColorOption,
+              )(createForm("filterOptions-form"))
 
         element.appendChild(wrapperDiv);
-
     return element;
 }
 
