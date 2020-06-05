@@ -1,0 +1,9 @@
+
+.filters{
+
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    @include greenButton(1.5, 0.5%);
+}
+

@@ -1,0 +1,22 @@
+.filterOptions-form{
+
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightcoral;
+    height: 300%;
+    width: 200%;
+    padding: 2%;
+
+}
+
+
+.clearfix:after { 
+    
+    content: "";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }

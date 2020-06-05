@@ -1,15 +1,11 @@
-import { createFilterOptions } from './createFilterOptions';
+import { showFilters } from './showFilters';
 
 
-
-const showFilters = () => {
+const filters = () => {
 
     const filtersButton = document.querySelector(".filters");
-    
-    filtersButton.addEventListener("click", () => {
-        createFilterOptions();
-    });
+    filtersButton.addEventListener("click", (e) => showFilters(e));
 };
 
 
-showFilters();
+filters();

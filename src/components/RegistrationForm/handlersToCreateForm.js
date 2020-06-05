@@ -1,4 +1,4 @@
-import { setClss, setTextContent, setName, setType, setValue, setforAtr, setOnclickFn } from "../toManipulateDOM/handlersToCreateElements";
+import { setClss, setTextContent, setName, setType, setValue, setforAtr } from "../toManipulateDOM/handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 
 
@@ -24,14 +24,14 @@ export const createSelect = (cl) => (name) => {
 
 export const createOption = (cl) => (value) => (textContent) => (element) => {
 
-  const textInput = compose(
-          setClss(cl),
-          setValue(value),
-          setTextContent(textContent)
-  )(document.createElement("input"));
+    const textInput = compose(
+            setClss(cl),
+            setValue(value),
+            setTextContent(textContent)
+    )(document.createElement("option"));
 
-element.appendChild(textInput);
-return element;
+  element.appendChild(textInput);
+ return element;
 }
 
 

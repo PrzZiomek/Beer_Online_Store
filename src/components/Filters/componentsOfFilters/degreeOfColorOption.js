@@ -14,7 +14,7 @@ export const degreeOfColorOption = (element) => {
                     createCheckboxInput("")("colors")("srednie"),
                     createLabel("")("ciemne")("ciemne"),
                     createCheckboxInput("")("colors")("ciemne"),
-            )(createDiv("filters-colors"))
+            )(createDiv("filtersForm-colors"))
 
     element.appendChild(wrapperDiv);
   return element;

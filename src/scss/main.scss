@@ -1,14 +1,14 @@
 @import "Abstracts/variables";
 @import "Abstracts/mixins";
 
+@import "wrap";
 
 @import "Home/generalRules";
-@import "wrap";
+@import "Home/filtersButton";
 @import "Home/header";
 @import "Home/nav";
 @import "Home/menuAndArea";
 @import "Home/homeMain";
-@import "Home/filters";
 
 @import "LoginWindow/close";
 @import "LoginWindow/close";
@@ -55,6 +55,11 @@
 @import "RegistrationForm/header";
 @import "RegistrationForm/textFields";
 @import "RegistrationForm/acceptFields";
+
+@import "Filters/generalRules";
+@import "Filters/button";
+@import "Filters/colorOptions";
+@import "Filters/yeastOptions";
 
 @import "sentry";
 
