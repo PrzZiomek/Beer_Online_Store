@@ -6,6 +6,6 @@ export const showFilters = (e) => {
 
     const button = e.target;
     const filterForm = createFilterOptions();
-    //filterForm.classList.add("clearfix");
+   // filterForm.classList.add("clearfix");
     button.appendChild(filterForm);
 }

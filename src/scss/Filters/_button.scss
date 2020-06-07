@@ -1,5 +1,6 @@
 .send{
-    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
     clear: both;
-    @include greenButton(1, 1%);
+    @include greenButton(1rem, 1%);
 }

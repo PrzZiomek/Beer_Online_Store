@@ -4,6 +4,7 @@
     position: absolute;
     top: 5vh;
     right: 5vw;
-    @include greenButton(1.5, 0.5%);
+    @include greenButton(1.3rem, 0.5%);
+    border-bottom: none;
 }
 

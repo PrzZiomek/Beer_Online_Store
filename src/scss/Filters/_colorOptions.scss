@@ -1,7 +1,19 @@
 .filtersForm-colors{
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     height: 90%;
     width: 50%;
     float: left;
+    margin: 2% 0;
+    padding: 0 1% 0 2%;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    border-right: 1px solid black;
 
+    > label{
+        height: 15%;
+        margin-bottom: 5%;
+    }
 }
