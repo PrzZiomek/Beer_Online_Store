@@ -3,8 +3,8 @@ import { showFilters } from './showFilters';
 
 const filters = () => {
 
-    const filtersButton = document.querySelector(".filters");
-    filtersButton.addEventListener("click", (e) => showFilters(e));
+    const filtersButton = document.querySelector("button.filters");
+    filtersButton.addEventListener("click", () => showFilters());
 };
 
 

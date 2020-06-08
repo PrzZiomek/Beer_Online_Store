@@ -2,10 +2,11 @@ import { createFilterOptions } from './createFilterOptions';
 
 
 
-export const showFilters = (e) => {
+export const showFilters = () => {
 
-    const button = e.target;
+    const button = document.querySelector("button.filters");
     const filterForm = createFilterOptions();
-   // filterForm.classList.add("clearfix");
+    console.log(button);
+    
     button.appendChild(filterForm);
 }

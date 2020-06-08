@@ -6,8 +6,11 @@
     transform: translateX(-50%);
     background-color: inherit;
     font-size: unset;
-    height: 500%;
+    height: 320%;
     width: 300%;
+    border: 2px solid brown;
+    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+    border-top: none;
 }
 
 
