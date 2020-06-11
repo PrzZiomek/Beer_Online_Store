@@ -1,15 +1,15 @@
 import { createFilterOptions } from './createFilterOptions';
-
+import { onSubmitFiltersForm } from './ searchFilteredBeers/onSubmitFiltersForm';
 
 
 export const showFilters = (e) => {
 
     const button = e.target;
-   // let optionsOpen = false;
-   console.log(button.hasChildNodes());
-   
-    if(button !== e.currentTarget) return;
     const filterForm = createFilterOptions();   
+   
+    if(button !== e.currentTarget || button.childNodes.length > 1) return;
+   
     button.appendChild(filterForm);
-  //  optionsOpen = !optionsOpen;
+    onSubmitFiltersForm(filterForm)
 }
+

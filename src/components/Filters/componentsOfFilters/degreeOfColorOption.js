@@ -10,7 +10,7 @@ export const degreeOfColorOption = (element) => {
         const wrapperDiv = compose( 
                     createLabel("")("jasne")("jasne"),
                     createCheckboxInput("")("colors")("jasne"),
-                    createLabel("")("srednie")("średnie"),
+                    createLabel("")("srednie")("srednie"),
                     createCheckboxInput("")("colors")("srednie"),
                     createLabel("")("ciemne")("ciemne"),
                     createCheckboxInput("")("colors")("ciemne"),
