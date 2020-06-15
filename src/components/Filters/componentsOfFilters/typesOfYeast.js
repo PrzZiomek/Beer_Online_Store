@@ -1,7 +1,7 @@
 import { pipeline as compose } from '../../../pipeline';
 import { createDiv, createSpanElem, createText } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createForm, createBtn, createOption, createSelect, createCheckboxInput } from '../../RegistrationForm/handlersToCreateForm';
-import { american_ale, american_ale_II, belgian_ardennes, french_saison, pilsen_lager, german_wheat  } from '../yeastNames';
+//import { american_ale, american_ale_II, belgian_ardennes, french_saison, pilsen_lager, german_wheat  } from '../yeastNames';
 
 
 
@@ -10,12 +10,14 @@ export const typesOfYeast = (element) => {
     const selectElement = createSelect("filtersForm-yeasts")("yeasts");
 
         const wrapperDiv = compose( 
-                    createOption("")(american_ale)("American Ale"),
-                    createOption("")(american_ale_II)("American Ale II"),
-                    createOption("")(belgian_ardennes)("Belgian Ardennes"),
-                    createOption("")(french_saison)("French Saison"),
-                    createOption("")(pilsen_lager)("Pilsner Lager"),
-                    createOption("")(german_wheat)("German Wheat"),
+                    createOption("filter")("Wyeast 1056 - American Ale™")("American Ale"),
+                    createOption("filter")("Wyeast 1272 - American Ale II™")("American Ale II"),
+                    createOption("filter")("Wyeast 3522 - Belgian Ardennes™")("Belgian Ardennes"),
+                    createOption("filter")("Wyeast 3711 - French Saison™")("French Saison"),
+                    createOption("filter")("Wyeast 2007 - Pilsen Lager™")("Pilsner Lager"),
+                    createOption("filter")("Wyeast 3333 - German Wheat™")("German Wheat"),
+                    createOption("filter")("Saflager S189")("Saflager"),
+                    createOption("filter")("Wyeast 3638 - Bavarian Wheat™")("Bavarian Wheat"),
             )(selectElement)
 
     element.appendChild(wrapperDiv);

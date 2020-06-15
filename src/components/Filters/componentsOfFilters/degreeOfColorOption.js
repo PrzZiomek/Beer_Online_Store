@@ -9,11 +9,11 @@ export const degreeOfColorOption = (element) => {
 
         const wrapperDiv = compose( 
                     createLabel("")("jasne")("jasne"),
-                    createCheckboxInput("")("colors")("jasne"),
+                    createCheckboxInput("filter")("colors")("jasne"),
                     createLabel("")("srednie")("srednie"),
-                    createCheckboxInput("")("colors")("srednie"),
+                    createCheckboxInput("filter")("colors")("srednie"),
                     createLabel("")("ciemne")("ciemne"),
-                    createCheckboxInput("")("colors")("ciemne"),
+                    createCheckboxInput("filter")("colors")("ciemne"),
             )(createDiv("filtersForm-colors"))
 
     element.appendChild(wrapperDiv);
