@@ -456,6 +456,90 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/components/Filters/ searchFilteredBeers/processingResponse/filterOutChoices.js":
+/*!********************************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/processingResponse/filterOutChoices.js ***!
+  \********************************************************************************************/
+/*! exports provided: filterOutChoices */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"filterOutChoices\", function() { return filterOutChoices; });\n/* harmony import */ var _handlersToProcessing_checkIfInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handlersToProcessing/checkIfInput */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/checkIfInput.js\");\n\n\nconst filterOutChoices = (elements) => \n            elements.filter(el => Object(_handlersToProcessing_checkIfInput__WEBPACK_IMPORTED_MODULE_0__[\"checkIfInput\"])(el) ? el.checked : el.selected );\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/processingResponse/filterOutChoices.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/processingResponse/filterOutSpecyfiedYeasts.js":
+/*!****************************************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/processingResponse/filterOutSpecyfiedYeasts.js ***!
+  \****************************************************************************************************/
+/*! exports provided: filterOutSpecyfiedYeasts */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"filterOutSpecyfiedYeasts\", function() { return filterOutSpecyfiedYeasts; });\n\n\nconst filterOutSpecyfiedYeasts = (value) => (beers) => \n        value === \"dowolne\" ? beers : beers.filter(beer => beer.ingredients.yeast === value);\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/processingResponse/filterOutSpecyfiedYeasts.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/checkIfInput.js":
+/*!*************************************************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/checkIfInput.js ***!
+  \*************************************************************************************************************/
+/*! exports provided: checkIfInput */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"checkIfInput\", function() { return checkIfInput; });\n\nconst checkIfInput = (el) => el.nodeName && el.nodeName.toLowerCase() === 'input';\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/processingResponse/handlersToProcessing/checkIfInput.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/chosenFilterPromise.js":
+/*!********************************************************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/chosenFilterPromise.js ***!
+  \********************************************************************************************************************/
+/*! exports provided: chosenFilterPromise */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"chosenFilterPromise\", function() { return chosenFilterPromise; });\n/* harmony import */ var _urlsToApi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../urlsToApi */ \"./src/components/Filters/ searchFilteredBeers/urlsToApi.js\");\n\n\n\nconst chosenFilterPromise = ({value}) => fetch(`https://api.punkapi.com/v2/beers?${Object(_urlsToApi__WEBPACK_IMPORTED_MODULE_0__[\"options\"])()[value]}`)\n                                                    .then(res => res.json());\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/processingResponse/handlersToProcessing/chosenFilterPromise.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/flattenArraysOneLevel.js":
+/*!**********************************************************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/flattenArraysOneLevel.js ***!
+  \**********************************************************************************************************************/
+/*! exports provided: flattenArraysOneLevel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"flattenArraysOneLevel\", function() { return flattenArraysOneLevel; });\n\nconst flattenArraysOneLevel = (arr) => \n        arr.reduce((acc,item) => Array.isArray(item) ? ( acc = [...acc, ...item], acc ) : ( acc = [...acc, item], acc ), []);\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/processingResponse/handlersToProcessing/flattenArraysOneLevel.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/processingResponse/separateInputsAndOptions.js":
+/*!****************************************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/processingResponse/separateInputsAndOptions.js ***!
+  \****************************************************************************************************/
+/*! exports provided: separateInputsAndOptions */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"separateInputsAndOptions\", function() { return separateInputsAndOptions; });\n/* harmony import */ var _handlersToProcessing_checkIfInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./handlersToProcessing/checkIfInput */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/checkIfInput.js\");\n\n\n\n const separateInputsAndOptions = (elements) => \n    elements.reduce((acc,el) => \n              Object(_handlersToProcessing_checkIfInput__WEBPACK_IMPORTED_MODULE_0__[\"checkIfInput\"])(el) ? \n            ( acc[0] = [...acc[0], el], acc ) : \n            ( acc[1] = [...acc[1], el], acc ), [[],[]])\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/processingResponse/separateInputsAndOptions.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/responsesFromAllRequests.js":
+/*!*********************************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/responsesFromAllRequests.js ***!
+  \*********************************************************************************/
+/*! exports provided: responsesFromAllRequests */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"responsesFromAllRequests\", function() { return responsesFromAllRequests; });\n/* harmony import */ var _processingResponse_handlersToProcessing_flattenArraysOneLevel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./processingResponse/handlersToProcessing/flattenArraysOneLevel */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/flattenArraysOneLevel.js\");\n/* harmony import */ var _processingResponse_filterOutSpecyfiedYeasts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./processingResponse/filterOutSpecyfiedYeasts */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/filterOutSpecyfiedYeasts.js\");\n\n\n\n\n\nfunction* responsesFromAllRequests(promises, chosenYeast){\n\n    let response = yield Promise.all(promises)\n    let result =   yield Object(_processingResponse_handlersToProcessing_flattenArraysOneLevel__WEBPACK_IMPORTED_MODULE_0__[\"flattenArraysOneLevel\"])(response);\n    let filteredBeers = yield Object(_processingResponse_filterOutSpecyfiedYeasts__WEBPACK_IMPORTED_MODULE_1__[\"filterOutSpecyfiedYeasts\"])(chosenYeast)(result); \n  return filteredBeers \n }\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/responsesFromAllRequests.js?");
+
+/***/ }),
+
 /***/ "./src/components/Filters/ searchFilteredBeers/searchFilteredBeers.js":
 /*!****************************************************************************!*\
   !*** ./src/components/Filters/ searchFilteredBeers/searchFilteredBeers.js ***!
@@ -464,7 +548,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchFilteredBeers\", function() { return searchFilteredBeers; });\n/* harmony import */ var _toManipulateDOM_basisHandlersToManipulateDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../toManipulateDOM/basisHandlersToManipulateDOM */ \"./src/components/toManipulateDOM/basisHandlersToManipulateDOM.js\");\n/* harmony import */ var _sendToApi_sendChosenFiltersAsRequestsToApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sendToApi/sendChosenFiltersAsRequestsToApi */ \"./src/components/Filters/ searchFilteredBeers/sendToApi/sendChosenFiltersAsRequestsToApi.js\");\n/* harmony import */ var _sendToApi_sendChosenFiltersAsRequestsToApi__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sendToApi_sendChosenFiltersAsRequestsToApi__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n\nconst searchFilteredBeers = (e) => {\n\n    const area = document.querySelector(\"main\");\n    const form = e.target;\n    const elements = [...form.querySelectorAll(\".filter\")];\n\n    Object(_sendToApi_sendChosenFiltersAsRequestsToApi__WEBPACK_IMPORTED_MODULE_1__[\"sendChosenFiltersAsRequestsToApi\"])(elements)\n    Object(_toManipulateDOM_basisHandlersToManipulateDOM__WEBPACK_IMPORTED_MODULE_0__[\"clearContentOf\"])(area);\n}\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/searchFilteredBeers.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"searchFilteredBeers\", function() { return searchFilteredBeers; });\n/* harmony import */ var _toManipulateDOM_basisHandlersToManipulateDOM__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../toManipulateDOM/basisHandlersToManipulateDOM */ \"./src/components/toManipulateDOM/basisHandlersToManipulateDOM.js\");\n/* harmony import */ var _sendToApi_sendChosenFiltersAsRequestsToApi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sendToApi/sendChosenFiltersAsRequestsToApi */ \"./src/components/Filters/ searchFilteredBeers/sendToApi/sendChosenFiltersAsRequestsToApi.js\");\n\n\n\n\nconst searchFilteredBeers = (e) => {\n\n    const area = document.querySelector(\"main\");\n    const form = e.target;\n    const elements = [...form.querySelectorAll(\".filter\")];\n    \n    Object(_sendToApi_sendChosenFiltersAsRequestsToApi__WEBPACK_IMPORTED_MODULE_1__[\"sendChosenFiltersAsRequestsToApi\"])(elements)\n    Object(_toManipulateDOM_basisHandlersToManipulateDOM__WEBPACK_IMPORTED_MODULE_0__[\"clearContentOf\"])(area);\n}\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/searchFilteredBeers.js?");
 
 /***/ }),
 
@@ -472,10 +556,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!***************************************************************************************************!*\
   !*** ./src/components/Filters/ searchFilteredBeers/sendToApi/sendChosenFiltersAsRequestsToApi.js ***!
   \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: sendChosenFiltersAsRequestsToApi */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n/*\nexport const sendChosenFiltersAsRequestsToApi = (elements) => {     \n\n    const chosenFilters = filterOutChoices(elements);\n    const [ inputs, option ] = separateInputsAndOptions(chosenFilters);\n    const promises = completePromises(inputs);\n    const chosenYeast = option[0].value;    \n    \n coroutin(function* (){\n\n    try{\n        const filteredBeers = yield * responsesFromAllRequests(promises, chosenYeast);\n\n        if(filteredBeers){\n            console.log(filteredBeers);\n        }\n    }catch(e){\n        alert(\"!!!, \"+ e);  \n    }\n})\n        \n}\n*/\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/sendToApi/sendChosenFiltersAsRequestsToApi.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sendChosenFiltersAsRequestsToApi\", function() { return sendChosenFiltersAsRequestsToApi; });\n/* harmony import */ var _getBeersFromAPI_coroutine__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../getBeersFromAPI/coroutine */ \"./src/components/getBeersFromAPI/coroutine.js\");\n/* harmony import */ var _processingResponse_filterOutChoices__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../processingResponse/filterOutChoices */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/filterOutChoices.js\");\n/* harmony import */ var _processingResponse_separateInputsAndOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../processingResponse/separateInputsAndOptions */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/separateInputsAndOptions.js\");\n/* harmony import */ var _responsesFromAllRequests__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../responsesFromAllRequests */ \"./src/components/Filters/ searchFilteredBeers/responsesFromAllRequests.js\");\n/* harmony import */ var _processingResponse_handlersToProcessing_chosenFilterPromise__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../processingResponse/handlersToProcessing/chosenFilterPromise */ \"./src/components/Filters/ searchFilteredBeers/processingResponse/handlersToProcessing/chosenFilterPromise.js\");\n\n\n\n//import { completePromises } from '../processingResponse/completePromises';\n\n\n\nconst sendChosenFiltersAsRequestsToApi = (elements) => {     \n   \n    const chosenFilters = Object(_processingResponse_filterOutChoices__WEBPACK_IMPORTED_MODULE_1__[\"filterOutChoices\"])(elements);\n    const [ inputs, option ] = Object(_processingResponse_separateInputsAndOptions__WEBPACK_IMPORTED_MODULE_2__[\"separateInputsAndOptions\"])(chosenFilters);\n    const completePromises = (filters) => filters.reduce((acc,el) => ( acc = [...acc, Object(_processingResponse_handlersToProcessing_chosenFilterPromise__WEBPACK_IMPORTED_MODULE_4__[\"chosenFilterPromise\"])(el)], acc ), [])\n\n    const promises = completePromises(inputs);\n    const chosenYeast = option[0].value;    \n    console.log(promises,chosenYeast);\n    \n    Object(_getBeersFromAPI_coroutine__WEBPACK_IMPORTED_MODULE_0__[\"coroutine\"])(function* (){\n        try{\n          const filteredBeers = yield * Object(_responsesFromAllRequests__WEBPACK_IMPORTED_MODULE_3__[\"responsesFromAllRequests\"])(promises, chosenYeast);\n            if(filteredBeers){\n                console.log(filteredBeers);\n            }\n        }catch(e){\n            alert(\"!!!, \"+ e);  \n        }\n    })\n       \n}\n\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/sendToApi/sendChosenFiltersAsRequestsToApi.js?");
+
+/***/ }),
+
+/***/ "./src/components/Filters/ searchFilteredBeers/urlsToApi.js":
+/*!******************************************************************!*\
+  !*** ./src/components/Filters/ searchFilteredBeers/urlsToApi.js ***!
+  \******************************************************************/
+/*! exports provided: options */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"options\", function() { return options; });\n\nconst options = () => ({\n        jasne: \"ebc_lt=12&per_page=70\",\n        srednie: \"ebc_gt=12&ebc_lt=33&per_page=70\",\n        ciemne: \"ebc_gt=33&per_page=70\",\n    })\n\n//# sourceURL=webpack:///./src/components/Filters/_searchFilteredBeers/urlsToApi.js?");
 
 /***/ }),
 
