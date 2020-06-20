@@ -19,6 +19,9 @@ export const setType = (v) => (el) => setAttr("type")(v)(el);
 
 export const setValue = (v) => (el) => setAttr("value")(v)(el);
 
+export const setChecked = (v) => (el) => setAttr("checked")(v)(el);
+
+
 
 export const setOnclickFn = (fn) => (arg = "") => (element) => {
   element.addEventListener("click", () => { arg ?  fn(arg) : fn() });

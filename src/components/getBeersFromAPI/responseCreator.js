@@ -34,10 +34,9 @@ export const createResponse = () => {
             removeLoader();
             OfferOnPage();
          }
-      }
-      catch(err){
+       }catch(err){
          dispatch(fetchFailAction(err))
-      }     
+     }     
    })
 }
 

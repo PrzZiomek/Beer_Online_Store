@@ -1,4 +1,4 @@
-import { setClss, setTextContent, setName, setType, setValue, setforAtr } from "../toManipulateDOM/handlersToCreateElements";
+import { setClss, setTextContent, setName, setType, setValue, setforAtr, setChecked } from "../toManipulateDOM/handlersToCreateElements";
 import { pipeline as compose } from "../../pipeline";
 
 
@@ -71,6 +71,21 @@ export const createCheckboxInput = (cl) => (name) => (value) => (element) => {
     )(document.createElement("input"));
 
   element.appendChild(checkboxInput);
+return element;
+}
+
+
+export const createCheckedCheckboxInput = (cl) => (name) => (value) => (element) => {
+
+  const checkboxInput = compose(
+          setClss(cl),
+          setName(name),
+          setValue(value),
+          setChecked("true"),
+          setType("checkbox")
+  )(document.createElement("input"));
+
+element.appendChild(checkboxInput);
 return element;
 }
 

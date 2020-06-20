@@ -10,6 +10,7 @@ export const typesOfYeast = (element) => {
     const selectElement = createSelect("filtersForm-yeasts")("yeasts");
 
         const wrapperDiv = compose( 
+                    createOption("filter")("dowolne")("dowolne"),
                     createOption("filter")("Wyeast 1056 - American Ale™")("American Ale"),
                     createOption("filter")("Wyeast 1272 - American Ale II™")("American Ale II"),
                     createOption("filter")("Wyeast 3522 - Belgian Ardennes™")("Belgian Ardennes"),

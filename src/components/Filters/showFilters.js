@@ -1,5 +1,6 @@
 import { createFilterOptions } from './createFilterOptions';
 import { onSubmitFiltersForm } from './ searchFilteredBeers/onSubmitFiltersForm';
+import { uncheckTheWszystkieInput } from './ searchFilteredBeers/uncheckTheWszystkieInput';
 
 
 export const showFilters = (e) => {
@@ -10,6 +11,7 @@ export const showFilters = (e) => {
     if(button !== e.currentTarget || button.childNodes.length > 1) return;
    
     button.appendChild(filterForm);
-    onSubmitFiltersForm(filterForm)
+    uncheckTheWszystkieInput(filterForm);
+    onSubmitFiltersForm(filterForm);
 }
 
