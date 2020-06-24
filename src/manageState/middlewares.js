@@ -17,10 +17,11 @@ export const thunk = ({dispatch, getState}) => next => action => {
   
 export const loggingMiddleware = ({getState}) => next => action => {
 
-  console.info('before', getState());
+  // PLACE FOR TRACKING METHODS THE STATE FLOW
+ /* console.info('before', getState());
   console.info('action', action);
   console.info('after', getState());
-
+*/
   return next(action);
 };
 

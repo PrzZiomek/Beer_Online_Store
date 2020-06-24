@@ -1,31 +1,25 @@
 import { coroutine } from '../../../getBeersFromAPI/coroutine';
+import { store } from "../../../../manageState/store";
+import { fetchBeginAction } from "../../../../manageState/actionCreators";
+import { insertLoader } from '../../../getBeersFromAPI/loader/loader';
 import { filterOutChoices } from '../processingResponse/filterOutChoices';
 import { separateInputsAndOptions } from '../processingResponse/separateInputsAndOptions';
 import { completePromises } from '../processingResponse/completePromises';
-import { responsesFromAllRequests } from '../responsesFromAllRequests';
-//import { chosenFilterPromise } from '../processingResponse/handlersToProcessing/chosenFilterPromise';
+import { responseCreator } from '../responseCreator';
+
+
 
 export const sendChosenFiltersAsRequestsToApi = (elements) => {     
    
     const chosenFilters = filterOutChoices(elements);
     const [ inputs, option ] = separateInputsAndOptions(chosenFilters);
-  //  const completePromises = (filters) => filters.reduce((acc,el) => ( acc = [...acc, chosenFilterPromise(el)], acc ), [])
-
-  //  console.log(chosenFilters);   
-   // console.log("po rozdziale"+inputs + "|||" + option); 
     const promises = completePromises(inputs);
     const chosenYeast = option[0].value;    
-  //  console.log("promisy:"+promises+"chosenYeast"+chosenYeast);
     
-    coroutine(function* (){
-        try{
-          const filteredBeers = yield * responsesFromAllRequests(promises, chosenYeast);
-            if(filteredBeers){
-                console.log(filteredBeers);
-            }
-        }catch(e){
-            alert("!!!, "+ e);  
-        }
-    })
-       
+    store.dispatch(fetchBeginAction())
+    store.dispatch(responseCreator(promises, chosenYeast))    
+    
+    insertLoader()
 }
+
+//creator of response
