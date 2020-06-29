@@ -1,6 +1,5 @@
-import { coroutine } from '../../../getBeersFromAPI/coroutine';
 import { store } from "../../../../manageState/store";
-import { fetchBeginAction } from "../../../../manageState/actionCreators";
+import { fetchBeginActionToFilters } from "../../../../manageState/actionCreators";
 import { insertLoader } from '../../../getBeersFromAPI/loader/loader';
 import { filterOutChoices } from '../processingResponse/filterOutChoices';
 import { separateInputsAndOptions } from '../processingResponse/separateInputsAndOptions';
@@ -16,10 +15,9 @@ export const sendChosenFiltersAsRequestsToApi = (elements) => {
     const promises = completePromises(inputs);
     const chosenYeast = option[0].value;    
     
-    store.dispatch(fetchBeginAction())
-    store.dispatch(responseCreator(promises, chosenYeast))    
+    store.dispatch(fetchBeginActionToFilters());
+    store.dispatch(responseCreator(promises, chosenYeast));
     
     insertLoader()
 }
 
-//creator of response

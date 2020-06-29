@@ -22,7 +22,6 @@ import { removeLoader } from './loader/removeLoader';
  }
  */
 
-
 export const createResponse = () => {
 
    return (dispatch) => coroutine(function* (){

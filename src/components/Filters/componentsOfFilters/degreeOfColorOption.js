@@ -1,6 +1,6 @@
 import { pipeline as compose } from '../../../pipeline';
-import { createDiv, createSpanElem, createText } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createForm, createLabel, createCheckedCheckboxInput, createBtn, createOption, createSelect, createCheckboxInput } from '../../RegistrationForm/handlersToCreateForm';
+import { createDiv } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createLabel, createCheckedCheckboxInput, createCheckboxInput } from '../../RegistrationForm/handlersToCreateForm';
 
 
 
@@ -23,5 +23,3 @@ export const degreeOfColorOption = (element) => {
 }
 
 
-// createLabel = (cl) => (to) => (textContent) => (element)
-// createCheckboxInput = (cl) => (name) => (value) =>

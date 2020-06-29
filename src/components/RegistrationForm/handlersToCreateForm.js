@@ -77,42 +77,42 @@ return element;
 
 export const createCheckedCheckboxInput = (cl) => (name) => (value) => (element) => {
 
-  const checkboxInput = compose(
-          setClss(cl),
-          setName(name),
-          setValue(value),
-          setChecked("true"),
-          setType("checkbox")
-  )(document.createElement("input"));
+    const checkboxInput = compose(
+            setClss(cl),
+            setName(name),
+            setValue(value),
+            setChecked("true"),
+            setType("checkbox")
+    )(document.createElement("input"));
 
-element.appendChild(checkboxInput);
+  element.appendChild(checkboxInput);
 return element;
 }
 
 
 export const createEmailInput = (cl) => (name) => (element) => {
 
-  const passwordInput = compose(
-          setClss(cl),
-          setName(name),
-          setType("email")
-  )(document.createElement("input"));
+    const passwordInput = compose(
+            setClss(cl),
+            setName(name),
+            setType("email")
+    )(document.createElement("input"));
 
-element.appendChild(passwordInput);
+  element.appendChild(passwordInput);
 return element;
 }
 
 
 export const createRadioInput = (cl) => (value) => (element) => {
 
-  const radioInput = compose(
-          setClss(cl),
-          setName(name),
-          setValue(value),
-          setType("radio")
-  )(document.createElement("input"));
+    const radioInput = compose(
+            setClss(cl),
+            setName(name),
+            setValue(value),
+            setType("radio")
+    )(document.createElement("input"));
 
-element.appendChild(radioInput);
+  element.appendChild(radioInput);
 return element;
 }
 

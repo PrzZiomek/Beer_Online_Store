@@ -4,17 +4,17 @@ import { pipeline as compose } from "../../../pipeline";
 
 export const createLoginForm = (element) => {
 
-    const wrapper = compose(     
-            createLabelWithRequired("")("e-mail")("e-mail"),
-            createEmailInput("")("e-mail"),
-            createLabelWithRequired("")("password")("hasło"),
-            createPasswordInput("")("password"),
-            createCheckboxInput("check")("check"),
-            createLabel("")("check")("zapamiętaj mnie"),
-            createBtn("")('zaloguj')             
+    const wrapper = compose(  
+              createLabelWithRequired("")("e-mail")("e-mail"),
+              createEmailInput("")("e-mail"),
+              createLabelWithRequired("")("password")("hasło"),
+              createPasswordInput("")("password"),
+              createCheckboxInput("")("check")("check"),
+              createLabel("")("check")("zapamiętaj mnie"),
+              createBtn("")('zaloguj')             
         )(createForm("login-form"))
             
-   // wrapper.onsubmit = registrationFormValidator();
+ //   wrapper.onsubmit = registrationFormValidator();
 
     element.appendChild(wrapper);
   return element;    

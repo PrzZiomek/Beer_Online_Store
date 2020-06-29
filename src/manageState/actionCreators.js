@@ -9,6 +9,9 @@ import { ADD_TO_CART,
         FETCH_BEGIN,
         FETCH_SUCCESS,
         FETCH_FAIL,
+        FILTERS_FETCH_BEGIN,
+        FILTERS_FETCH_SUCCESS,
+        FILTERS_FETCH_FAIL,
         DECR_ORDER,
         INCR_ORDER,
         VALID,
@@ -31,6 +34,21 @@ export const fetchSuccessAction = (payload) => ({
 export const fetchFailAction = (error) => ({
     type: FETCH_FAIL,
     error
+})
+
+export const fetchBeginActionToFilters = () => ({
+    type: FILTERS_FETCH_BEGIN
+})
+
+export const fetchSuccessActionToFilters = (payload) => ({
+    type: FILTERS_FETCH_SUCCESS,
+    payload
+})
+
+export const fetchFailActionToFilters = (error) => ({
+    type: FILTERS_FETCH_FAIL,
+    error
+
 })
 
 export const addToCartAction = (value) => ({

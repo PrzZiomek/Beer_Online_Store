@@ -2,7 +2,7 @@
 header{
 
     text-align: center;
-    height: 20vh;
+    min-height: 20vh;
     margin: 0 22% 2% 22%;
     background-color: $universalBackgroundColor;
     border-radius: 2%;
@@ -19,3 +19,26 @@ header{
         padding-top: 1%;
       }  
 }
+
+
+
+@media (min-width: 1283px) {
+
+  header{
+    > h2{
+      font-size: 2rem; 
+    }
+  }  
+}
+
+
+
+
+@media (max-width: 1920px)  {
+
+  header{
+    min-height: 18vh;
+  }  
+  
+}
+

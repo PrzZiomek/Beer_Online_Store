@@ -17,15 +17,22 @@
         bottom: 0;
         right: 0;
         position: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
         z-index: -1;   
-
-        @media screen and (max-width: 1920) and (max-height:1080) {
-          background-repeat: no-repeat;
-          background-size: cover;
-      }
       }
          
 }
 
 
+@media (min-width: 1920px)  {
 
+    .wrap{
+        &::after {
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+             
+    }
+    
+}

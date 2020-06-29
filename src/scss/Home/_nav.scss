@@ -14,9 +14,6 @@ nav{
         cursor: pointer;
         text-align: center;   
 
-        @media screen and (max-width: 1920) and (max-height:1080) {
-            margin: 2% 0;
-        }
 
         &:nth-child(5){
             font-size: 1.4rem;
@@ -59,5 +56,22 @@ nav{
         background-color: green;
         color: lawngreen;
         transition: 0.7s;
+    }
+}
+
+
+
+@media (min-width: 1920px) {
+  
+    nav{
+        &.menu{
+            left: 1.5%;
+            top: 28vh;
+
+            &.li a{
+                padding: 7%;
+                margin: 20% 12%;
+            }
+        } 
     }
 }

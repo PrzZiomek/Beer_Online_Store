@@ -1,8 +1,5 @@
 import { pipeline as compose } from '../../../pipeline';
-import { createDiv, createSpanElem, createText } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
-import { createForm, createBtn, createOption, createSelect, createCheckboxInput } from '../../RegistrationForm/handlersToCreateForm';
-//import { american_ale, american_ale_II, belgian_ardennes, french_saison, pilsen_lager, german_wheat  } from '../yeastNames';
-
+import { createOption, createSelect } from '../../RegistrationForm/handlersToCreateForm';
 
 
 export const typesOfYeast = (element) => {
@@ -24,6 +21,3 @@ export const typesOfYeast = (element) => {
     element.appendChild(wrapperDiv);
   return element;
 }
-
-
-// createOption = (cl) => (value) => (textContent) => (element) => 

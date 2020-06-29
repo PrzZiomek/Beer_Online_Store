@@ -1,9 +1,8 @@
 import {  coroutine } from '../../getBeersFromAPI/coroutine';
-import { fetchSuccessAction, fetchFailAction } from "../../../manageState/actionCreators";
-import { OfferOnPage } from "../../OfferOnPage/OfferOnPage";
+import { fetchSuccessActionToFilters, fetchFailActionToFilters } from "../../../manageState/actionCreators";
+import { ShowFilteredBeers } from '../ShowFilteredBeers';
 import { removeLoader } from "../../getBeersFromAPI/loader/removeLoader";
 import { responsesFromAllRequests } from './responsesFromAllRequests';
-
 
 
 
@@ -13,13 +12,35 @@ export const responseCreator = (promises, chosenYeast) => {
 
         try{
           const filteredBeers = yield * responsesFromAllRequests(promises, chosenYeast);
-            if(filteredBeers){
-             dispatch(fetchSuccessAction(filteredBeers))   
+           if(filteredBeers){
+             dispatch(fetchSuccessActionToFilters(filteredBeers))   
              removeLoader();
-             OfferOnPage();          
+             ShowFilteredBeers();          
             }
         }catch(err){
-            dispatch(fetchFailAction(err)) 
+            dispatch(fetchFailActionToFilters(err)) 
         }
     })
 }
+
+
+
+// Naive version with Promise and then
+
+/*
+export const responseCreator = (promises, chosenYeast) => {   
+
+    return (dispatch) => {
+        
+        responsesFromAllRequests(promises, chosenYeast)
+            .then(
+                filteredBeers => {
+                        dispatch(fetchSuccessAction(filteredBeers))   
+                        removeLoader();
+                        OfferOnPage();          
+                     },
+                err => dispatch(fetchFailAction(err)) 
+            )
+    }       
+}
+*/

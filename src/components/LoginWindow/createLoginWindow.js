@@ -8,11 +8,13 @@ import { loginWindowQuestions } from './componentsOfCreateLoginWindow/loginWindo
 
 
 export const createLoginWindow = () => 
-                    compose(    
+                  compose(    
                         buttonToCloseLoginWindow,    
                         loginWindowHeader,
                         createLoginForm,
                         loginWindowQuestions,
                     )(createDiv("loginWindow"));
+
+                   
                 
  

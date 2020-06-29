@@ -26,7 +26,7 @@ export const loggingMiddleware = ({getState}) => next => action => {
 };
 
 
-
+/*
 const delayMiddleware = ({dispatch, getState}) => next => action => {
 
   console.info(">>>>> getState",getState());
@@ -34,4 +34,4 @@ const delayMiddleware = ({dispatch, getState}) => next => action => {
 
   return next(action);
 };
-  
+  */

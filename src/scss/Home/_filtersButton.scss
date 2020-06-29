@@ -2,10 +2,22 @@
 .filters{
 
     position: absolute;
-    top: 5vh;
+    top: 3vh;
     right: 5vw;
-    @include greenButton(1.3rem, 0.5%);
+    @include greenButton(1.5rem, 0.7%);
     border: 2px solid brown;
     border-bottom: none;
 }
 
+
+
+
+@media (min-width: 1920px)  {
+
+    .filters{
+
+        @include greenButton(1.9rem, 1%);
+      
+    }
+    
+}
