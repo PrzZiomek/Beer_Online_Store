@@ -33,14 +33,13 @@ export const responseCreator = (promises, chosenYeast) => {
     return (dispatch) => {
         
         responsesFromAllRequests(promises, chosenYeast)
-            .then(
-                filteredBeers => {
+            .then(filteredBeers => {
                         dispatch(fetchSuccessAction(filteredBeers))   
                         removeLoader();
                         OfferOnPage();          
-                     },
-                err => dispatch(fetchFailAction(err)) 
-            )
+            })
+            .catch(err => dispatch(fetchFailAction(err)) )  
+            
     }       
 }
 */
