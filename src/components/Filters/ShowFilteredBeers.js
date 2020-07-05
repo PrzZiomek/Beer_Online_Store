@@ -7,7 +7,6 @@ export const ShowFilteredBeers = () => {
 
     const area = document.querySelector("main");
     const beers = store.getState().reducerToResponseForFilters.items;
-console.log("showfiltered", beers);
 
     clearContentOf(area);  
     createOfferOnPage(beers);

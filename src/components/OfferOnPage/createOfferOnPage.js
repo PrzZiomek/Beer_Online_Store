@@ -1,4 +1,5 @@
 import { createBeerLabel } from './createBeerLabel';
+import { createAndAddSentinel } from './createAndAddSentinel';
 
 
 export const createOfferOnPage = (beers) => {
@@ -10,4 +11,5 @@ export const createOfferOnPage = (beers) => {
           area.appendChild(beerWrapper);
     });
 
+    createAndAddSentinel(area);
 };

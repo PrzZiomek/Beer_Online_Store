@@ -1,6 +1,7 @@
 .description-part{
 
     position: relative;
+    min-height: 60vh;
 
     & > a{
         @include yellowLink(&);

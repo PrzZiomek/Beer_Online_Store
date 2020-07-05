@@ -3,6 +3,7 @@ import {  coroutine } from './coroutine';
 import { fetchSuccessAction, fetchFailAction } from "../../manageState/actionCreators";
 import { OfferOnPage } from "../OfferOnPage/OfferOnPage";
 import { removeLoader } from './loader/removeLoader';
+import { infiniteScroll } from "../../infiniteScroll/IntersectionObserver";
 
 /* 
 // Simplest way - using async and await keyword
@@ -29,12 +30,13 @@ export const createResponse = () => {
       try{
          const beers = yield * getBeersFromApi()       
          if(beers){ 
-            dispatch(fetchSuccessAction(beers));
-            removeLoader();
-            OfferOnPage();
+               dispatch(fetchSuccessAction(beers));
+               removeLoader();
+               OfferOnPage();
+               infiniteScroll();
          }
        }catch(err){
-         dispatch(fetchFailAction(err))
+               dispatch(fetchFailAction(err))
      }     
    })
 }

@@ -6,7 +6,6 @@ import { insertLoader } from './loader/loader';
 
 
 
-
 window.addEventListener("load", () => { 
 
     store.dispatch(fetchBeginAction());

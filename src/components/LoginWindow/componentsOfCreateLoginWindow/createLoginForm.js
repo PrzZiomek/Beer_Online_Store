@@ -9,7 +9,7 @@ export const createLoginForm = (element) => {
               createEmailInput("")("e-mail"),
               createLabelWithRequired("")("password")("hasło"),
               createPasswordInput("")("password"),
-              createCheckboxInput("")("check")("check"),
+              createCheckboxInput("check")("check")("check"),
               createLabel("")("check")("zapamiętaj mnie"),
               createBtn("")('zaloguj')             
         )(createForm("login-form"))
