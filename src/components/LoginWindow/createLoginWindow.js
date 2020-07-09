@@ -7,6 +7,7 @@ import { loginWindowQuestions } from './componentsOfCreateLoginWindow/loginWindo
 
 
 
+
 export const createLoginWindow = () => 
                   compose(    
                         buttonToCloseLoginWindow,    

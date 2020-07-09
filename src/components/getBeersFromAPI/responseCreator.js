@@ -8,11 +8,9 @@ import { infiniteScroll } from "../../infiniteScroll/IntersectionObserver";
 /* 
 // Simplest way - using async and await keyword
 
-
  export const createResponse = () => {
 
-    return async (dispatch) => {
-        
+    return async (dispatch) => {    
         const beers = await getBeersFromApi().catch(err => dispatch(fetchFailAction(err)));    
          if(beers){ 
             dispatch(fetchSuccessAction(beers));

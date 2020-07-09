@@ -1,7 +1,6 @@
 import { store } from "../../manageState/store";
 import { clearContentOf } from "../toManipulateDOM/basisHandlersToManipulateDOM";
 import { createOfferOnPage } from "./createOfferOnPage";
-//import { createAndAddSentinel } from "./createAndAddSentinel";
 
 
 
@@ -12,7 +11,7 @@ export const OfferOnPage = () => {
 
     clearContentOf(area);  
     createOfferOnPage(beers);
-   // createAndAddSentinel(area);
+
 };
 
 

@@ -2,6 +2,7 @@ import { createBeerLabel } from './createBeerLabel';
 import { createAndAddSentinel } from './createAndAddSentinel';
 
 
+
 export const createOfferOnPage = (beers) => {
 
     const area = document.querySelector("main");
