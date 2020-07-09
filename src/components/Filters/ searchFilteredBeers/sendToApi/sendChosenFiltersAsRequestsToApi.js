@@ -13,8 +13,8 @@ export const sendChosenFiltersAsRequestsToApi = (elements) => {
     const chosenFilters = filterOutChoices(elements);
     const [ inputs, option ] = separateInputsAndOptions(chosenFilters);
     const promises = completePromises(inputs);
-    const chosenYeast = option[0].value;    
-    
+    const chosenYeast = option[0].value; 
+       
     store.dispatch(fetchBeginActionToFilters());
     store.dispatch(responseCreator(promises, chosenYeast));
     

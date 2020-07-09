@@ -1,7 +1,7 @@
 import { clearContentOf } from "../../toManipulateDOM/basisHandlersToManipulateDOM";
 import { sendChosenFiltersAsRequestsToApi } from './sendToApi/sendChosenFiltersAsRequestsToApi';
 
-
+ 
 export const searchFilteredBeers = (e) => {
 
     const area = document.querySelector("main");

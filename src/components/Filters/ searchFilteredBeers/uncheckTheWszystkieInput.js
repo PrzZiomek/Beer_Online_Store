@@ -1,5 +1,6 @@
 import { filterOutChoices } from './processingResponse/filterOutChoices';
 
+
 export const uncheckTheWszystkieInput = (form) => 
                 form.addEventListener("change", () => {
                     
