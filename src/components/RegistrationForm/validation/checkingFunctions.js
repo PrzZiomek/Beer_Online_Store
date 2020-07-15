@@ -1,5 +1,5 @@
 
-const includeNumber = (text) => [...text].some(x => x.match(/\d+/g));
+export const includeNumber = (text) => [...text].some(x => x.match(/\d+/g));
 
 export const checkIfIncludesNumb = (text) =>{ 
     if(includeNumber(text)){

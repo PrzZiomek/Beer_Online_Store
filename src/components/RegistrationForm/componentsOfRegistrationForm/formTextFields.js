@@ -9,16 +9,16 @@ export const formTextFields = (element) => {
 
   const wrapper = compose(           
             createLabelWithRequired("")("imie")("imię"),
-            createTextInput("")("imie"),
+            createTextInput("name")("imie"),
             createLabelWithRequired("")("nazwisko")("nazwisko"),
-            createTextInput("")("nazwisko"),
+            createTextInput("surname")("nazwisko"),
             createLabelWithRequired("")("e-mail")("e-mail"),
-            createEmailInput("")("e-mail"),
+            createEmailInput("email")("e-mail"),
             createLabelWithRequired("")("haslo")("hasło"),
             createPasswordInput("password")("haslo"),
             createDivWithinElement("withInfo")("hasło musi mieć min. 6 znaków, moze składać się z duzych liter, znaków specjalnych i liczb"),
             createLabelWithRequired("")("haslo2")("powtórz hasło"),
-            createPasswordInput("")("haslo2")     
+            createPasswordInput("passwordRepeated")("haslo2")     
     )(createDiv("form-textFields"))
         
     element.appendChild(wrapper);

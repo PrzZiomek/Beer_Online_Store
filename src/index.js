@@ -1,4 +1,4 @@
-import "./components/getBeersFromAPI/loadPage";
+import "./components/LoadPage";
 import "./scss/main.scss";
 import "./components/contact";
 import "./components/LoginWindow/LoginWindow";

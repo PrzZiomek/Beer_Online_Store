@@ -4,6 +4,7 @@ import { formHeader } from "./componentsOfRegistrationForm/formHeader";
 import { formTextFields } from "./componentsOfRegistrationForm/formTextFields";
 import { formAcceptFields } from "./componentsOfRegistrationForm/formAcceptFields";
 import { registrationFormValidator } from "./validation/registrationFormValidator";
+import { validationBeforeSubmit } from "./validationBeforeSubmit/veryfication";
 
 
 
@@ -19,6 +20,7 @@ export const createRegistrationForm = () => {
         )(createForm("registration-form"))
             
     area.appendChild(wrapper);
-    
+
+    validationBeforeSubmit(wrapper);
     wrapper.onsubmit = registrationFormValidator();
 }

@@ -3,6 +3,7 @@
     margin: auto;
     @include universalBackground();
     width: 75%;
+    height: 590px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -11,7 +12,7 @@
         @include greenButton(1.2rem, 2%);
         box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
         font-weight: bold;
-        margin: 2% 0 0 20%;
+        margin: 4% 0 0 20%;
         justify-self: center;
 
         &:hover{
@@ -22,5 +23,9 @@
     & input{
         background-color: green;
         font-size: 1.2rem;
+    }
+
+    & input:focus{
+        border: 1px solid yellow;
     }
 }
