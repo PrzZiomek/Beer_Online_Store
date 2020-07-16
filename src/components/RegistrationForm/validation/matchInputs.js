@@ -11,4 +11,5 @@ export const matchInputWithFn = (input) => ({
                 "email" : verifyEmail(input.value),
                 "radio" : verifyAgreement(input.checked),
                 "password" : verifyPassword(input.value),
-            })
+                
+            })[input.type]
