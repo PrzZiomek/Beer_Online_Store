@@ -1,12 +1,19 @@
-import { objWithInputsByClassName } from './helpers/objWithInputsByClassName';
-import { matchValidationMessage } from './matchValidationMessage';
+import { managingOfValidationAlerts } from "./managingOfValidationAlerts";
 
 
 export const validationBeforeSubmit = (form) => {
 
         form.addEventListener("focusout", (e) =>{
+     
+         const currentInput = e.target;
+         
+      managingOfValidationAlerts(form)(currentInput)
+  })
+}
 
-         /*
+
+
+  /*
             const emailInput = form.querySelector("input.email");
             const passwordInput = form.querySelector("input.password");
             const passwordRepaetedInput = form.querySelector("input.passwordRepeated");
@@ -14,19 +21,6 @@ export const validationBeforeSubmit = (form) => {
             const surnameInput = form.querySelector("input.surname");
             const checkInput = form.querySelector("input.acceptRegulations");
 */
-         const inputs = [...form.querySelectorAll("input")]; 
-      
-         console.log(e.target);
-
-   
-           alert(matchValidationMessage(objWithInputsByClassName(inputs))[e.target.className]) ;
-      
-        })
-}
-
-
-
-
 
 
 

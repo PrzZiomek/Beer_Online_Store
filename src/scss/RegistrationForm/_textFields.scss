@@ -21,6 +21,7 @@
     }
 
     > input{
+        position: relative;
         display: block;
         width: 60%;
         height: 5vh;
@@ -35,5 +36,14 @@
             margin: 0;
             background-color: rgb(8, 133, 8);
             border: 2px solid rgb(16, 179, 16);
+    }
+
+    > .infoAboutAsterix{
+        position: absolute;
+        bottom: 9%;
+        left: 3%;
+        font-size: 1.1rem;
+        font-weight: normal;
+        text-transform: none;
     }
 }

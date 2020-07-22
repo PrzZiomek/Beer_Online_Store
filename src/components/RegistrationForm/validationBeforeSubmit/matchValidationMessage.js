@@ -1,4 +1,4 @@
-import { ifIncorrectNameFormat, ifIncorrectEmailFormat, ifIncorrectPasswordLength, ifNoIdenticalPassword, ifNoAgreement } from "./checkingFunctions";
+import { ifIncorrectNameFormat, ifIncorrectEmailFormat, ifIncorrectPasswordLength, ifNoIdenticalPassword, ifNoAgreement } from "./helpers/checkingFunctions";
 
 
 export const matchValidationMessage = ({ 

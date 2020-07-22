@@ -13,7 +13,7 @@ export const formAcceptFields = (element) => {
                 createText("")("Akceptuję "),
                 createLinkTo("")("regulamin serwisu")("#/regulamin-serwisu"),
                 createText("")(" i zapoznałem się z "),
-                createLinkTo("")("polityką prywatności")("#/polityka-prywatnosci")
+                createLinkTo("")("polityką prywatności *")("#/polityka-prywatnosci")
             ),
             createCheckboxInput("acceptSendingNewsletter")("newsletter")("acceptSendingNewsletter"),    
             createText("")("Wyrażam zgodę na wysyłanie mi meilowo przez Beers S.A. z siedzibą w Poznaniu wiadomości marketingowych.")      

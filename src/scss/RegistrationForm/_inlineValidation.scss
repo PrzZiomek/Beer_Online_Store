@@ -1,0 +1,17 @@
+.inlineValidation{
+
+    position: absolute;
+    top: 10%;
+    left: 29%;
+    height: 5vh;
+    width: 16vw;
+    text-align: center;
+    background-color: red;
+    color: yellowgreen;
+    text-transform: none;
+
+    p{
+        position: absolute;
+        transform: translateY(50%);
+    }
+}

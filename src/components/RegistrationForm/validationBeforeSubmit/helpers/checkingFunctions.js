@@ -1,10 +1,11 @@
-import { includeNumber } from '../validation/checkingFunctions';
+import { includeNumber } from '../../validation/checkingFunctions';
+
 
 export const ifIncorrectNameFormat = (name) => includeNumber(name) || name.length < 2;
 
 export const ifIncorrectEmailFormat = (email) => !(/(^\w.*@\w+\.\w)/.test(email));
 
-export const ifNoAgreement = (check) => check.checked;
+export const ifNoAgreement = (checked) => !checked; 
 
 export const ifIncorrectPasswordLength = (password) => password.length < 5;
 
