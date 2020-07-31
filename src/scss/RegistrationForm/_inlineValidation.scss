@@ -5,13 +5,23 @@
     left: 29%;
     height: 5vh;
     width: 16vw;
+    background-color: red;
+    color: yellowgreen;
+    text-transform: none;
     text-align: center;
+
+}
+
+
+.inlineValidationForChecked{
+
+    position: absolute;
+    top: 30%;
+    left: 54%;
+    height: 5vh;
+    width: 16vw;
     background-color: red;
     color: yellowgreen;
     text-transform: none;
 
-    p{
-        position: absolute;
-        transform: translateY(50%);
-    }
 }

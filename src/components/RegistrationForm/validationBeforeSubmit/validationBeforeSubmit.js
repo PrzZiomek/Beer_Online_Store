@@ -3,12 +3,10 @@ import { managingOfValidationAlerts } from "./managingOfValidationAlerts";
 
 export const validationBeforeSubmit = (form) => {
 
-        form.addEventListener("focusout", (e) =>{
-     
-         const currentInput = e.target;
-         
-      managingOfValidationAlerts(form)(currentInput)
-  })
+        form.addEventListener("focusout", (e) =>{   
+          const currentInput = e.target;
+          managingOfValidationAlerts(form)(currentInput)
+      })
 }
 
 

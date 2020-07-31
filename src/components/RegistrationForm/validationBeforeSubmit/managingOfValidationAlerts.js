@@ -1,5 +1,6 @@
 import { createAlertIfNoValid } from "./validationAlerts/createAlertIfNoValid";
 import { inlineValidationElement } from "./validationAlerts/inlineValidationElement";
+import { reValidationInputs } from "./reValidationInputs";
 
 
 
@@ -9,18 +10,16 @@ export const managingOfValidationAlerts = (form) => (currentInput) => {
     const inputs = [...form.querySelectorAll("input")]; 
     const validateMessage = createAlertIfNoValid(inputs)(currentInput.className);
     const inlineValidation = inlineValidationElement(validateMessage)(currentInput);
-    const textFields = form.querySelector(".form-textFields");
-    const curentAlert = form.getElementsByClassName(`inlineValidation ${currentInput.className}`);
-            console.log(curentAlert);
-                                                                                                                           
+    const textFields = form.querySelector(".form-textFields"); 
+    const inlineWalidationAlreadyIs = textFields.getElementsByClassName(`inlineValidation ${currentInput.className}`).length;                                                                                             
 
-    if(validateMessage){
+    if(validateMessage){ 
+        if(currentInput.type === 'checkbox'){
+            inlineValidation.className = "inlineValidationForChecked";
+            inlineValidation.style.top = "32%";
+        } 
         currentInput.style.backgroundColor = "orangered";
         textFields.appendChild(inlineValidation);
+        reValidationInputs(currentInput)(inputs)(inlineValidation);
     }
- /*  if(curentAlert){
-        currentInput.style.backgroundColor = "revert";
-        textFields.removeChild(inlineValidation);
-        console.log("haaah!");      
-    } */
 }

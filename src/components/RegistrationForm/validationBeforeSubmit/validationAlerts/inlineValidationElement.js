@@ -1,5 +1,5 @@
 import { pipeline as compose } from '../../../../pipeline';
-import { createDiv, createText, createTitle } from "../../../toManipulateDOM/basisHandlersToManipulateDOM";
+import { createDiv, createText } from "../../../toManipulateDOM/basisHandlersToManipulateDOM";
 
 
 
@@ -10,7 +10,7 @@ export const inlineValidationElement = (text) => (currentInput) => {
     )(createDiv("inlineValidation"));
     
     wrapperDiv.style.top = currentInput.offsetTop + "px";
-    wrapperDiv.classList.add(currentInput.className)
+    wrapperDiv.classList.add(currentInput.className);
 
  return wrapperDiv;
 
