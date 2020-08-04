@@ -1,16 +1,14 @@
 import { combineReducers } from "../combineReducers";
-import { reducerToCart } from "./reducerToCart";
-import { reducerToCurrentBeer } from "./reducerToCurrentBeer";
-import { reducerToFavorite} from "./reducerToFavorite";
-import { reducerToResponse } from "./reducerToResponse";
-import { reducerToResponseForFilters } from './reducerToResponseForFilters';
+import { reducerToCart } from "./higherOrderReducers/reducerToCart";
+import { reducerToCurrentBeer } from "./caseFunctions/reducerToCurrentBeer";
+import { reducerToResponse } from "./higherOrderReducers/reducerToResponse";
 
 
 
 export const mainReducer = combineReducers({
-    reducerToResponse,
-    reducerToFavorite,
-    reducerToCart,
+    reducerToResponseForOffer: reducerToResponse("OFFER"),
+    reducerToResponseForFilters: reducerToResponse("FILTERS"),
+    reducerToShopping: reducerToCart("SHOPPING_CART"),
+    reducerToFavorite: reducerToCart("FAVORITE_CART"),
     reducerToCurrentBeer,
-    reducerToResponseForFilters,
 })

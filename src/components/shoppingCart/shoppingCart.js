@@ -8,7 +8,7 @@ import { createShoppingCart } from "./createShoppingCart";
 export const ShoppingCart = () => {
 
     const area = document.querySelector("main");
-    const cartContent = store.getState().reducerToCart;
+    const cartContent = store.getState().reducerToShopping;
 
     clearContentOf(area);
     removePrevievCartModal();

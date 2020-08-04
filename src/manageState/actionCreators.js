@@ -1,70 +1,72 @@
-import { ADD_TO_CART,
-        ADD_TO_FAVORITE,
-        RMV_FROM_CART,
-        RMV_TYPE_FROM_CART,
-        RMV_FROM_FAVORITE,
-        CLEAR_CART,
-        CLEAR_FAVOUR,
+import { ADD_TO_SHOPPING_CART,
+        ADD_TO_FAVORITE_CART,
+        RMV_FROM_SHOPPING_CART,
+        RMV_TYPE_FROM_SHOPPING_CART,
+        RMV_FROM_FAVORITE_CART,
         CURRENT_BEER,
-        FETCH_BEGIN,
-        FETCH_SUCCESS,
-        FETCH_FAIL,
-        FILTERS_FETCH_BEGIN,
-        FILTERS_FETCH_SUCCESS,
-        FILTERS_FETCH_FAIL,
+        FETCH_BEGIN_OFFER,
+        FETCH_SUCCESS_OFFER,
+        FETCH_FAIL_OFFER,
+        FETCH_BEGIN_FILTERS,
+        FETCH_SUCCESS_FILTERS,
+        FETCH_FAIL_FILTERS,
         DECR_ORDER,
         INCR_ORDER,
         VALID,
         NOT_VALID,
-        RMV_TYPE_FROM_FAVORITE
+        RMV_TYPE_FROM_FAVORITE_CART
         } from "./actions";
 
 
 
         
 export const fetchBeginAction = () => ({
-    type: FETCH_BEGIN
+    type: FETCH_BEGIN_OFFER
 })
 
 export const fetchSuccessAction = (payload) => ({
-    type: FETCH_SUCCESS,
+    type: FETCH_SUCCESS_OFFER,
     payload
 })
 
 export const fetchFailAction = (error) => ({
-    type: FETCH_FAIL,
+    type: FETCH_FAIL_OFFER,
     error
 })
 
 export const fetchBeginActionToFilters = () => ({
-    type: FILTERS_FETCH_BEGIN
+    type: FETCH_BEGIN_FILTERS
 })
 
 export const fetchSuccessActionToFilters = (payload) => ({
-    type: FILTERS_FETCH_SUCCESS,
+    type: FETCH_SUCCESS_FILTERS,
     payload
 })
 
 export const fetchFailActionToFilters = (error) => ({
-    type: FILTERS_FETCH_FAIL,
+    type: FETCH_FAIL_FILTERS,
     error
 
 })
 
+
+
 export const addToCartAction = (value) => ({
-    type: ADD_TO_CART,
+    type: ADD_TO_SHOPPING_CART,
     value  
 });
 
-export const setCurrentBeerAction = (value) => ({
-    type: CURRENT_BEER,
+export const removeFromCartAction = (value) => ({
+    type: RMV_FROM_SHOPPING_CART,
     value
 })
 
-export const removeFromCartAction = (value) => ({
-    type: RMV_FROM_CART,
+export const rmvWholeTypeFromCartAction = (value) => ({
+    type: RMV_TYPE_FROM_SHOPPING_CART,
     value
 })
+
+
 
 export const incrOrderAction = () => ({
     type: INCR_ORDER,
@@ -73,6 +75,8 @@ export const incrOrderAction = () => ({
 export const decrOrderAction = () => ({
     type: DECR_ORDER
 })
+
+
 
 export const validationOKaction = (value) => ({
     type: VALID,
@@ -84,23 +88,26 @@ export const NoValidationAction = (error) => ({
     error
 })
 
-export const rmvWholeTypeFromCartAction = (value) => ({
-    type: RMV_TYPE_FROM_CART,
-    value
-})
+
 
 export const addToFavoriteAction = (value) => ({
-    type: ADD_TO_FAVORITE,
+    type: ADD_TO_FAVORITE_CART,
     value  
 });
 
-
 export const removeFromFavoriteAction = (value) => ({
-    type: RMV_FROM_FAVORITE,
+    type: RMV_FROM_FAVORITE_CART,
     value
 })
 
 export const rmvWholeTypeFromFavoriteAction = (value) => ({
-    type: RMV_TYPE_FROM_FAVORITE,
+    type: RMV_TYPE_FROM_FAVORITE_CART,
+    value
+})
+
+
+
+export const setCurrentBeerAction = (value) => ({
+    type: CURRENT_BEER,
     value
 })

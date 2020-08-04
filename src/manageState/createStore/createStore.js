@@ -34,37 +34,6 @@ export const createStore = (reducer, middleware) => {
 
 
 
-/*
-export const createStore = (reducer, middleware) => {
-
-  let state;
-
-  const coreDispatch = (action) => {
-            validateAction(action);
-            state = reducer(state, action);
-  };
-
-  const getState = () => state;
-
-  const store = {
-    dispatch: coreDispatch,
-    getState,
-  };
-
-
-  if(middleware){
-    const dispatch = (action) => store.dispatch(action);
-    store.dispatch = middleware({
-      dispatch,
-      getState
-    })(coreDispatch)
-  }
-
-  return store;
-};
-
-
-*/
 
 
 

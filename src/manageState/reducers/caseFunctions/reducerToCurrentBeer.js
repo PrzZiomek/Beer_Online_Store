@@ -1,4 +1,4 @@
-import { CURRENT_BEER } from "../actions";
+import { CURRENT_BEER } from "../../actions";
 
 
 

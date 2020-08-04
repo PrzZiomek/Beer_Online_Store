@@ -7,7 +7,7 @@ export const actualBeerAndCartPreviev = () => {
 
     const page = document.querySelector("body");  
     const cartPrevievModal = createDiv("previevModal");
-    const cartContent = store.getState().reducerToCart;
+    const cartContent = store.getState().reducerToShopping;
     const currentBeer = store.getState().reducerToCurrentBeer;
     const cartPreviev = shoppingCartStatementAndPreviev(cartContent)(currentBeer);
 
