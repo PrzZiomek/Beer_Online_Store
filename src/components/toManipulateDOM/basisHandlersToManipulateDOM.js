@@ -23,17 +23,6 @@ export const createDiv = (cl) => {
 
 
 
-export const createSpanElem = (cl) => (txtContent) => (element) =>{ 
-
-    const span = compose(
-                    setClss(cl),
-                    setTextContent(txtContent)
-              )(document.createElement("span"));
-          
-      element.appendChild(span);
-    return element
-  }
-
 
 export const createTitle = (cl) => (txtContent) => (element) =>{ 
 
@@ -112,4 +101,14 @@ export const createWrapperDiv = (cl) => (...elements) => (element) => {
 
 
 
-       
+
+export const createSpanElem = (cl) => (txtContent) => (element) =>{ 
+
+  const span = compose(
+                  setClss(cl),
+                  setTextContent(txtContent)
+            )(document.createElement("span"));
+        
+    element.appendChild(span);
+  return element
+}
