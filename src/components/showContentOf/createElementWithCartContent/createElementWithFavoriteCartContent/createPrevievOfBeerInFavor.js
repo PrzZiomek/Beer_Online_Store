@@ -18,7 +18,7 @@ export const createPrevievOfBeerInFavor = (group) =>
                 createBeerNameWithDescription(group[0]),
                 createText("price")(`${group[0].abv} $`),
                 createButtonToIncreaseOrder("")(addToFavoriteAndUpdateCartView)(group[0]),
-                createSpanElem("amount")(group[0].length),
+                createSpanElem("amount")(group.length),
                 createButtonToDecreaseOrder("")(rmvFromFavoriteAndUpdateCartView)(group[0]),
                 createSpanElem("sum")(`${sumOfGroup(group[0].abv, group.length)} $`),
                 createBtnAddToCart("addToCart-btn")("dodaj do koszyka")(group[0])

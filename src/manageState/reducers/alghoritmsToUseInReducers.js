@@ -6,11 +6,11 @@ export const removePos = (arr) => (beer) => {
 
                 let tab = []; 
                 for(let i = 0; i < arr.length; i++ ){
-                if(arr[i].name === beer.name){
-                    arr.splice(i,1);
-                    tab = [...arr]
-                    return tab
-                }
+                  if(arr[i].name === beer.name){
+                        arr.splice(i,1);
+                        tab = [...arr];
+                        return tab;
+                    }
                 }
             }
 

@@ -8,6 +8,6 @@ import { thunk, loggingMiddleware } from "./middlewares";
   export const store = createStore(mainReducer, applyMiddleware(
         thunk,
         loggingMiddleware,
-    ))
+    ));
   
     

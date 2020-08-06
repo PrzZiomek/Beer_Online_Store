@@ -3,7 +3,7 @@ import { Nothing } from './Nothing';
 
 
 
- export const MaybeOf = (x) => 
-                x === null ||
-                x === undefined ||
-                x.isNothing ? Nothing(x) : Just(x);
+ export const MaybeOf = (v) => 
+                v === null ||
+                v === undefined ||
+                v.isNothing ? Nothing(v) : Just(v);

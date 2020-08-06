@@ -3,10 +3,10 @@ import { Left } from "./Left";
 
 
 
- const Either = (f) => {
+ const Either = (fn) => {
 
                 try {
-                    let res = f();
+                    let res = fn();
                     return Right(res);
                 } catch (e) {
                     return Left(e);

@@ -12,30 +12,16 @@ export const clearContentOf = (el) => {
 
 
 
-export const createDiv = (cl) => { 
+export const createDiv = (cl = "") => { 
 
     const element = document.createElement("div");
     const elementWithClss =  setClss(cl)(element);
-  return elementWithClss
+  return elementWithClss;
  } 
 
 
 
-
-
-export const createSpanElem = (cl) => (txtContent) => (element) =>{ 
-
-    const span = compose(
-                    setClss(cl),
-                    setTextContent(txtContent)
-              )(document.createElement("span"));
-          
-      element.appendChild(span);
-    return element
-  }
-
-
-export const createTitle = (cl) => (txtContent) => (element) =>{ 
+export const createTitle = (cl = "") => (txtContent) => (element) =>{ 
 
     const h3 = compose(
             setClss(cl),
@@ -47,7 +33,7 @@ export const createTitle = (cl) => (txtContent) => (element) =>{
  }
 
 
-  export const createText = (cl) => (txtContent) => (element) =>{ 
+  export const createText = (cl = "") => (txtContent) => (element) =>{ 
 
     const p = compose(
             setClss(cl),
@@ -59,18 +45,18 @@ export const createTitle = (cl) => (txtContent) => (element) =>{
   } 
 
 
-  export const createDivWithinElement = (cl) => (txtContent) => (element) =>{ 
+  export const createDivWithinElement = (cl = "") => (txtContent) => (element) =>{ 
 
     const div = compose(
               setTextContent(txtContent)
-       )(createDiv(cl))
+       )(createDiv(cl));
        
        element.appendChild(div);
    return element;
  } 
 
 
-export const createImgElem = (cl) => (alt) => (src) => (element) => {
+export const createImgElem = (cl = "") => (alt = "") => (src) => (element) => {
 
     const img = compose(
             setClss(cl),
@@ -84,7 +70,7 @@ export const createImgElem = (cl) => (alt) => (src) => (element) => {
 
 
 
-export const createLinkTo = (cl) => (txtContent) => (path) => (element) => {
+export const createLinkTo = (cl = "") => (txtContent) => (path) => (element) => {
 
     const link = compose(
             setClss(cl),
@@ -100,7 +86,7 @@ export const createLinkTo = (cl) => (txtContent) => (path) => (element) => {
 
 
 
-export const createWrapperDiv = (cl) => (...elements) => (element) => {
+export const createWrapperDiv = (cl = "") => (...elements) => (element) => {
 
   const wrapper = compose(
             ...elements
@@ -111,5 +97,15 @@ export const createWrapperDiv = (cl) => (...elements) => (element) => {
 } 
 
 
+export const createSpanElem = (cl = "") => (txtContent) => (element) =>{ 
+   const span = compose(
+                  setClss(cl),
+                  setTextContent(txtContent)
+            )(document.createElement("span"));      
+    element.appendChild(span);
+  return element
+}
 
-       
+
+
+

@@ -1,12 +1,12 @@
 import { MaybeOf } from "./MaybeOf";
 
 
-export const Just = (x) => ({
+export const Just = (v) => ({
 
-        chain: (f) => f(x),
-        valueOf: () => x,
-        map: (f) => MaybeOf(f(x)),
+        chain: (fn) => fn(v),
+        valueOf: () => v,
+        map: (fn) => MaybeOf(fn(v)),
         isJust: true,
         isNothing: false,
-        inspect: () => `Just(${x})`,
+        inspect: () => `Just(${v})`,
     })

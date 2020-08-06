@@ -11,8 +11,8 @@ window.addEventListener("load", () => {
     store.dispatch(fetchBeginAction());
     store.dispatch(createResponse());
  
-    router() 
-    insertLoader()
+    router(); 
+    insertLoader();
   });
 
   

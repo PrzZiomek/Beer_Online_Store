@@ -2,7 +2,7 @@ import { addToCart } from "../showContentOf/createElementWithCartContent/createE
 import { addToCartAndOpenPreviev } from "../AddToCartAndOpenPreviev/addToCartAndOpenPreviev";
 import { setClss, setOnclickFn, setTextContent } from "./handlersToCreateElements";
 import { addToFavoriteAndOpenStatement } from '../addToFavoriteAndOpenStatement/addToFavoriteAndOpenStatement';
-import { pipeline as compose } from "../../pipeline";
+import { pipeline as compose } from "../../pipeline"
 
 
 
@@ -35,6 +35,7 @@ export const createBtnAddToCartAndOpenPreviev = (cl) => (txtContent) => (arg) =>
      element.appendChild(btn);
   return element;
 }
+
 
 
 export const createBtnAddToCart = (cl) => (txtContent) => (arg) => (element) => {

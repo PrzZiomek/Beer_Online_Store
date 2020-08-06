@@ -43,22 +43,3 @@ export const reducerToCart = (reducerFor = "") =>
 
 
 
-
-/*
-export const reducerToCart = (state = initState, action) => {
-
-    switch (action.type){
-        case ADD_TO_SHOPPING_CART:
-            return [...state, action.value];
-        case RMV_FROM_SHOPPING_CART: 
-            return removePos(state)(action.value);
-        case RMV_TYPE_FROM_SHOPPING_CART:
-            return removeSpecifyBeer(state)(action.value.name)
-        case CLEAR_SHOPPING_CART:
-             return [];
-        default:
-            return state;
-    }
-};
-
-*/

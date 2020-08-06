@@ -1,8 +1,8 @@
 
 export const Right = (v) => ({
     
-                map: (f) => Right(f(v)),
+                map: (fn) => Right(fn(v)),
                 match: (pattern) => pattern.Right(v),
-                chain: (f) => f(v),
-                valueOf: () => v,
+                chain: (fn) => fn(v),
+                valueOfn: () => v,
             });
