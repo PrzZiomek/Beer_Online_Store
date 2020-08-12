@@ -21,7 +21,14 @@ export const createDiv = (cl = "") => {
 
 
 
+<<<<<<< HEAD
 export const createTitle = (cl = "") => (txtContent) => (element) =>{ 
+=======
+
+
+
+export const createTitle = (cl) => (txtContent) => (element) =>{ 
+>>>>>>> 7b09fbd5440d57341d08c184c1d099d16c424ee3
 
     const h3 = compose(
             setClss(cl),
@@ -109,3 +116,17 @@ export const createSpanElem = (cl = "") => (txtContent) => (element) =>{
 
 
 
+<<<<<<< HEAD
+=======
+
+export const createSpanElem = (cl) => (txtContent) => (element) =>{ 
+
+  const span = compose(
+                  setClss(cl),
+                  setTextContent(txtContent)
+            )(document.createElement("span"));
+        
+    element.appendChild(span);
+  return element
+}
+>>>>>>> 7b09fbd5440d57341d08c184c1d099d16c424ee3
