@@ -1,117 +1,39 @@
-
 import {Maybe} from '../../monads/Maybe/Maybe';
-
-
-const checkIfThisIsFunction = (fn) => typeof fn === "function" && fn;
-
-const convertIfArgIsNotText = (x = "") => (fn) =>{ 
-    const checkedArg = x.constructor === String ? x : String(x);
-   return fn(checkedArg) 
-}
-
-const convertIfArgIsNotHtmlEl = (elem) => (fn) =>{ 
-     const checkedEl = elem instanceof Element || elem instanceof HTMLDocument ? elem : document.createElement("div");
-   return fn(checkedEl)      
-};
+import {Identity} from '../../monads/Identity/Identity';
+import { checkIfThisIsFunction, convertIfArgIsNotHtmlEl, convertIfArgIsNotText } from './helpersToTypeConverting';
+import { createDivBefChecking, createImgElemBefChecking, createLinkToBefChecking, createTextBefChecking, createTitleBefChecking, createSpanElemFnBefChecking, createDivWithinElementBefChecking } from './functionsBeforeTypeChecking';
 
 
 
+/*
+    THIS IS AN ALTERNATIVE WAY TO TYPE CONTROL IN JAVASCRIPT WITH MONADS
 
- const createSpanElemFnBefChecking = (cl) => (txtContent) => (element) =>{ 
-   const span = compose(
-                  setClss(cl),
-                  setTextContent(txtContent)
-            )(document.createElement("span"));      
-    element.appendChild(span);
-  return element
-}
-
- const createDivBefChecking = (cl) => { 
-
-  const element = document.createElement("div");
-  const elementWithClss =  setClss(cl)(element);
- return elementWithClss;
- }
-
-
- const createTitleBefChecking = (cl) => (txtContent) => (element) =>{ 
-
-  const h3 = compose(
-          setClss(cl),
-          setTextContent(txtContent)
-    )(document.createElement("h3"));
-      
-  element.appendChild(h3);
-return element
-}
-
-
- const createTextBefChecking = (cl) => (txtContent) => (element) =>{ 
-
-  const p = compose(
-          setClss(cl),
-          setTextContent(txtContent)
-    )(document.createElement("p"));
-  
-    element.appendChild(p);
- return element;
-} 
-
-export const createDivWithinElementBefChecking = (cl) => (txtContent) => (element) =>{ 
-
-  const div = compose(
-            setTextContent(txtContent)
-     )(createDiv(cl));
-     
-     element.appendChild(div);
- return element;
-} 
-
- const createImgElemBefChecking = (cl) => (alt) => (src) => (element) => {
-
-  const img = compose(
-          setClss(cl),
-          setSrc(src),
-          setAlt(alt),
-    )(document.createElement("img"));
-
-  element.appendChild(img);
-return element;
-}
-
-export const createLinkToBefChecking = (cl) => (txtContent) => (path) => (element) => {
-
-  const link = compose(
-          setClss(cl),
-          setPath(path),
-          setTextContent(txtContent)
-    )(document.createElement("a"));
-
-    
-  element.appendChild(link);
-return element;
-}
-
+    typeControl/inVanillaJS folder is detached from application flow.
+*/
 
 
 
 export const createSpanElem = (cl) => (txtContent) => (element) => 
 
-          Maybe.of(createSpanElemFnBefChecking)
-                        .map(checkIfThisIsFunction)
-                        .map(convertIfArgIsNotText(cl))  
-                        .map(convertIfArgIsNotText(txtContent)) 
-                        .map(convertIfArgIsNotHtmlEl(element))                                                                                                                       
-                        .valueOf();
+        Maybe.of(createSpanElemFnBefChecking)
+                      .map(checkIfThisIsFunction)        // if is true Maybe monad return Just functor, that return Maybe again. If is false monad return Nothing functor and this is where the whole operation is finished.
+                      .chain(Identity)                   // after checking Maybe isn't longer needed, thus I change the category by chaining value (function in this case) with Identity monad.
+                      .map(convertIfArgIsNotText(cl))    // then the value is mapped by conversions functions repeatedly, until each nested function will be called. 
+                      .map(convertIfArgIsNotText(txtContent)) 
+                      .map(convertIfArgIsNotHtmlEl(element))                                                                                                                       
+                      .valueOf();                         // finally value is unwrapped from monad - value is 'flatten' - in other words, and createSpanElem function is called.
 
-               
+      
+                        
                         
 export const createDiv = (cl) => 
 
           Maybe.of(createDivBefChecking)
                       .map(checkIfThisIsFunction)
+                      .chain(Identity)
                       .map(convertIfArgIsNotText(cl))  
                       .valueOf();
+
 
 
 
@@ -119,21 +41,25 @@ export const createTitle = (cl) => (txtContent) => (element) =>
 
         Maybe.of(createTitleBefChecking)
                   .map(checkIfThisIsFunction)
+                  .chain(Identity)
                   .map(convertIfArgIsNotText(cl))  
                   .map(convertIfArgIsNotText(txtContent)) 
                   .map(convertIfArgIsNotHtmlEl(element))                                                                                                                       
                   .valueOf();
 
+  
                   
 
 export const createText = (cl) => (txtContent) => (element) =>
 
         Maybe.of(createTextBefChecking)
                   .map(checkIfThisIsFunction)
+                  .chain(Identity)
                   .map(convertIfArgIsNotText(cl))  
                   .map(convertIfArgIsNotText(txtContent)) 
                   .map(convertIfArgIsNotHtmlEl(element))                                                                                                                       
                   .valueOf();
+
 
 
 
@@ -141,6 +67,7 @@ export const createDivWithinElement = (cl) => (txtContent) => (element) =>
 
         Maybe.of(createDivWithinElementBefChecking)
                   .map(checkIfThisIsFunction)
+                  .chain(Identity)
                   .map(convertIfArgIsNotText(cl))  
                   .map(convertIfArgIsNotText(txtContent)) 
                   .map(convertIfArgIsNotHtmlEl(element))                                                                                                                       
@@ -148,10 +75,12 @@ export const createDivWithinElement = (cl) => (txtContent) => (element) =>
 
 
 
+
 export const createImgElem = (cl) => (alt) => (src) => (element) => 
 
         Maybe.of(createImgElemBefChecking)
                   .map(checkIfThisIsFunction)
+                  .chain(Identity)
                   .map(convertIfArgIsNotText(cl)) 
                   .map(convertIfArgIsNotText(alt)) 
                   .map(convertIfArgIsNotText(src)) 
@@ -160,10 +89,12 @@ export const createImgElem = (cl) => (alt) => (src) => (element) =>
 
 
 
+
 export const createLinkTo = (cl) => (txtContent) => (path) => (element) => 
 
         Maybe.of(createLinkToBefChecking)
                   .map(checkIfThisIsFunction)
+                  .chain(Identity)
                   .map(convertIfArgIsNotText(cl)) 
                   .map(convertIfArgIsNotText(txtContent)) 
                   .map(convertIfArgIsNotText(path)) 

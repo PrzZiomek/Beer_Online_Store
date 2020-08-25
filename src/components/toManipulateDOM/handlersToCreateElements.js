@@ -24,7 +24,7 @@ export const setChecked = (v) => (el) => setAttr("checked")(v)(el);
 
 
 export const setOnclickFn = (fn) => (arg = "") => (element) => {
-  element.addEventListener("click", () => { arg ?  fn(arg) : fn() });
+  element.addEventListener("click", () => fn(arg));
 return element;
 }
 
