@@ -2060,7 +2060,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"pipeline\", function() { return pipeline; });\n// not efficient pipeline\n/* \n export const pipeline = (...fns) => (x) => fns.reduce((acc,fn) => fn(acc), x);\n*/\n\n\n\n// replacement for functional pipeline to improve performance\n\nconst pipeline = (...fns) => (x) => {\n\n  let acc = x;\n    for(const fn of fns){\n        acc = fn(acc);     \n    }\n return acc;\n}\n\n\n//# sourceURL=webpack:///./src/pipeline.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"pipeline\", function() { return pipeline; });\n// not such efficient pipeline\n/* \n export const pipeline = (...fns) => (x) => fns.reduce((acc,fn) => fn(acc), x);\n*/\n\n\n\n// replacement for functional pipeline to improve performance\n\nconst pipeline = (...fns) => (x) => {\n\n let acc = x;\n    for(const fn of fns){\n        acc = fn(acc);     \n    }\n return acc;\n}\n\n\n//# sourceURL=webpack:///./src/pipeline.js?");
 
 /***/ }),
 
