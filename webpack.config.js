@@ -1,6 +1,6 @@
 const path = require("path");
-//const MediaQueryPlugin  = require("media-query-plugin");
-//const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isDevelopment = process.env.NODE_ENV === "development";
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 
 
@@ -9,6 +9,10 @@ module.exports = {
     mode: "development",
     
     entry: "./src/index.js",
+
+    resolve: {
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"]
+    },
 
     output: {
         filename: "main.js",
@@ -19,11 +23,38 @@ module.exports = {
         rules: [
 
             {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/
+            },     
+          
+            {
                 test: /\.scss$/,
                 use: [          
                        "style-loader",
                        "css-loader",                      
                        "sass-loader"
+                    ],
+            },
+
+            {
+                test: /\.module\.s(a|c)ss$/,            
+                loader: [          
+                       MiniCssExtractPlugin.loader,
+                       {
+                        loader: "css-loader",
+                        options: { 
+                            modules: true,
+                            sourceMap: isDevelopment, 
+                        }
+                       },
+                       {
+                        loader: "sass-loader",
+                        options: { 
+                            sourceMap: isDevelopment,
+                        }
+                       }                    
+                       
                     ],
             },
 
@@ -60,71 +91,15 @@ module.exports = {
                 }
               }
         ]
-    }
+    },
 
-}
-
-
-
-
-
-/*
-
-
- plugins: [
+    plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].scss",
             chunkFilename: "[id].scss"
         })
     ],
 
-        {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '/public/path/to/',
-            },
-        },
 
+}
 
-
-        {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: (resourcePath, context) => {
-                return path.relative(path.dirname(resourcePath), context) + '/';
-              },
-            },
-        },
-
-
-
-
-        {
-                test: /\.scss$/,
-                use: [          
-                        "style-loader",   // replaced MiniCssExtractPlugin.loader,  
-                        {
-                        loader: "css-loader",
-                        options: {
-                            importLoaders: 1,
-                            modules: true,
-                        }
-                        },
-                        
-                        MediaQueryPlugin.loader,
-                        "sass-loader"
-                    ],
-                    include: /\.module\.scss$/
-            },
-
-            {
-                test: /\.scss$/,
-                use: [          
-                        "style-loader",                        
-                        "css-loader",                     
-                        MediaQueryPlugin.loader,
-                        "sass-loader"
-                    ],
-                    exclude: /\.module\.scss$/
-            },
-*/
