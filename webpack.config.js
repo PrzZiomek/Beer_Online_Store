@@ -19,6 +19,18 @@ module.exports = {
         path: path.resolve(__dirname, "dist")
     },
 
+    devServer: {
+       filename:  "main.js",
+       publicPath: "/dist/main.scss",
+       port: 3000,
+       proxy: {
+           '/api': {
+               target: "http://localhost:8080/",
+               secure: false
+           }
+       }
+    },
+
     module: {
         rules: [
 
@@ -103,3 +115,6 @@ module.exports = {
 
 }
 
+
+
+// node_modules/.bin/webpack-dev-server
