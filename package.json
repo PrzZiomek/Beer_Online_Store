@@ -6,7 +6,7 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "start": "webpack & npm run start:dev",
-    "check-types": "tsc",
+    "check-types": "tsc", 
     "check-types:watch": "tsc --watch"
   },
   "keywords": [],
