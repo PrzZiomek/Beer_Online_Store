@@ -22,6 +22,17 @@ export const createRegistrationForm = () => {
     area.appendChild(form);
 
     validationBeforeSubmit(form);
-   
+
+
     form.onsubmit = validateAndSendUserData();
-    }
+
+  /*
+    const events = new EventSource("http://localhost:8080/events");
+        events.onmessage = (event) => {
+         console.log(event.data);
+        if(event.data){
+            events.close();
+        }
+    } 
+    */
+}
