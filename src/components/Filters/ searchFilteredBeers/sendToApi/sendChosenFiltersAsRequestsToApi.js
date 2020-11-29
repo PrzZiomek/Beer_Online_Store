@@ -1,5 +1,5 @@
 import { store } from "../../../../manageState/store";
-import { fetchBeginActionToFilters } from "../../../../manageState/actionCreators";
+import { fetchBeginAction } from "../../../../manageState/actionCreators";
 import { insertLoader } from '../../../getBeersFromAPI/loader/loader';
 import { filterOutChoices } from '../processingResponse/filterOutChoices';
 import { separateInputsAndOptions } from '../processingResponse/separateInputsAndOptions';
@@ -15,7 +15,7 @@ export const sendChosenFiltersAsRequestsToApi = (elements) => {
     const promises = completePromises(inputs);
     const chosenYeast = option[0].value; 
        
-    store.dispatch(fetchBeginActionToFilters());
+    store.dispatch(fetchBeginAction("FILTERS"));
     store.dispatch(responseCreator(promises, chosenYeast));
     
     insertLoader()

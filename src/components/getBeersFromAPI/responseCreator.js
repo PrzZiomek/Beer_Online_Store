@@ -28,13 +28,13 @@ export const createResponse = () => {
       try{
          const beers = yield * getBeersFromApi()       
          if(beers){ 
-               dispatch(fetchSuccessAction(beers));
+               dispatch(fetchSuccessAction('OFFER', beers));
                removeLoader();
                OfferOnPage();
                infiniteScroll();
          }
        }catch(err){
-               dispatch(fetchFailAction(err))
+               dispatch(fetchFailAction('OFFER', err))
      }     
    })
 }

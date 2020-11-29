@@ -1,9 +1,12 @@
 import { validation } from './validation';
+import { store } from '../../../manageState/store';
 
 
 export const validateAndSendUserData = () => {
 
     const form = document.querySelector(".registration-form");
+    const { token } = store.getState().reducerToResponseForJwt.items;
+
 
     form.addEventListener("submit", (e) => {
 
@@ -14,7 +17,8 @@ export const validateAndSendUserData = () => {
             method: "POST",
             headers:{
                 "Cookie": "registered=true", 
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token,
             },
             body: JSON.stringify({
                 user: {

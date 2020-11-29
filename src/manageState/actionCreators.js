@@ -4,12 +4,9 @@ import { ADD_TO_SHOPPING_CART,
         RMV_TYPE_FROM_SHOPPING_CART,
         RMV_FROM_FAVORITE_CART,
         CURRENT_BEER,
-        FETCH_BEGIN_OFFER,
-        FETCH_SUCCESS_OFFER,
-        FETCH_FAIL_OFFER,
-        FETCH_BEGIN_FILTERS,
-        FETCH_SUCCESS_FILTERS,
-        FETCH_FAIL_FILTERS,
+        FETCH_BEGIN_,
+        FETCH_SUCCESS_,
+        FETCH_FAIL_,
         DECR_ORDER,
         INCR_ORDER,
         VALID,
@@ -20,33 +17,18 @@ import { ADD_TO_SHOPPING_CART,
 
 
         
-export const fetchBeginAction = () => ({
-    type: FETCH_BEGIN_OFFER
+export const fetchBeginAction = (val) => ({
+    type: FETCH_BEGIN_ + val
 })
 
-export const fetchSuccessAction = (payload) => ({
-    type: FETCH_SUCCESS_OFFER,
+export const fetchSuccessAction = (val, payload) => ({
+    type: FETCH_SUCCESS_ + val,
     payload
 })
 
-export const fetchFailAction = (error) => ({
-    type: FETCH_FAIL_OFFER,
+export const fetchFailAction = (val, error) => ({
+    type: FETCH_FAIL_ + val,
     error
-})
-
-export const fetchBeginActionToFilters = () => ({
-    type: FETCH_BEGIN_FILTERS
-})
-
-export const fetchSuccessActionToFilters = (payload) => ({
-    type: FETCH_SUCCESS_FILTERS,
-    payload
-})
-
-export const fetchFailActionToFilters = (error) => ({
-    type: FETCH_FAIL_FILTERS,
-    error
-
 })
 
 

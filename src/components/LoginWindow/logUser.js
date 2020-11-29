@@ -1,10 +1,13 @@
 import { validation } from '../RegistrationForm/validation/validation';
+import { store } from '../../manageState/store';
 
 
 
 export const validateAndLogUser = (form) => {
 
- 
+   const { token } = store.getState().reducerToResponseForJwt.items; 
+   
+
     form.addEventListener("submit", (e) => {
 
         e.preventDefault();     
@@ -14,7 +17,8 @@ export const validateAndLogUser = (form) => {
             method: "POST",
             headers:{
                 "Cookie": "login=true", 
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token,
             },
             body: JSON.stringify({
                 user: {

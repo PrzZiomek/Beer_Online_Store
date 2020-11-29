@@ -1,5 +1,5 @@
 import {  coroutine } from '../../getBeersFromAPI/coroutine';
-import { fetchSuccessActionToFilters, fetchFailActionToFilters } from "../../../manageState/actionCreators";
+import { fetchSuccessAction } from "../../../manageState/actionCreators";
 import { ShowFilteredBeers } from '../ShowFilteredBeers';
 import { removeLoader } from "../../getBeersFromAPI/loader/removeLoader";
 import { responsesFromAllRequests } from './responsesFromAllRequests';
@@ -13,12 +13,12 @@ export const responseCreator = (promises, chosenYeast) => {
         try{
           const filteredBeers = yield * responsesFromAllRequests(promises, chosenYeast);
            if(filteredBeers){
-             dispatch(fetchSuccessActionToFilters(filteredBeers))   
+             dispatch(fetchSuccessAction("FILTERS", filteredBeers))   
              removeLoader();
              ShowFilteredBeers();          
             }
         }catch(err){
-            dispatch(fetchFailActionToFilters(err)) 
+            dispatch(fetchFailActionT("FILTERS", err)) 
         }
     })
 }

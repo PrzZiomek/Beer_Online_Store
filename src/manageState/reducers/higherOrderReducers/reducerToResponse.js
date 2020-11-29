@@ -3,7 +3,10 @@ import { FETCH_BEGIN_OFFER,
          FETCH_SUCCESS_OFFER,
          FETCH_BEGIN_FILTERS,
          FETCH_FAIL_FILTERS,
-         FETCH_SUCCESS_FILTERS } from "../../actions";
+         FETCH_SUCCESS_FILTERS,
+         FETCH_FAIL_JWT,
+         FETCH_BEGIN_JWT,
+         FETCH_SUCCESS_JWT } from "../../actions";
 
 
     
@@ -19,7 +22,10 @@ const actionTypes = (type) => ({
     FETCH_FAIL_OFFER,
     FETCH_BEGIN_FILTERS,
     FETCH_FAIL_FILTERS,
-    FETCH_SUCCESS_FILTERS   
+    FETCH_SUCCESS_FILTERS,
+    FETCH_FAIL_JWT,
+    FETCH_BEGIN_JWT,
+    FETCH_SUCCESS_JWT  
 })[type]
 
 
